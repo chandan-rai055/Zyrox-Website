@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zyrox Media — Digital Marketing Agency That Helps Your Brand Grow</title>
+  <meta name="description" content="Zyrox Media is an elite digital marketing agency handling social media, content production, high-conversion web development, SEO, and Meta ads under one roof.">
+  <meta name="keywords" content="digital marketing agency, social media management, SEO, meta ads, creative studio, brand growth">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Zyrox Media — Digital Marketing Agency">
+  <meta property="og:description" content="Holistic growth architecture powered by creative direction, high-velocity distribution, and algorithmic targeting.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23131316'/><path d='M8 9h16l-10 14h10' stroke='%23FFD400' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>">
+
+  <!-- Google Fonts: Inter, Manrope, Outfit, Syne, Anton, Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{ --gold:#F9C80E; --bg:#0a0a0a; }
+    body.loading{ overflow:hidden !important; }
+   
+    /* ===== ZYROX PRELOADER ===== */
+    #preloader{ position:fixed; inset:0; z-index:999999; background:radial-gradient(ellipse at center,#16130b 0%,#0a0a0a 70%); font-family:'Space Grotesk',system-ui,sans-serif; }
+    #c{ display:block; width:100%; height:100%; }
+    #ring{ position:absolute; left:50%; top:50%; border:2px solid var(--gold); border-radius:50%; transform:translate(-50%,-50%);
+           box-shadow:0 0 36px rgba(249,200,14,.7); display:none; pointer-events:none; }
+    .meter{ position:absolute; left:50%; bottom:7vh; transform:translateX(-50%); width:140px; text-align:center; transition:opacity .4s; }
+    .meter.hide{ opacity:0; }
+    #num{ font-size:14px; letter-spacing:.18em; font-variant-numeric:tabular-nums; color:var(--gold); }
+    .track{ height:2px; margin-top:10px; background:#25221a; overflow:hidden; }
+    #bar{ height:100%; width:0; background:var(--gold); }
+   
+    @media (prefers-reduced-motion: reduce){
+      #preloader{ display:none; }
+    }
+  </style>
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="loading">
+
+  <!-- ========== PRELOADER START ========== -->
+  <div id="preloader" aria-label="Loading">
+    <canvas id="c"></canvas>
+    <div id="ring"></div>
+    <div class="meter" id="meter"><div id="num">0%</div><div class="track"><div id="bar"></div></div></div>
+  </div>
+
+  <script>
+  (function(){
+  var WORDS=['SEO','ADS','BRAND','SOCIAL','REELS','GROWTH','LEADS','CONTENT','ROI','WEB','STRATEGY','ZYROX','ANALYTICS','CAMPAIGN','CLICKS','REACH','DESIGN','VIRAL','SALES','डिजिटल','मार्केटिंग','ब्रांड','ग्रोथ'];
+  var pre=document.getElementById('preloader'),cv=document.getElementById('c'),ctx=cv.getContext('2d'),
+      ring=document.getElementById('ring'),num=document.getElementById('num'),bar=document.getElementById('bar'),meter=document.getElementById('meter');
+  var W,H,cx,cy,dpr,lw,lh,ox,oy,step=2,parts=[],words=[],img=new Image(),loaded=(document.readyState==='complete'),t0=0,tc=-1,Rm=1,mn=1,irisOn=false;
+  var clamp=function(v){return v<0?0:v>1?1:v},lerp=function(a,b,t){return a+(b-a)*t},
+      eo=function(t){return 1-Math.pow(1-t,4)},eio=function(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2};
+  window.addEventListener('load',function(){loaded=true});
+   
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.body.classList.remove('loading');
+    if(pre) pre.remove(); return;
+  }
+   
+  function build(){
+    dpr=Math.min(window.devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cx=W/2;cy=H/2;
+    cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    Rm=Math.hypot(W,H)/2;mn=Math.min(W,H);
+    var asp=(img.height&&img.width)?(img.height/img.width):1;lw=Math.min(W*.8,600);lh=lw*asp;
+    if(lh>H*.55){lh=H*.55;lw=lh/asp}
+    lw=Math.round(lw);lh=Math.round(lh);ox=Math.round(cx-lw/2);oy=Math.round(cy-lh/2);
+    var o=document.createElement('canvas');o.width=lw;o.height=lh;
+    var c=o.getContext('2d');c.drawImage(img,0,0,lw,lh);
+    parts=[];
+    try{
+      var d=c.getImageData(0,0,lw,lh).data,n=0,i;
+      for(i=3;i<d.length;i+=4)if(d[i]>140)n++;
+      step=Math.max(1.6,Math.sqrt(n/3600));
+      for(var y=0;y<lh;y+=step)for(var x=0;x<lw;x+=step){
+        var k=((y|0)*lw+(x|0))*4;if(d[k+3]<140)continue;
+        parts.push({tx:ox+x,ty:oy+y,c:'rgb('+d[k]+','+d[k+1]+','+d[k+2]+')',
+          r0:Rm*(1.05+Math.random()*.7),r1:mn*(.08+Math.random()*.42),a0:Math.random()*6.283,
+          w:.9+Math.random()*.9,dl:Math.random()*.6,cd:Math.random()*.35});
+      }
+    }catch(e){}
+    words=[];var NW=W<600?26:42;
+    for(i=0;i<NW;i++)words.push({s:WORDS[i%WORDS.length],f:Math.round(mn*(.022+Math.random()*.03))+8,
+      r0:Rm*(1.05+Math.random()*.6),r1:mn*(.14+Math.random()*.4),a0:Math.random()*6.283,
+      w:.7+Math.random()*.7,dl:Math.random()*.7,al:.4+Math.random()*.6,g:Math.random()<.7});
+  }
+   
+  /* swirl: bahar se andar spiral mein aata hua */
+  function pos(o,t){
+    var a=clamp((t-o.dl)/1.9),r=lerp(o.r0,o.r1,eo(a));
+    r*=1-.3*clamp((t-2)/1.5);
+    var th=o.a0+o.w*t*1.1;
+    return [cx+r*Math.cos(th),cy+r*Math.sin(th),th,a];
+  }
+   
+  function frame(now){
+    var t=(now-t0)/1000;
+    if(tc<0&&loaded&&t>3.4)tc=t;
+    var u0=tc<0?0:t-tc,i,q,e,u,x,y;
+    ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;
+   
+    var gl=.04+.16*clamp(u0/1.2),g=ctx.createRadialGradient(cx,cy,0,cx,cy,mn*.6);
+    g.addColorStop(0,'rgba(249,200,14,'+gl+')');g.addColorStop(1,'rgba(249,200,14,0)');
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+   
+    ctx.textAlign='center';ctx.textBaseline='middle';
+    for(i=0;i<words.length;i++){
+      var w=words[i];q=pos(w,t);u=tc<0?0:clamp((u0-w.dl*.3)/1);e=eio(u);
+      var al=w.al*clamp(q[3]*2.2)*(1-e);if(al<.01)continue;
+      ctx.save();ctx.translate(lerp(q[0],cx,e),lerp(q[1],cy,e));ctx.rotate(q[2]+1.5708);
+      ctx.font='700 '+(w.f*(1-.6*e)).toFixed(1)+'px "Space Grotesk",system-ui,sans-serif';
+      ctx.fillStyle=w.g?'#F9C80E':'#8a8578';ctx.globalAlpha=al;ctx.fillText(w.s,0,0);ctx.restore();
+    }
+   
+    var fp=1-clamp((u0-1.3)/.5);
+    if(fp>0&&parts.length>0)for(i=0;i<parts.length;i++){
+      var p=parts[i];q=pos(p,t);u=tc<0?0:clamp((u0-p.cd)/1);e=eio(u);
+      x=lerp(q[0],p.tx,e);y=lerp(q[1],p.ty,e);
+      var s=lerp(1.6,step*1.1,e);
+      ctx.globalAlpha=(.3+.7*e)*clamp(q[3]*3)*fp;ctx.fillStyle=p.c;ctx.fillRect(x-s/2,y-s/2,s,s);
+    }
+   
+    var la=clamp((u0-1.1)/.5);
+    if(la>0){ctx.globalAlpha=la;ctx.drawImage(img,ox,oy,lw,lh);}
+    var ru=clamp((u0-1.15)/.9);
+    if(ru>0&&ru<1){ctx.globalAlpha=(1-ru)*.8;ctx.strokeStyle='#F9C80E';ctx.lineWidth=2;
+      ctx.beginPath();ctx.arc(cx,cy,eo(ru)*mn*.7,0,6.283);ctx.stroke();}
+   
+    var pr=tc<0?88*eo(clamp(t/3.4)):88+12*clamp(u0/1.3);
+    num.textContent=Math.round(pr)+'%';bar.style.width=pr+'%';
+    if(u0>1.5)meter.classList.add('hide');
+   
+    /* iris: logo ke beech se website khulti hai */
+    if(tc>=0&&u0>2.3){
+      var iu=clamp((u0-2.3)/1.1),R=eio(iu)*Rm*1.1;
+      if(!irisOn){irisOn=true;document.body.classList.remove('loading');ring.style.display='block';}
+      var m='radial-gradient(circle at 50% 50%, transparent '+R+'px, #000 '+(R+1.5)+'px)';
+      pre.style.webkitMaskImage=m;pre.style.maskImage=m;
+      ring.style.width=ring.style.height=(2*R+6)+'px';ring.style.opacity=1-iu*iu;
+      if(iu>=1){pre.remove();return;}
+    }
+    requestAnimationFrame(frame);
+  }
+   
+  img.onload=function(){build();t0=performance.now();requestAnimationFrame(frame);};
+  img.onerror=function(){
+    img.onerror=null;
+    img.src='assets/logo-zyrox.png';
+  };
+  img.src='logo-zyrox.png';
+  setTimeout(function(){
+    if(tc<0){ loaded=true; tc=(performance.now()-t0)/1000; }
+  }, 7000);
+  window.addEventListener('resize',function(){if(img.complete&&pre.parentNode)build()});
+  })();
+  </script>
+  <!-- ========== PRELOADER END ========== -->
+
+  <!-- ========================================================================
+       TOP SCROLL PROGRESS BAR
+       ======================================================================== -->
+  <div class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       CUSTOM MOUSE CURSOR
+       ======================================================================== -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true">
+    <span class="cursor-text"></span>
+  </div>
+
+  <!-- ========================================================================
+       BACKGROUND ATMOSPHERE: GRADIENT BLOBS & FILM GRAIN
+       ======================================================================== -->
+  <div class="bg-mesh-canvas" aria-hidden="true">
+    <div class="blob-violet"></div>
+    <div class="blob-deep"></div>
+    <div class="blob-warm"></div>
+  </div>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       01. NAVBAR
+       ======================================================================== -->
+  <header class="navbar" role="banner">
+    <div class="container nav-container">
+      <!-- Brand Logo (Zyrox Media logo2) -->
+      <a href="#hero" class="brand-logo" aria-label="Zyrox Media Home">
+        <img src="assets/logo2.png" alt="Zyrox Media - Digital Marketing Agency" class="header-logo-img" width="175" height="42">
+      </a>
+
+      <!-- Desktop Navigation Links (Home, Services, About Us, Projects) -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#why-us" class="nav-link">About Us</a>
+        <a href="#projects" class="nav-link">Projects</a>
+      </nav>
+
+      <!-- CTA Button Right (Get Started ->) -->
+      <div class="nav-cta-btn">
+        <button class="btn-accent nav-btn-get-started" data-open-modal="contact" aria-label="Get Started with Zyrox Media">
+          <span>Get Started</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" aria-hidden="true">
+    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+      <a href="#hero" class="mobile-nav-link active">Home</a>
+      <a href="#services" class="mobile-nav-link">Services</a>
+      <a href="#why-us" class="mobile-nav-link">About Us</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+    </nav>
+    <button class="btn-accent nav-btn-get-started" data-open-modal="contact" style="align-self: flex-start;">
+      <span>Get Started</span>
+      <span class="btn-arrow" aria-hidden="true">→</span>
+    </button>
+  </div>
+
+  <!-- ========================================================================
+       02. HERO SECTION (.sd-hero)
+       ======================================================================== -->
+  <section class="sd-hero" id="hero" aria-label="Zyrox Media hero">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+      <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="i-yt" viewBox="0 0 24 24"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 50 50 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 50 50 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+      <symbol id="i-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.500 3c-1.800 0-3 .5-4.500 2-1.500-1.500-2.700-2-4.500-2A5.500 5.500 0 0 0 2 8.500c0 2.300 1.500 4 3 5.500l7 7Z"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.300-4.300"/></symbol>
+      <symbol id="i-trend" viewBox="0 0 24 24"><path d="m22 7-8.500 8.500-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+      <symbol id="i-mega" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.600 16.800a3 3 0 1 1-5.800-1.600"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.970 5.700a2 2 0 0 1-2.060 0L2 7"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.900 20A9 9 0 1 0 4 16.100L2 22Z"/></symbol>
+      <symbol id="i-bars" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.500 16.500c-1.500 1.300-2 5-2 5s3.700-.5 5-2c.7-.8.700-2.100-.1-2.900a2.200 2.200 0 0 0-2.900-.1z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.900A12.900 12.900 0 0 1 22 2c0 2.700-.8 7.500-6 11a22 22 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.600-1.100 5 0 5 0M12 15v5s3-.6 4-2c1.100-1.600 0-5 0-5"/></symbol>
+    </defs></svg>
+
+    <div class="sd-bg" aria-hidden="true">
+      <span style="left:4%;top:12%;--s:38px;--d:15s"><svg class="sd-ic"><use href="#i-ig"/></svg></span>
+      <span style="left:46%;top:8%;--s:30px;--d:12s;--l:-3s"><svg class="sd-ic"><use href="#i-search"/></svg></span>
+      <span style="left:30%;top:78%;--s:42px;--d:17s;--l:-6s"><svg class="sd-ic"><use href="#i-fb"/></svg></span>
+      <span style="left:62%;top:84%;--s:34px;--d:13s;--l:-2s"><svg class="sd-ic"><use href="#i-trend"/></svg></span>
+      <span style="left:92%;top:14%;--s:40px;--d:16s;--l:-8s"><svg class="sd-ic"><use href="#i-yt"/></svg></span>
+      <span style="left:12%;top:60%;--s:30px;--d:11s;--l:-4s"><svg class="sd-ic"><use href="#i-heart"/></svg></span>
+      <span style="left:54%;top:46%;--s:28px;--d:14s;--l:-9s"><svg class="sd-ic"><use href="#i-mega"/></svg></span>
+      <span style="left:88%;top:70%;--s:36px;--d:18s;--l:-5s"><svg class="sd-ic"><use href="#i-in"/></svg></span>
+      <span style="left:22%;top:90%;--s:28px;--d:12s;--l:-7s"><svg class="sd-ic"><use href="#i-mail"/></svg></span>
+      <span style="left:70%;top:6%;--s:32px;--d:15s;--l:-1s"><svg class="sd-ic"><use href="#i-target"/></svg></span>
+      <span style="left:40%;top:30%;--s:26px;--d:13s;--l:-10s"><svg class="sd-ic"><use href="#i-chat"/></svg></span>
+      <span style="left:2%;top:36%;--s:32px;--d:16s;--l:-12s"><svg class="sd-ic"><use href="#i-bars"/></svg></span>
+    </div>
+
+    <div class="sd-wrap">
+      <div>
+        <span class="sd-badge sd-in" style="--i:0"><i></i>Digital Marketing Agency</span>
+        <h1 class="sd-in" style="--i:1">Digital Marketing Agency That Helps Your Brand Grow<em>.</em></h1>
+        <p class="sd-lead sd-in" style="--i:2">Zyrox Media is a digital marketing agency that handles your social media, content, website, SEO and Meta ads under one roof, so you get quality leads and a strong online presence. We align strategic design architecture with performance marketing engineering to engineer scalable brand conversion.</p>
+        <div class="sd-btns sd-in" style="--i:3">
+          <a class="sd-btn p" href="#services">Explore Services <svg class="sd-ic"><use href="#i-arrow"/></svg></a>
+          <button class="sd-btn g" type="button" data-open-modal="intro" aria-label="Watch agency showreel intro"><svg class="sd-ic"><use href="#i-play"/></svg>Watch Intro</button>
+        </div>
+        <div class="sd-trust sd-in" style="--i:4">
+          <span><svg class="sd-ic"><use href="#i-check"/></svg>Full-Stack Studio</span>
+          <span><svg class="sd-ic"><use href="#i-bolt"/></svg>Agile Execution</span>
+          <span><svg class="sd-ic"><use href="#i-trend"/></svg>Proven ROI</span>
+        </div>
+      </div>
+
+      <div class="sd-vis" aria-hidden="true">
+        <div class="sd-ring2">
+          <b style="top:50%;left:0"><svg class="sd-ic"><use href="#i-heart"/></svg></b>
+          <b style="top:50%;left:100%"><svg class="sd-ic"><use href="#i-chat"/></svg></b>
+        </div>
+        <div class="sd-ring">
+          <b style="top:0;left:50%"><svg class="sd-ic"><use href="#i-ig"/></svg></b>
+          <b style="top:50%;left:100%"><svg class="sd-ic"><use href="#i-search"/></svg></b>
+          <b style="top:100%;left:50%"><svg class="sd-ic"><use href="#i-fb"/></svg></b>
+          <b style="top:50%;left:0"><svg class="sd-ic"><use href="#i-mega"/></svg></b>
+        </div>
+        <div class="sd-img">
+          <img src="hero banner image.png" alt="Zyrox Media David sculpture with sunglasses and headphones">
+        </div>
+        <div class="sd-chip a">
+          <span class="dot"></span>
+          <div>
+            <small>Active Growth</small>
+            <b>+340% Revenue</b>
+          </div>
+        </div>
+        <div class="sd-chip b">
+          <div class="ico">
+            <svg class="sd-ic"><use href="#i-trend"/></svg>
+          </div>
+          <div>
+            <small>Client Retention</small>
+            <b>98.4% Proven</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       03. INFINITE MARQUEE STRIP (-2deg tilted band)
+       ======================================================================== -->
+  <div class="marquee-wrapper" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span class="marquee-item">Social Media <span class="bullet">•</span></span>
+        <span class="marquee-item">Content <span class="bullet">•</span></span>
+        <span class="marquee-item">Design <span class="bullet">•</span></span>
+        <span class="marquee-item">Web <span class="bullet">•</span></span>
+        <span class="marquee-item">SEO <span class="bullet">•</span></span>
+        <span class="marquee-item">Blogs <span class="bullet">•</span></span>
+        <span class="marquee-item">Meta Ads <span class="bullet">•</span></span>
+      </div>
+      <div class="marquee-content">
+        <span class="marquee-item">Social Media <span class="bullet">•</span></span>
+        <span class="marquee-item">Content <span class="bullet">•</span></span>
+        <span class="marquee-item">Design <span class="bullet">•</span></span>
+        <span class="marquee-item">Web <span class="bullet">•</span></span>
+        <span class="marquee-item">SEO <span class="bullet">•</span></span>
+        <span class="marquee-item">Blogs <span class="bullet">•</span></span>
+        <span class="marquee-item">Meta Ads <span class="bullet">•</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       04. STATS COUNTERS SECTION (.sd-stats)
+       ======================================================================== -->
+  <section class="sd-stats" id="sd-stats" aria-label="Zyrox Media Achievements">
+    <div class="sd-stats-wrap">
+      <div class="sd-stat-card" style="--i:0">
+        <div class="sd-stat-num"><span class="sd-num" data-target="120" data-comma="false">0</span>+</div>
+        <p class="sd-stat-label">Brands Served</p>
+      </div>
+      <div class="sd-stat-card" style="--i:1">
+        <div class="sd-stat-num"><span class="sd-num" data-target="3500" data-comma="true">0</span>+</div>
+        <p class="sd-stat-label">Reels Created</p>
+      </div>
+      <div class="sd-stat-card" style="--i:2">
+        <div class="sd-stat-num"><span class="sd-num" data-target="1200" data-comma="true">0</span>+</div>
+        <p class="sd-stat-label">Blogs Published</p>
+      </div>
+      <div class="sd-stat-card" style="--i:3">
+        <div class="sd-stat-num"><span class="sd-num" data-target="250" data-comma="false">0</span>K+</div>
+        <p class="sd-stat-label">Leads Generated</p>
+      </div>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var section = document.getElementById('sd-stats');
+    if(!section) return;
+    var cards = section.querySelectorAll('.sd-stat-card');
+    var nums = section.querySelectorAll('.sd-num');
+    var started = false;
+
+    function formatNumber(n, useComma) {
+      return useComma ? n.toLocaleString('en-US') : String(n);
+    }
+
+    function runCounters() {
+      if(started) return;
+      started = true;
+      cards.forEach(function(c){ c.classList.add('in-view'); });
+
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        nums.forEach(function(el){
+          var target = parseInt(el.getAttribute('data-target'), 10);
+          var comma = el.getAttribute('data-comma') === 'true';
+          el.textContent = formatNumber(target, comma);
+        });
+        return;
+      }
+
+      nums.forEach(function(el){
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        var comma = el.getAttribute('data-comma') === 'true';
+        var duration = 2000;
+        var t0 = null;
+
+        function step(t) {
+          if(!t0) t0 = t;
+          var p = Math.min((t - t0) / duration, 1);
+          var ease = 1 - Math.pow(1 - p, 3);
+          var current = Math.round(target * ease);
+          el.textContent = formatNumber(current, comma);
+          if(p < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = formatNumber(target, comma);
+          }
+        }
+        requestAnimationFrame(step);
+      });
+    }
+
+    if('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting) {
+            runCounters();
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.2 });
+      obs.observe(section);
+    } else {
+      runCounters();
+    }
+  })();
+  </script>
+
+  <!-- ========================================================================
+       05. SERVICES SECTION (Video 2: Interactive Hover Animations)
+       ======================================================================== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow-pill">
+          <span class="dot"></span>
+          <span>Capabilities</span>
+        </div>
+        <h2 class="section-title">Our Digital Marketing Services<span class="pulsing-dot">.</span></h2>
+        <p class="section-subtitle">
+          Holistic growth architecture powered by creative direction, high-velocity distribution, and algorithmic targeting.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Card 1: Social Media Management -->
+        <div class="service-card" tabindex="0">
+          <div class="card-spotlight"></div>
+          <div class="service-card-inner">
+            <div class="service-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Social Media Management</h3>
+            <p class="service-desc">Full channel-takeover with organic audience building, daily community engagement, and algorithmic distribution.</p>
+            <div class="service-link">
+              <span>Explore Channel Strategy</span>
+              <span class="service-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Content Shoot & Editing -->
+        <div class="service-card" tabindex="0">
+          <div class="card-spotlight"></div>
+          <div class="service-card-inner">
+            <div class="service-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+              </svg>
+            </div>
+            <h3 class="service-title">Content Shoot & Editing</h3>
+            <p class="service-desc">High-retention studio and on-site video production tailored for ultra-fast mobile retention and viral reels.</p>
+            <div class="service-link">
+              <span>Production Pipeline</span>
+              <span class="service-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Graphic Design -->
+        <div class="service-card" tabindex="0">
+          <div class="card-spotlight"></div>
+          <div class="service-card-inner">
+            <div class="service-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m4.93 4.93 4.24 4.24"></path>
+                <path d="m14.83 9.17 4.24-4.24"></path>
+                <path d="m14.83 14.83 4.24 4.24"></path>
+                <path d="m9.17 14.83-4.24 4.24"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Graphic Design</h3>
+            <p class="service-desc">Bespoke digital brand collateral, persuasive carousel graphics, and high-converting performance ad creatives.</p>
+            <div class="service-link">
+              <span>View Brand Books</span>
+              <span class="service-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Website Design & Development -->
+        <div class="service-card" tabindex="0">
+          <div class="card-spotlight"></div>
+          <div class="service-card-inner">
+            <div class="service-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="service-title">Website Design & Development</h3>
+            <p class="service-desc">Modern responsive web platforms engineered for lightning-fast speeds, UI friction reduction, and conversion rate peaks.</p>
+            <div class="service-link">
+              <span>Explore Web Tech</span>
+              <span class="service-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: SEO -->
+        <div class="service-card" tabindex="0">
+          <div class="card-spotlight"></div>
+          <div class="service-card-inner">
+            <div class="service-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">SEO</h3>
+            <p class="service-desc">Search engine optimization that captures high-intent organic buyer traffic through technical architecture & backlink growth.</p>
+            <div class="service-link">
+              <span>Organic Audits</span>
+              <span class="service-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Blogs -->
+        <div class="service-card" tabindex="0">
+          <div class="card-spotlight"></div>
+          <div class="service-card-inner">
+            <div class="service-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Blogs</h3>
+            <p class="service-desc">Thought-leadership editorial copy engineered for search engine crawl dominance and authentic reader conversion.</p>
+            <div class="service-link">
+              <span>Content Clusters</span>
+              <span class="service-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7: Meta Ads -->
+        <div class="service-card" tabindex="0">
+          <div class="card-spotlight"></div>
+          <div class="service-card-inner">
+            <div class="service-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Meta Ads</h3>
+            <p class="service-desc">Full-funnel paid Instagram & Facebook ad campaigns optimized for maximum ROAS, audience retargeting, and qualified leads.</p>
+            <div class="service-link">
+              <span>Paid Acquisition</span>
+              <span class="service-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8: Content Calendar & Tracking -->
+        <div class="service-card" tabindex="0">
+          <div class="card-spotlight"></div>
+          <div class="service-card-inner">
+            <div class="service-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">Content Calendar & Tracking</h3>
+            <p class="service-desc">Proactive monthly content roadmap with transparent milestone tracking, KPI monitoring, and continuous campaign optimization.</p>
+            <div class="service-link">
+              <span>Delivery Blueprint</span>
+              <span class="service-arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       05. FOUNDER & TEAM SECTIONS (with Cinematic Portfolio Intro)
+       ======================================================================== -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,600;1,500&family=Outfit:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+  :where(.zx) :is(p,ul,h3,h4,blockquote){margin:0;padding:0}
+  .zx{overflow-x:clip}
+  .fd,.tm{--y:#FFD60A;--bg:#111214;--cd:#18191c;--tx:#F4F4F2;--mu:#A9A9AD;position:relative;width:100vw;margin-left:calc(50% - 50vw);background:var(--bg);color:var(--tx);font-family:'Manrope',sans-serif;overflow:hidden;box-sizing:border-box;isolation:isolate}
+  .fd *,.tm *{box-sizing:border-box}
+  .fd-wrap,.tm-wrap{max-width:1240px;margin:0 auto;padding:96px 24px}
+  .zx .ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .zx .tag{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:99px;background:#1b1c1f;color:var(--y);font:700 11px/1 'Outfit',sans-serif;letter-spacing:.08em;text-transform:uppercase}
+  .zx .tag i{width:6px;height:6px;border-radius:50%;background:var(--y)}
+  .zx .fd h2,.zx .tm h2{font:700 clamp(32px,4.4vw,54px)/1.08 'Outfit',sans-serif;letter-spacing:-.02em;margin:18px 0 0;color:var(--tx)}
+  .zx .fd h2 em,.zx .tm h2 em{font-style:normal;color:var(--y)}
+  /* reveal (sirf tab chhupta hai jab JS chal raha ho) */
+  .zx.js .zrv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0)*100ms)}
+  .zx.js .on .zrv{opacity:1;transform:none}
+  /* FOUNDER */
+  .fd::before{content:"";position:absolute;left:-10%;top:10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,214,10,.13),transparent 65%);z-index:-1}
+  .fd-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+  .fd-vis{position:relative;width:min(480px,100%);aspect-ratio:1;margin:0 auto}
+  .fd-ring{position:absolute;inset:-4%;border-radius:50%;border:1px dashed rgba(255,214,10,.45);animation:zspin 40s linear infinite}
+  .fd-ring b{position:absolute;top:50%;left:100%;width:44px;height:44px;margin:-22px;border-radius:50%;background:#1a1b1e;border:1px solid #2c2d31;color:var(--y);display:grid;place-items:center;font-size:20px;animation:zspinr 40s linear infinite}
+  .fd-ring b:nth-child(2){top:100%;left:50%}.fd-ring b:nth-child(3){top:0;left:30%}
+  .fd-photo{position:absolute;inset:6%;border-radius:36px;overflow:hidden;background:linear-gradient(145deg,#2a2b30,#18191c);border:1px solid #2c2d31;display:grid;place-items:center;transform:rotate(-3deg);transition:transform .6s cubic-bezier(.2,.7,.2,1);box-shadow:0 0 80px rgba(255,214,10,.15)}
+  .fd-vis:hover .fd-photo{transform:rotate(0)}
+  .fd-photo span{font:700 120px/1 'Outfit',sans-serif;color:var(--y);opacity:.9}
+  .fd-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .fd-chip{position:absolute;padding:12px 16px;border-radius:16px;background:rgba(28,29,33,.9);backdrop-filter:blur(8px);border:1px solid #2a2b30;font:600 13px/1.3 'Outfit',sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.4);animation:zflt 5s ease-in-out infinite}
+  .fd-chip strong{display:block;font-size:24px;color:var(--y)}
+  .fd-chip.a{top:4%;right:-4%}.fd-chip.b{bottom:6%;left:-6%;animation-delay:-2.5s}
+  .fd-txt p{color:var(--mu);line-height:1.75;font-size:16.5px;margin:20px 0 0;max-width:600px}
+  .fd-quote{margin:28px 0 0;padding:4px 0 4px 20px;border-left:3px solid var(--y);font:500 20px/1.5 'Outfit',sans-serif;color:var(--tx);max-width:560px}
+  .fd-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 0;padding:0;list-style:none}
+  .fd-steps li{padding:18px;border-radius:18px;background:var(--cd);border:1px solid #26272b;transition:transform .3s,border-color .3s}
+  .fd-steps li:hover{transform:translateY(-6px);border-color:var(--y)}
+  .fd-steps b{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:#212226;color:var(--y);font-size:19px;margin-bottom:12px}
+  .fd-steps h4{font:600 16px 'Outfit',sans-serif;margin:0 0 6px;color:var(--tx)}.fd-steps small{display:block;color:var(--mu);font-size:13px;line-height:1.55}
+  .fd-sign{display:flex;align-items:center;gap:16px;margin-top:30px;flex-wrap:wrap}
+  .fd-sign strong{font:700 22px 'Outfit',sans-serif}.fd-sign small{display:block;color:var(--y);font:600 12px 'Outfit',sans-serif;letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+  .fd-sign a{width:42px;height:42px;border-radius:50%;background:#1b1c1f;border:1px solid #2a2b30;color:var(--y);display:grid;place-items:center;font-size:18px;transition:.3s;text-decoration:none}
+  .fd-sign a:hover{background:var(--y);color:#111;transform:translateY(-3px)}
+  /* TEAM */
+  .tm-head{text-align:center;max-width:640px;margin:0 auto 56px}
+  .tm-head p{color:var(--mu);line-height:1.7;margin:16px 0 0}
+  .tm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;perspective:1200px}
+  .tm-card{--mx:50%;--my:50%;position:relative;padding:26px;border-radius:22px;background:var(--cd);border:1px solid #26272b;overflow:hidden;transform:rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .25s ease-out,border-color .3s}
+  .zx.js .tm-card.zrv{transition:opacity .8s,transform .25s ease-out,border-color .3s;transition-delay:calc(var(--i,0)*100ms),0s,0s}
+  .tm-card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(255,214,10,.18),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+  .tm-card:hover{border-color:rgba(255,214,10,.5)}.tm-card:hover::before{opacity:1}
+  .tm-ph{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:linear-gradient(145deg,#2a2b30,#1d1e22);display:grid;place-items:center;margin-bottom:20px}
+  .tm-ph span{font:700 52px 'Outfit',sans-serif;color:var(--y)}
+  .tm-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+  .tm-card:hover .tm-ph img{transform:scale(1.08)}
+  .tm-soc{position:absolute;left:0;right:0;bottom:0;display:flex;gap:8px;justify-content:center;padding:36px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.75));transform:translateY(101%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+  .tm-card:hover .tm-soc{transform:none}
+  .tm-soc a{width:36px;height:36px;border-radius:50%;background:var(--y);color:#111;display:grid;place-items:center;font-size:17px;transition:transform .3s;text-decoration:none}
+  .tm-soc a:hover{transform:translateY(-4px) scale(1.1)}
+  .tm-card h3{font:600 20px 'Outfit',sans-serif;margin:0;color:var(--tx)}
+  .tm-role{display:block;color:var(--y);font:600 12px 'Outfit',sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:6px 0 14px}
+  .tm-card p{font-size:14px;line-height:1.65;color:var(--mu);margin:0 0 16px}
+  .tm-card ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:7px}
+  .tm-card li{padding:6px 11px;border-radius:99px;font:600 11.5px 'Outfit',sans-serif;background:rgba(255,214,10,.08);border:1px solid rgba(255,214,10,.25);color:var(--y);transition:transform .3s}
+  .tm-card:hover li{transform:translateY(-3px)}
+  .tm-card:hover li:nth-child(2){transition-delay:.06s}.tm-card:hover li:nth-child(3){transition-delay:.12s}
+  @keyframes zspin{to{transform:rotate(360deg)}}@keyframes zspinr{to{transform:rotate(-360deg)}}@keyframes zflt{50%{transform:translateY(-12px)}}
+  @media(max-width:1100px){.tm-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:900px){.fd-wrap{grid-template-columns:1fr;gap:48px}.fd-vis{width:min(360px,88%)}.fd-steps{grid-template-columns:1fr}}
+  @media(max-width:600px){.tm-grid{grid-template-columns:1fr}.fd-wrap,.tm-wrap{padding:64px 18px}}
+  @media(prefers-reduced-motion:reduce){.fd *,.tm *{animation:none!important;transition:none!important}.zx .zrv{opacity:1!important;transform:none!important}}
+
+  /* ---------- PORTFOLIO INTRO (button dabane par khulta hai) ---------- */
+  .pf-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 20px;border-radius:99px;border:0;background:#FFD60A;color:#111;font:700 13px/1 'Outfit',sans-serif;cursor:pointer;transition:transform .25s,box-shadow .25s}
+  .pf-btn .ic{font-size:16px}
+  .pf-btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(255,214,10,.35)}
+  .pf-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  .pf-btn.full{width:100%;margin-top:18px}
+  .pf{--y:#FFD60A;--y2:#FFF27A;--y3:#C79A00;position:fixed!important;inset:0;z-index:2147483000;background:#0b0c0d;overflow:hidden;color:#fff;font-family:'Manrope',sans-serif;transition:background .9s ease .6s}
+  .pf *{box-sizing:border-box}
+  :where(.pf *){margin:0;padding:0}
+  .pf.out{background:transparent;pointer-events:none}
+  .out .pf-bg,.out .pf-streak,.out .pf-grain{opacity:0;transition:opacity .9s ease .6s}
+  .out .pf-shine{display:none}
+  .pf.out .pf-close,.pf.out .pf-mute{opacity:0;transition:opacity .25s}
+  @keyframes pfOL{to{transform:translateX(-125vw) rotate(-9deg);opacity:0}}
+  @keyframes pfOR{to{transform:translateX(125vw) rotate(9deg);opacity:0}}
+  @keyframes pfOU{to{transform:translateY(-125vh) rotate(7deg);opacity:0}}
+  @keyframes pfOD{to{transform:translateY(125vh) rotate(-7deg);opacity:0}}
+  @keyframes pfManOut{from{transform:translateX(-50%)}to{transform:translateX(-50%) translateY(130%);opacity:0}}
+  .out .pf-big>span:nth-child(odd){animation:pfOU .9s cubic-bezier(.7,0,.9,.45) forwards;animation-delay:calc(var(--d)*.3)}
+  .out .pf-big>span:nth-child(even){animation:pfOD .9s cubic-bezier(.7,0,.9,.45) forwards;animation-delay:calc(var(--d)*.3)}
+  .out .pf-tag span:nth-child(1){animation:pfOL .8s cubic-bezier(.7,0,.9,.45) forwards}
+  .out .pf-tag span:nth-child(2){animation:pfOU .8s cubic-bezier(.7,0,.9,.45) forwards}
+  .out .pf-tag span:nth-child(3){animation:pfOR .8s cubic-bezier(.7,0,.9,.45) forwards}
+  .out .pf-man{animation:pfManOut .95s cubic-bezier(.7,0,.9,.45) .1s forwards}
+  .out .pf-hi{animation:pfOL .85s cubic-bezier(.7,0,.9,.45) .05s forwards}
+  .out .pf-card{animation:pfOD .9s cubic-bezier(.7,0,.9,.45) .1s forwards}
+  .out .pf-pill{animation:pfOU .85s cubic-bezier(.7,0,.9,.45) .05s forwards}
+  .out .pf-svc li{animation:pfOR .8s cubic-bezier(.7,0,.9,.45) forwards}
+  .out .pf-svc li:nth-child(2){animation-delay:.06s}.out .pf-svc li:nth-child(3){animation-delay:.12s}.out .pf-svc li:nth-child(4){animation-delay:.18s}.out .pf-svc li:nth-child(5){animation-delay:.24s}
+  .pf-bg{position:absolute;inset:0;background:radial-gradient(60vmax 40vmax at 15% 100%,rgba(255,214,10,.28),transparent 60%),radial-gradient(50vmax 40vmax at 90% 0%,rgba(255,160,0,.16),transparent 60%),linear-gradient(160deg,#17140a,#0b0c0d 55%)}
+  .pf-streak{position:absolute;top:-20%;left:-30%;width:40%;height:140%;background:linear-gradient(90deg,transparent,rgba(255,214,10,.1),transparent);transform:rotate(18deg);animation:pfStreak 6s ease-in-out .3s infinite}
+  .pf-grain{position:absolute;inset:0;opacity:.07;background:radial-gradient(circle,#fff 1px,transparent 1.4px) 0 0/22px 22px}
+  @keyframes pfStreak{0%{transform:translateX(0) rotate(18deg)}100%{transform:translateX(420%) rotate(18deg)}}
+  .pf-big{position:absolute;left:0;right:0;top:50%;transform:translateY(-54%);text-align:center;font:400 min(24vw,60vh)/1 'Anton',Impact,'Arial Narrow','Helvetica Neue Condensed',sans-serif;letter-spacing:.01em;white-space:nowrap;text-transform:uppercase}
+  .pf-big>span{position:relative;display:inline-block;color:transparent}
+  .pf-big>span::before,.pf-big>span::after{content:attr(data-l);position:absolute;left:0;top:0}
+  .pf-big>span::before{background:linear-gradient(180deg,var(--y2) 0%,var(--y) 45%,var(--y3) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;clip-path:inset(0 100% 0 0);animation:pfWipe .7s cubic-bezier(.6,0,.2,1) forwards;animation-delay:calc(var(--d) + .35s)}
+  .pf-big>span::after{-webkit-text-stroke:2px #fff;color:transparent;clip-path:inset(0 100% 0 0);animation:pfWipe .6s cubic-bezier(.6,0,.2,1) forwards,pfFade .4s ease forwards;animation-delay:var(--d),calc(var(--d) + 1s)}
+  @keyframes pfWipe{to{clip-path:inset(0 0 0 0)}}
+  @keyframes pfFade{to{opacity:0}}
+  .pf-shine{position:absolute;left:0;right:0;top:50%;transform:translateY(-54%);text-align:center;font:400 min(24vw,60vh)/1 'Anton',Impact,'Arial Narrow','Helvetica Neue Condensed',sans-serif;letter-spacing:.01em;white-space:nowrap;text-transform:uppercase;pointer-events:none;color:transparent;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.95) 50%,transparent 58%) 160% 0/250% 100% no-repeat;-webkit-background-clip:text;background-clip:text;animation:pfShine 1.4s ease-in-out 2.7s forwards}
+  @keyframes pfShine{to{background-position:-60% 0}}
+  .pf-big,.pf-shine{animation-fill-mode:both}
+  .pf-bigwrap{position:absolute;inset:0;animation:pfDim 1s ease 3.6s forwards}
+  @keyframes pfDim{to{opacity:.55}}
+  .pf-tag{position:absolute;top:8vh;left:5vw;right:5vw;display:flex;justify-content:space-between;font:italic 500 clamp(14px,2vw,26px)/1 'Playfair Display',serif;color:#f3ecd0;opacity:0;animation:pfIn .8s ease 2.0s forwards}
+  @keyframes pfIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .pf-man{position:absolute;left:50%;bottom:0;height:min(84vh,170vw);aspect-ratio:539/1000;transform:translateX(-50%) translateY(40%) scale(.92);opacity:0;animation:pfRise 1.2s cubic-bezier(.2,.8,.2,1) 3.1s forwards}
+  .pf-man::before{content:"";position:absolute;left:50%;top:30%;width:130%;aspect-ratio:1;transform:translate(-50%,-30%);background:radial-gradient(circle,rgba(255,214,10,.38),transparent 62%);z-index:-1;animation:pfPulseG 4s ease-in-out infinite}
+  .pf-man img{position:relative;width:100%;height:100%;display:block;filter:drop-shadow(0 0 22px rgba(255,214,10,.28)) drop-shadow(0 20px 30px rgba(0,0,0,.6));animation:pfFloat 6s ease-in-out 4.4s infinite}
+  @keyframes pfRise{to{transform:translateX(-50%);opacity:1}}
+  @keyframes pfFloat{50%{transform:translateY(-8px)}}
+  @keyframes pfPulseG{50%{opacity:.6;transform:translate(-50%,-30%) scale(1.08)}}
+  .pf-hi{position:absolute;left:5vw;top:47%;font-family:'Playfair Display',serif}
+  .pf-hi small{display:block;font:italic 500 clamp(13px,1.5vw,20px)/1 'Outfit',sans-serif;color:#fff;margin-bottom:8px;min-height:1.2em}
+  .pf-hi b{display:block;font:600 clamp(26px,4.4vw,60px)/1.05 'Playfair Display',serif;color:var(--y2);min-height:1.1em}
+  .pf-card{position:absolute;left:5vw;bottom:9vh;width:min(32vw,400px);padding:22px 24px;border-radius:20px;background:linear-gradient(145deg,rgba(255,214,10,.22),rgba(255,214,10,.06));border:1px solid rgba(255,214,10,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 0 40px rgba(255,214,10,.08);transform:translateX(-40px) scale(.9);opacity:0;animation:pfCard .8s cubic-bezier(.2,.8,.2,1) 5.2s forwards}
+  @keyframes pfCard{to{transform:none;opacity:1}}
+  .pf-card h3{font:600 clamp(16px,1.7vw,22px)/1 'Playfair Display',serif;color:#fff;margin-bottom:12px;min-height:1em}
+  .pf-card p{font:500 clamp(11px,1.05vw,14px)/1.65 'Manrope',sans-serif;color:#f1ead0;min-height:6.6em}
+  .pf-pill{position:absolute;right:6vw;top:22vh;display:flex;align-items:center;gap:12px;padding:12px 22px;border-radius:99px;background:linear-gradient(90deg,#fff,#fff 55%,var(--y));color:#111;font:700 clamp(12px,1.2vw,16px)/1.1 'Outfit',sans-serif;box-shadow:0 10px 40px rgba(255,214,10,.35);transform:translateY(-30px) scale(.6);opacity:0;animation:pfPill .8s cubic-bezier(.3,1.5,.5,1) 6.0s forwards}
+  .pf-pill strong{font-size:1.9em;letter-spacing:-.02em}.pf-pill span{border-left:1px solid #bbb;padding-left:12px}
+  @keyframes pfPill{to{transform:none;opacity:1}}
+  .pf-svc{position:absolute;right:6vw;bottom:12vh;display:grid;gap:14px;list-style:none}
+  .pf-svc li{display:flex;align-items:center;gap:12px;font:600 clamp(12px,1.25vw,17px)/1 'Outfit',sans-serif;min-height:1.3em;opacity:0;transition:opacity .3s}
+  .pf-svc li.on{opacity:1}
+  .pf-svc svg{width:clamp(16px,1.6vw,22px);height:clamp(16px,1.6vw,22px);flex:none;filter:drop-shadow(0 0 8px currentColor);animation:pfSpark 2s ease-in-out infinite}
+  @keyframes pfSpark{50%{transform:scale(1.25) rotate(20deg)}}
+  .pf-caret::after{content:"|";margin-left:2px;animation:pfBlink .6s steps(1) infinite;color:var(--y)}
+  @keyframes pfBlink{50%{opacity:0}}
+  .pf-close{position:absolute;top:22px;right:24px;z-index:5;padding:10px 18px;border-radius:99px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);color:#fff;font:600 13px 'Outfit',sans-serif;cursor:pointer;backdrop-filter:blur(6px);transition:background .25s,color .25s}
+  .pf-close:hover{background:var(--y);color:#111;border-color:var(--y)}
+  .pf-mute{position:absolute;top:22px;left:24px;z-index:5;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);color:#fff;font-size:18px;cursor:pointer;backdrop-filter:blur(6px);display:grid;place-items:center;transition:background .25s,color .25s}
+  .pf-mute:hover{background:var(--y);color:#111;border-color:var(--y)}
+  .pf-man.ph{height:auto;aspect-ratio:1;width:min(48vh,64vw)}
+  .pf-man.ph span{position:relative;display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:var(--y);color:#111;font:700 min(18vh,24vw)/1 'Outfit',sans-serif;box-shadow:0 0 90px rgba(255,214,10,.4)}
+  .pf-man.ph img{display:none}
+  @media(max-width:760px){
+   .pf-big,.pf-shine{top:30%;font-size:min(22vw,26vh)}
+   .pf-tag{top:11vh;font-size:13px}
+   .pf-man{height:min(62vh,150vw);bottom:0}
+   .pf-hi{top:47%;left:5vw}
+   .pf-card{width:90vw;left:5vw;bottom:3vh;padding:14px 16px;z-index:2}.pf-card p{min-height:0}
+   .pf-pill{top:41%;bottom:auto;right:4vw}
+   .pf-svc{left:5vw;right:auto;top:58%;bottom:auto;gap:9px}
+   .pf-man.ph{width:min(46vw,30vh)}
+  }
+  </style>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="zx-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="zx-bolt" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol>
+  <symbol id="zx-trend" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+  <symbol id="zx-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="zx-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+  <symbol id="zx-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="zx-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+  <symbol id="zx-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></symbol>
+  </defs></svg>
+
+  <div class="zx" id="zx-founder-team">
+
+  <!-- ================= FOUNDER ================= -->
+  <section class="fd" id="founder" aria-labelledby="fd-title">
+   <div class="fd-wrap">
+    <div class="fd-vis zrv">
+     <div class="fd-ring">
+      <b><svg class="ic" aria-hidden="true"><use href="#zx-trend"/></svg></b>
+      <b><svg class="ic" aria-hidden="true"><use href="#zx-heart"/></svg></b>
+      <b><svg class="ic" aria-hidden="true"><use href="#zx-target"/></svg></b>
+     </div>
+     <div class="fd-photo">
+      <span>CR</span>
+      <!-- Founder ki photo: src me apni photo ka URL daalo (WordPress Media Library ka link) -->
+      <img src="/founder.webp" alt="Chandan Rai, Founder of Zyrox Media" onerror="this.style.display='none'">
+     </div>
+     <div class="fd-chip a"><strong>8+</strong>Years of Experience</div>
+     <div class="fd-chip b"><strong>150+</strong>Brands Grown</div>
+    </div>
+
+    <div class="fd-txt">
+     <span class="tag zrv"><i></i>Meet the Founder</span>
+     <h2 id="fd-title" class="zrv" style="--i:1">Hi, I’m Chandan Rai<em>.</em></h2>
+     <p class="zrv" style="--i:2">I started Zyrox Media with one simple belief: good design should do more than look good, it should bring customers. After years of working with local businesses and growing brands, I saw the same problem again and again. Great products, but no clear online presence.</p>
+     <p class="zrv" style="--i:2">Today, my team and I handle social media, content, websites, SEO and Meta ads under one roof, so you don’t have to run after five different agencies. Every campaign we build is tracked, measured and improved until it delivers real leads.</p>
+     <blockquote class="fd-quote zrv" style="--i:3">“We don’t chase likes. We build brands that grow.”</blockquote>
+
+     <ul class="fd-steps">
+      <li class="zrv" style="--i:4"><b><svg class="ic" aria-hidden="true"><use href="#zx-target"/></svg></b><h4>Understand</h4><small>We study your brand, audience and competitors before we design anything.</small></li>
+      <li class="zrv" style="--i:5"><b><svg class="ic" aria-hidden="true"><use href="#zx-bolt"/></svg></b><h4>Execute</h4><small>Creative, content and ads go live fast, with a clear monthly calendar.</small></li>
+      <li class="zrv" style="--i:6"><b><svg class="ic" aria-hidden="true"><use href="#zx-trend"/></svg></b><h4>Scale</h4><small>We track every number and double down on what brings the best ROI.</small></li>
+     </ul>
+
+     <div class="fd-sign zrv" style="--i:7">
+      <div><strong>Chandan Rai</strong><small>Founder, Zyrox Media</small></div>
+      <a href="#" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
+      <a href="#" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
+      <button type="button" class="pf-btn" data-name="Chandan Rai" data-initials="CR" data-photo="/founder.webp" data-tagline="Digital Marketer|&amp;|Growth Partner" data-summary="Founder of Zyrox Media. I help brands grow with social media, content, websites, SEO and Meta ads, tracked and improved until it brings real leads." data-stat="8+|Years of|Experience" data-skills="Social Media Growth|Content Shoots|Performance Meta Ads|Search Engine SEO|Website Design"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- ================= TEAM ================= -->
+  <section class="tm" id="team" aria-labelledby="tm-title">
+   <div class="tm-wrap">
+    <div class="tm-head">
+     <span class="tag zrv"><i></i>Our Team</span>
+     <h2 id="tm-title" class="zrv" style="--i:1">The People Behind Your Growth<em>.</em></h2>
+     <p class="zrv" style="--i:2">A small, focused team of creators, marketers and developers who work together on every project.</p>
+    </div>
+    <div class="tm-grid">
+
+     <!-- Team member 1: photo ke liye neeche <img src=""> me URL daalo (optional) -->
+     <article class="tm-card zrv" style="--i:0">
+      <div class="tm-ph">
+       <span>NS</span>
+       <img src="" alt="Nitin Sone, Creative Director at Zyrox Media" loading="lazy" onerror="this.style.display='none'" style="display:none">
+       <div class="tm-soc">
+        <a href="#" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
+        <a href="#" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
+       </div>
+      </div>
+      <h3>Nitin Sone</h3>
+      <span class="tm-role">Creative Director</span>
+      <p>Leads brand identity and design. Turns your idea into posts, carousels and ad creatives that stop the scroll.</p>
+      <ul><li>Branding</li><li>Graphic Design</li><li>Art Direction</li></ul>
+      <button type="button" class="pf-btn full" data-name="Nitin Sone" data-initials="NS" data-photo="" data-tagline="Creative Director|&amp;|Brand Storyteller" data-summary="Creative director at Zyrox Media. I turn ideas into brand identities, carousels and ad creatives that stop the scroll." data-stat="200+|Designs|Delivered" data-skills="Branding|Graphic Design|Art Direction"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
+     </article>
+
+     <article class="tm-card zrv" style="--i:1">
+      <div class="tm-ph">
+       <span>KR</span>
+       <img src="" alt="Kumkum Rai, Performance Marketer at Zyrox Media" loading="lazy" onerror="this.style.display='none'" style="display:none">
+       <div class="tm-soc">
+        <a href="#" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
+        <a href="#" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
+       </div>
+      </div>
+      <h3>Kumkum Rai</h3>
+      <span class="tm-role">Performance Marketer</span>
+      <p>Plans and runs Meta ad campaigns, tests audiences and keeps your cost per lead going down every week.</p>
+      <ul><li>Meta Ads</li><li>Retargeting</li><li>ROAS</li></ul>
+      <button type="button" class="pf-btn full" data-name="Kumkum Rai" data-initials="KR" data-photo="" data-tagline="Performance Marketer|&amp;|Growth Hacker" data-summary="Performance marketer at Zyrox Media. I run Meta ad campaigns, test audiences and bring the cost per lead down every week." data-stat="50+|Campaigns|Managed" data-skills="Meta Ads|Retargeting|ROAS"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
+     </article>
+
+     <article class="tm-card zrv" style="--i:2">
+      <div class="tm-ph">
+       <span>VS</span>
+       <img src="" alt="Vishal Singh, SEO &amp; Content Lead at Zyrox Media" loading="lazy" onerror="this.style.display='none'" style="display:none">
+       <div class="tm-soc">
+        <a href="#" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
+        <a href="#" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
+       </div>
+      </div>
+      <h3>Vishal Singh</h3>
+      <span class="tm-role">SEO &amp; Content Lead</span>
+      <p>Researches keywords, writes blogs and fixes technical issues so your website shows up when buyers search.</p>
+      <ul><li>SEO</li><li>Blogs</li><li>Analytics</li></ul>
+      <button type="button" class="pf-btn full" data-name="Vishal Singh" data-initials="VS" data-photo="" data-tagline="SEO Specialist|&amp;|Content Thinker" data-summary="SEO and content lead at Zyrox Media. I research keywords, write blogs and fix technical issues so brands rank when buyers search." data-stat="100+|Articles|Published" data-skills="SEO|Blogs|Analytics"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
+     </article>
+
+     <article class="tm-card zrv" style="--i:3">
+      <div class="tm-ph">
+       <span>JS</span>
+       <img src="" alt="Jeeval Singh, Web Developer at Zyrox Media" loading="lazy" onerror="this.style.display='none'" style="display:none">
+       <div class="tm-soc">
+        <a href="#" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
+        <a href="#" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
+       </div>
+      </div>
+      <h3>Jeeval Singh</h3>
+      <span class="tm-role">Web Developer</span>
+      <p>Builds fast, mobile-friendly WordPress websites and landing pages designed to turn visitors into enquiries.</p>
+      <ul><li>WordPress</li><li>Speed</li><li>UX</li></ul>
+      <button type="button" class="pf-btn full" data-name="Jeeval Singh" data-initials="JS" data-photo="" data-tagline="Web Developer|&amp;|UX Thinker" data-summary="Web developer at Zyrox Media. I build fast, mobile-friendly WordPress websites and landing pages that turn visitors into enquiries." data-stat="40+|Websites|Launched" data-skills="WordPress|Speed|UX"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
+     </article>
+
+    </div>
+   </div>
+  </section>
+
+  </div>
+
+  <script>
+  (function(){
+  var Z=document.getElementById('zx-founder-team');if(!Z)return;
+  Z.classList.add('js');
+
+  /* ---------- scroll reveal ---------- */
+  var secs=Z.querySelectorAll('.fd,.tm');
+  function on(e){e.classList.add('on')}
+  if('IntersectionObserver' in window){
+   var io=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){on(x.target);io.unobserve(x.target)}})},{threshold:.15});
+   secs.forEach(function(s){io.observe(s)});
+   setTimeout(function(){secs.forEach(on)},5000);
+  }else{secs.forEach(on)}
+
+  /* ---------- team card tilt ---------- */
+  Z.querySelectorAll('.tm-card').forEach(function(c){
+   c.addEventListener('mousemove',function(e){
+    var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+    c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
+    c.style.setProperty('--ry',(x/r.width-0.5)*8+'deg');c.style.setProperty('--rx',(0.5-y/r.height)*8+'deg');
+   });
+   c.addEventListener('mouseleave',function(){c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')});
+  });
+
+  /* ---------- portfolio buttons ---------- */
+  Z.querySelectorAll('.pf-btn').forEach(function(b){
+   b.addEventListener('click',function(){
+    var d=b.dataset,st=d.stat.split('|');
+    openPF({name:d.name,initials:d.initials,photo:d.photo||'',tagline:d.tagline.split('|'),summary:d.summary,stat:{n:st[0],l:[st[1],st[2]]},skills:d.skills.split('|')});
+   });
+  });
+
+  /* ---------- Portfolio Intro (cinematic) ---------- */
+  var SPARK='M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0z';
+  var SPARK_COLORS=['#FFF27A','#FFD60A','#FFB703','#FF9F1C','#FFFFFF'];
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+  function openPF(person){
+   if(document.querySelector('.pf'))return;
+   var el=document.createElement('div');el.className='pf';el.setAttribute('role','dialog');el.setAttribute('aria-modal','true');el.setAttribute('aria-label',person.name+' portfolio');
+   var letters='PORTFOLIO'.split('').map(function(c,i){return '<span data-l="'+c+'" style="--d:'+(0.3+i*0.14).toFixed(2)+'s">'+c+'</span>'}).join('');
+   var skillsHtml=person.skills.map(function(s,i){return '<li style="color:'+SPARK_COLORS[i%5]+'"><svg viewBox="0 0 24 24" fill="currentColor"><path d="'+SPARK+'"/></svg><span></span></li>'}).join('');
+   el.innerHTML='<div class="pf-bg"></div><div class="pf-streak"></div><div class="pf-grain"></div>'
+   +'<div class="pf-bigwrap"><div class="pf-big">'+letters+'</div><div class="pf-shine">PORTFOLIO</div></div>'
+   +'<div class="pf-tag"><span>'+esc(person.tagline[0])+'</span><span>'+esc(person.tagline[1])+'</span><span>'+esc(person.tagline[2])+'</span></div>'
+   +'<div class="pf-man'+(person.photo?'':' ph')+'">'+(person.photo?'<img src="'+esc(person.photo)+'" alt="'+esc(person.name)+'">':'<span>'+esc(person.initials)+'</span>')+'</div>'
+   +'<div class="pf-hi"><small class="pf-t1"></small><b class="pf-t2"></b></div>'
+   +'<div class="pf-card"><h3 class="pf-t3"></h3><p class="pf-t4"></p></div>'
+   +'<div class="pf-pill"><strong>'+esc(person.stat.n)+'</strong><span>'+esc(person.stat.l[0])+'<br>'+esc(person.stat.l[1])+'</span></div>'
+   +'<ul class="pf-svc">'+skillsHtml+'</ul>'
+   +'<button class="pf-mute" type="button" aria-label="Toggle sound">\uD83D\uDD0A</button>'
+   +'<button class="pf-close" type="button">Close \u2715</button>';
+   document.body.appendChild(el);
+   /* photo na mile to initials dikhao */
+   var manImg=el.querySelector('.pf-man img');
+   if(manImg)manImg.addEventListener('error',function(){var m=el.querySelector('.pf-man');m.classList.add('ph');var s=document.createElement('span');s.textContent=person.initials;m.appendChild(s)});
+
+   var q=function(sel){return el.querySelector(sel)};
+   var timers=[];var at=function(ms,fn){timers.push(setTimeout(fn,ms))};
+   var isMuted=false,closing=false,lastTick=0;
+   var ctx=null,master=null,noise=null,pad=null;
+
+   /* ---- SOUND (WebAudio: koi audio file nahi) ---- */
+   try{
+    var AC=window.AudioContext||window.webkitAudioContext;
+    ctx=new AC();
+    master=ctx.createGain();master.gain.value=0.9;
+    var comp=ctx.createDynamicsCompressor();master.connect(comp);comp.connect(ctx.destination);
+    var dl=ctx.createDelay(0.5);dl.delayTime.value=0.17;
+    var fb=ctx.createGain();fb.gain.value=0.28;
+    var wet=ctx.createGain();wet.gain.value=0.22;
+    master.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(wet);wet.connect(comp);
+    var nb=ctx.createBuffer(1,ctx.sampleRate*2,ctx.sampleRate),dd=nb.getChannelData(0);
+    for(var i=0;i<dd.length;i++)dd[i]=Math.random()*2-1;
+    noise=nb;ctx.resume();
+   }catch(e){ctx=null}
+   var ok=function(){return ctx&&ctx.state==='running'&&!isMuted};
+   var env=function(g,t,a,pk,dec){g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(pk,t+a);g.gain.exponentialRampToValueAtTime(0.0001,t+a+dec)};
+   var whoosh=function(f0,f1,dur,pk,qv){
+    if(!ok())return;
+    var t=ctx.currentTime,s=ctx.createBufferSource();s.buffer=noise;
+    var f=ctx.createBiquadFilter();f.type='bandpass';f.Q.value=qv||1.2;
+    f.frequency.setValueAtTime(f0,t);f.frequency.exponentialRampToValueAtTime(f1,t+dur);
+    var g=ctx.createGain();env(g,t,dur*0.45,pk,dur*0.55);
+    s.connect(f);f.connect(g);g.connect(master);s.start(t);s.stop(t+dur+0.1);
+   };
+   var thump=function(f,dur,pk){
+    if(!ok())return;
+    var t=ctx.currentTime,o=ctx.createOscillator(),g=ctx.createGain();
+    o.type='sine';o.frequency.setValueAtTime(f,t);o.frequency.exponentialRampToValueAtTime(40,t+dur);
+    env(g,t,0.005,pk,dur);o.connect(g);g.connect(master);o.start(t);o.stop(t+dur+0.1);
+   };
+   var tick=function(){
+    if(!ok())return;
+    var t=ctx.currentTime,s=ctx.createBufferSource();s.buffer=noise;
+    var f=ctx.createBiquadFilter();f.type='highpass';f.frequency.value=2500+Math.random()*2500;
+    var g=ctx.createGain();env(g,t,0.001,0.16,0.03);
+    s.connect(f);f.connect(g);g.connect(master);s.start(t,Math.random());s.stop(t+0.05);
+   };
+   var chime=function(freq,pk){
+    if(!ok())return;
+    var t=ctx.currentTime;
+    [1,2.01,3.02].forEach(function(m,i){
+     var o=ctx.createOscillator(),g=ctx.createGain();
+     o.type='sine';o.frequency.value=freq*m;env(g,t,0.004,(pk||0.12)/(i+1),0.9);
+     o.connect(g);g.connect(master);o.start(t);o.stop(t+1);
+    });
+   };
+   var riser=function(dur){
+    if(!ok())return;
+    var t=ctx.currentTime,s=ctx.createBufferSource();s.buffer=noise;s.loop=true;
+    var f=ctx.createBiquadFilter();f.type='bandpass';f.Q.value=2;
+    f.frequency.setValueAtTime(300,t);f.frequency.exponentialRampToValueAtTime(5500,t+dur);
+    var g=ctx.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(0.3,t+dur);g.gain.linearRampToValueAtTime(0,t+dur+0.15);
+    s.connect(f);f.connect(g);g.connect(master);s.start(t);s.stop(t+dur+0.2);
+   };
+   var startPad=function(){
+    if(!ok())return;
+    var t=ctx.currentTime,g=ctx.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(0.05,t+2);
+    var f=ctx.createBiquadFilter();f.type='lowpass';f.frequency.value=380;
+    [55,82.4,110.3].forEach(function(fr){var o=ctx.createOscillator();o.type='sawtooth';o.frequency.value=fr;o.connect(f);o.start(t)});
+    f.connect(g);g.connect(master);pad=g;
+   };
+   var S={
+    letter:function(){whoosh(250,1800,0.45,0.3,1.5);thump(130,0.3,0.45)},
+    shine:function(){whoosh(900,7000,1.2,0.34,0.9)},
+    rise:function(){whoosh(120,900,0.9,0.4,0.8);at(650,function(){thump(90,0.7,0.8)})},
+    card:function(){whoosh(500,2600,0.5,0.22,1.2)},
+    pop:function(){thump(260,0.18,0.5);chime(1568,0.1)},
+    spark:function(i){chime([784,880,988,1175,1319][i%5],0.13)},
+    out:function(){whoosh(200,6000,0.9,0.45,0.7);thump(70,1,0.9)}
+   };
+
+   /* ---- typing ---- */
+   var type=function(node,txt,speed){
+    if(!node)return;
+    var i=0;node.classList.add('pf-caret');
+    var step=function(){
+     var n=txt.slice(0,i);
+     if(node.firstChild&&node.firstChild.nodeType===3)node.firstChild.nodeValue=n;
+     else node.insertBefore(document.createTextNode(n),node.firstChild);
+     if(i>0&&txt[i-1]!==' '){var now=Date.now();if(now-lastTick>42){lastTick=now;tick()}}
+     if(i++<txt.length)timers.push(setTimeout(step,speed));
+     else setTimeout(function(){node.classList.remove('pf-caret')},500);
+    };
+    step();
+   };
+
+   /* ---- close (alag-alag direction me fly-away) ---- */
+   var prevOverflow=document.documentElement.style.overflow;
+   function cleanup(){
+    timers.forEach(clearTimeout);
+    document.removeEventListener('keydown',onKey);
+    document.documentElement.style.overflow=prevOverflow;
+    if(ctx){try{ctx.close()}catch(e){}}
+    if(el.parentNode)el.parentNode.removeChild(el);
+   }
+   function closeIt(){
+    if(closing)return;closing=true;
+    timers.forEach(clearTimeout);
+    S.out();
+    if(pad){try{pad.gain.cancelScheduledValues(ctx.currentTime);pad.gain.setValueAtTime(pad.gain.value,ctx.currentTime);pad.gain.linearRampToValueAtTime(0,ctx.currentTime+1)}catch(e){}}
+    el.classList.add('out');
+    setTimeout(cleanup,1800);
+   }
+   function onKey(e){if(e.key==='Escape')closeIt()}
+   document.addEventListener('keydown',onKey);
+   document.documentElement.style.overflow='hidden';
+   q('.pf-close').addEventListener('click',closeIt);
+   var mb=q('.pf-mute');
+   mb.addEventListener('click',function(){
+    isMuted=!isMuted;
+    if(master)master.gain.value=isMuted?0:0.9;
+    mb.textContent=isMuted?'\uD83D\uDD07':'\uD83D\uDD0A';
+   });
+
+   /* ---- timeline ---- */
+   startPad();
+   for(var k=0;k<9;k++)at(300+k*140,S.letter);
+   at(1500,function(){riser(1.2)});
+   at(2700,S.shine);
+   at(3100,S.rise);
+   at(4000,function(){type(q('.pf-t1'),'Hi, I Am',55)});
+   at(4600,function(){type(q('.pf-t2'),person.name,70)});
+   at(5200,S.card);
+   at(5700,function(){type(q('.pf-t3'),'Professional Summary',60)});
+   at(6000,S.pop);
+   at(6200,function(){type(q('.pf-t4'),person.summary,16)});
+   var lis=el.querySelectorAll('.pf-svc li');
+   person.skills.forEach(function(t,i){at(7400+i*420,function(){lis[i].classList.add('on');S.spark(i);type(lis[i].querySelector('span'),t,38)})});
+  }
+  })();
+  </script>
+
+  <!-- ========================================================================
+       06. HOW WE WORK (6-Step Process Timeline)
+       ======================================================================== -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-header" style="text-align: center; margin-left: auto; margin-right: auto;">
+        <div class="eyebrow-pill">
+          <span class="dot"></span>
+          <span>Proven Workflow</span>
+        </div>
+        <h2 class="section-title">How We Work<span class="pulsing-dot">.</span></h2>
+        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+          From initial brand immersion to continuous algorithmic scaling: our 6-phase battle-tested framework.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Base Line and Scrubbed Accent Progress Line -->
+        <div class="timeline-base-line" aria-hidden="true"></div>
+        <div class="timeline-progress-line" aria-hidden="true"></div>
+
+        <!-- Step 1: Onboarding -->
+        <div class="timeline-step">
+          <div class="timeline-node" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-phase-label">Phase 01</div>
+            <h3>Deep-Dive Onboarding</h3>
+            <p>Comprehensive brand audit, competitor teardown, historical ad analysis, customer persona mapping, and tracking pixel integration into our analytics stack.</p>
+          </div>
+        </div>
+
+        <!-- Step 2: Planning -->
+        <div class="timeline-step">
+          <div class="timeline-node" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-phase-label">Phase 02</div>
+            <h3>Quarterly Growth Architecture</h3>
+            <p>We formulate your 90-day positioning playbook, content pillars, promotional calendar, and performance targets to guarantee alignment from day one.</p>
+          </div>
+        </div>
+
+        <!-- Step 3: Creation -->
+        <div class="timeline-step">
+          <div class="timeline-node" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-phase-label">Phase 03</div>
+            <h3>High-Velocity Production</h3>
+            <p>On-site shoots, motion graphic composition, copy drafting, and conversion web development executed by our specialized creative squads.</p>
+          </div>
+        </div>
+
+        <!-- Step 4: Approval -->
+        <div class="timeline-step">
+          <div class="timeline-node" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-phase-label">Phase 04</div>
+            <h3>Frictionless Portal Review</h3>
+            <p>One-click approvals through our client portal. You inspect mockups, copy, and videos with frame-accurate commenting before anything goes live.</p>
+          </div>
+        </div>
+
+        <!-- Step 5: Publishing -->
+        <div class="timeline-step">
+          <div class="timeline-node" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-phase-label">Phase 05</div>
+            <h3>Algorithmic Distribution</h3>
+            <p>Multi-channel publishing, active comment engagement, and launch of automated Meta bid strategies to capture initial audience momentum.</p>
+          </div>
+        </div>
+
+        <!-- Step 6: Reporting -->
+        <div class="timeline-step">
+          <div class="timeline-node" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-phase-label">Phase 06</div>
+            <h3>Attribution & Optimization</h3>
+            <p>Bi-weekly strategy debriefs, conversion attribution analysis, and iterative scaling of top-performing ad creative clusters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       08. WHY CHOOSE US SECTION (.wc-sec)
+       ======================================================================== -->
+  <section class="wc-sec" id="why-us" aria-label="Why choose Zyrox Media">
+    <div id="why-siora" style="position:absolute;top:0;left:0;height:1px;width:1px;" aria-hidden="true"></div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <symbol id="w-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+      <symbol id="w-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></symbol>
+      <symbol id="w-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="w-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+      <symbol id="w-trend" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+      <symbol id="w-mega" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+      <symbol id="w-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></symbol>
+      <symbol id="w-like" viewBox="0 0 24 24"><path d="M7 10v11H3V10zM7 10l4-8c1.7 0 3 1.3 3 3v4h5.5a2 2 0 0 1 2 2.3l-1.4 8a2 2 0 0 1-2 1.7H7"/></symbol>
+      <symbol id="w-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0"/></symbol>
+      <symbol id="w-bars" viewBox="0 0 24 24"><path d="M3 3v18h18M18 17V9M13 17V5M8 17v-3"/></symbol>
+      <symbol id="w-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="w-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    </defs></svg>
+
+    <div class="wc-bg" aria-hidden="true">
+      <span style="--x:3%;--s:34px;--d:17s;--l:0s;--t:20%"><svg><use href="#w-ig"/></svg></span>
+      <span class="f" style="--x:11%;--s:26px;--d:13s;--l:-4s;--t:60%"><svg><use href="#w-heart"/></svg></span>
+      <span style="--x:19%;--s:38px;--d:19s;--l:-9s;--t:35%"><svg><use href="#w-trend"/></svg></span>
+      <span style="--x:27%;--s:28px;--d:14s;--l:-2s;--t:75%"><svg><use href="#w-chat"/></svg></span>
+      <span style="--x:35%;--s:36px;--d:18s;--l:-11s;--t:15%"><svg><use href="#w-play"/></svg></span>
+      <span style="--x:43%;--s:30px;--d:15s;--l:-6s;--t:55%"><svg><use href="#w-like"/></svg></span>
+      <span style="--x:51%;--s:40px;--d:20s;--l:-13s;--t:80%"><svg><use href="#w-mega"/></svg></span>
+      <span class="f" style="--x:59%;--s:24px;--d:12s;--l:-1s;--t:30%"><svg><use href="#w-heart"/></svg></span>
+      <span style="--x:66%;--s:32px;--d:16s;--l:-8s;--t:65%"><svg><use href="#w-share"/></svg></span>
+      <span style="--x:73%;--s:34px;--d:18s;--l:-5s;--t:10%"><svg><use href="#w-bell"/></svg></span>
+      <span style="--x:80%;--s:28px;--d:14s;--l:-10s;--t:45%"><svg><use href="#w-bars"/></svg></span>
+      <span style="--x:87%;--s:36px;--d:17s;--l:-3s;--t:85%"><svg><use href="#w-ig"/></svg></span>
+      <span style="--x:93%;--s:30px;--d:15s;--l:-12s;--t:25%"><svg><use href="#w-target"/></svg></span>
+      <span style="--x:47%;--s:26px;--d:21s;--l:-15s;--t:50%"><svg><use href="#w-search"/></svg></span>
+    </div>
+
+    <div class="wc-wrap">
+      <span class="wc-badge"><i></i>The Zyrox Advantage</span>
+      <h2>Why Choose Zyrox Media as Your Digital Marketing Agency<em>.</em></h2>
+      <p class="wc-intro">Most agencies outsource your creative pieces across disconnected freelancers. Zyrox Media centralizes your growth engine under one dedicated in-house team committed to rigorous craft and bottom-line metrics.</p>
+
+      <div class="wc-grid">
+        <div class="wc-card" style="--i:0"><div class="wc-num">01</div><h3>One team for everything</h3><p>No disjointed communications. Designers, filmmakers, copywriters, and media buyers sit in the same creative room.</p><div class="wc-bar"></div></div>
+        <div class="wc-card" style="--i:1"><div class="wc-num">02</div><h3>Clear monthly planning</h3><p>Every single asset is scheduled 30 days ahead with crystal-clear publication deadlines and zero last-minute rush.</p><div class="wc-bar"></div></div>
+        <div class="wc-card" style="--i:2"><div class="wc-num">03</div><h3>Creative content that matches your brand</h3><p>We craft tailor-made aesthetics and voice frameworks that respect your unique industry heritage and customer profile.</p><div class="wc-bar"></div></div>
+        <div class="wc-card" style="--i:3"><div class="wc-num">04</div><h3>Data-driven approach</h3><p>Every creative hypothesis is scrutinized against algorithmic retain rates, CTR benchmarks, and conversion economics.</p><div class="wc-bar"></div></div>
+        <div class="wc-card" style="--i:4"><div class="wc-num">05</div><h3>Transparent tracking</h3><p>Real-time dashboard access, bi-weekly review standups, and plain-English reports showing real revenue generation.</p><div class="wc-bar"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var cards=document.querySelectorAll('.wc-card');if(!cards.length)return;
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('wc-show');io.unobserve(x.target)}})},{threshold:.15});
+      cards.forEach(function(c){io.observe(c)});
+    }else{cards.forEach(function(c){c.classList.add('wc-show')})}
+    cards.forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+  })();
+  </script>
+
+  <!-- ========================================================================
+       09. FEATURED PROJECTS (.fp-sec)
+       ======================================================================== -->
+  <section class="fp-sec" id="projects" aria-label="Featured projects">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <symbol id="f-arr" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    </defs></svg>
+
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <div>
+          <span class="fp-badge"><i></i>Proven Case Histories</span>
+          <h2>Featured Projects<em>.</em></h2>
+        </div>
+        <p>Real brands, verified data, and transformational business outcomes engineered by Zyrox Media.</p>
+      </div>
+
+      <div class="fp-filters" role="group" aria-label="Filter projects">
+        <button class="fp-f on" data-f="all" type="button">All projects</button>
+        <button class="fp-f" data-f="ads" type="button">Paid ads</button>
+        <button class="fp-f" data-f="seo" type="button">SEO &amp; web</button>
+        <button class="fp-f" data-f="social" type="button">Social &amp; reels</button>
+      </div>
+
+      <div class="fp-list">
+        <!-- Project 1: Aethelgard Fine Living -->
+        <a class="fp-row" href="#contact" data-cat="ads" data-img="assets/project-aethelgard.svg" style="--i:0">
+          <div class="fp-main"><span class="fp-idx"></span>
+            <div class="fp-title"><div class="fp-meta"><span class="fp-ind">D2C E-Commerce</span><span class="fp-tags">Meta Ads / Reel Production</span></div><h3>Aethelgard Fine Living</h3></div>
+            <div class="fp-met"><span class="fp-ml">Key metric</span><span class="fp-mv">4.8x ROAS</span></div>
+            <span class="fp-go"><svg><use href="#f-arr"/></svg></span></div>
+          <div class="fp-more"><div><p>Scaled quarterly online revenue by 340% via high-definition lifestyle video creative and hyper-segmented Meta ad funnels.</p></div></div>
+        </a>
+
+        <!-- Project 2: Veloce Cloud Platform -->
+        <a class="fp-row" href="#contact" data-cat="seo" data-img="assets/project-veloce.svg" style="--i:1">
+          <div class="fp-main"><span class="fp-idx"></span>
+            <div class="fp-title"><div class="fp-meta"><span class="fp-ind">B2B SaaS</span><span class="fp-tags">SEO Architecture / Web Dev</span></div><h3>Veloce Cloud Platform</h3></div>
+            <div class="fp-met"><span class="fp-ml">Key metric</span><span class="fp-mv">+185K Organic Visits</span></div>
+            <span class="fp-go"><svg><use href="#f-arr"/></svg></span></div>
+          <div class="fp-more"><div><p>Rebuilt site architecture from ground up, paired with 45 authoritative technical blogs that captured rank 1 for 18 primary keywords.</p></div></div>
+        </a>
+
+        <!-- Project 3: Kinetix Athletics -->
+        <a class="fp-row" href="#contact" data-cat="social" data-img="assets/project-kinetix.svg" style="--i:2">
+          <div class="fp-main"><span class="fp-idx"></span>
+            <div class="fp-title"><div class="fp-meta"><span class="fp-ind">Fashion &amp; Retail</span><span class="fp-tags">Community / Viral Reels</span></div><h3>Kinetix Athletics</h3></div>
+            <div class="fp-met"><span class="fp-ml">Key metric</span><span class="fp-mv">12.4M Impressions</span></div>
+            <span class="fp-go"><svg><use href="#f-arr"/></svg></span></div>
+          <div class="fp-more"><div><p>Generated over 12 million viral impressions across Instagram Reels within 90 days, doubling their direct-to-consumer email subscriber list.</p></div></div>
+        </a>
+      </div>
+
+      <div class="fp-foot"><a class="fp-all" href="#contact">See all case studies <svg><use href="#f-arr"/></svg></a></div>
+    </div>
+
+    <div class="fp-pv" aria-hidden="true"><div class="fp-pvin"><div class="fp-art"></div><span class="fp-pvtag"></span><strong class="fp-pvm"></strong><span class="fp-pvl">Key metric</span></div></div>
+  </section>
+
+  <script>
+  (function(){
+    var sec=document.getElementById('projects') || document.getElementById('featured-projects');if(!sec)return;
+    var rows=[].slice.call(sec.querySelectorAll('.fp-row')),list=sec.querySelector('.fp-list');
+    var pv=sec.querySelector('.fp-pv'),art=pv.querySelector('.fp-art'),tag=pv.querySelector('.fp-pvtag'),mv=pv.querySelector('.fp-pvm');
+    /* reveal */
+    function show(){var n=0;rows.forEach(function(r){if(!r.classList.contains('fp-hide')){r.style.setProperty('--i',n++);r.classList.add('fp-show')}})}
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){show();io.disconnect()}},{threshold:.1});io.observe(list);
+    }else{show()}
+    /* filters */
+    var fs=sec.querySelectorAll('.fp-f');
+    fs.forEach(function(b){b.addEventListener('click',function(){
+      fs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+      var f=b.getAttribute('data-f');
+      rows.forEach(function(r){r.classList.remove('fp-show');r.classList.toggle('fp-hide',f!=='all'&&r.getAttribute('data-cat')!==f)});
+      void list.offsetWidth;show();
+    })});
+    /* cursor-following preview (mouse only) */
+    if(!window.matchMedia||!matchMedia('(hover:hover) and (min-width:861px)').matches)return;
+    var tx=0,ty=0,cx=0,cy=0,run=false,W=290,H=350;
+    function loop(){
+      cx+=(tx-cx)*.16;cy+=(ty-cy)*.16;
+      pv.style.transform='translate3d('+cx.toFixed(1)+'px,'+cy.toFixed(1)+'px,0)';
+      if(run)requestAnimationFrame(loop);
+    }
+    list.addEventListener('mousemove',function(e){
+      var x=e.clientX+30;if(x+W>innerWidth-12)x=e.clientX-W-30;
+      tx=x;ty=Math.max(12,Math.min(innerHeight-H-12,e.clientY-H/2));
+    });
+    rows.forEach(function(r){
+      r.addEventListener('mouseenter',function(e){
+        var img=r.getAttribute('data-img');
+        tag.textContent=r.querySelector('.fp-ind').textContent;
+        mv.textContent=r.querySelector('.fp-mv').textContent;
+        art.style.backgroundImage=img?'url("'+img+'")':'';art.classList.toggle('img',!!img);
+        var x=e.clientX+30;if(x+W>innerWidth-12)x=e.clientX-W-30;
+        tx=x;ty=Math.max(12,Math.min(innerHeight-H-12,e.clientY-H/2));
+        if(!run){cx=tx;cy=ty;run=true;loop()}
+        pv.classList.add('on');
+      });
+    });
+    list.addEventListener('mouseleave',function(){pv.classList.remove('on');run=false});
+  })();
+  </script>
+
+  <!-- ========================================================================
+       09. WHAT YOU GET EVERY MONTH (.wd-sec)
+       ======================================================================== -->
+  <section class="wd-sec" id="what-you-get" aria-label="What you get every month">
+    <div id="deliverables" style="position:absolute;top:0;left:0;height:1px;width:1px;" aria-hidden="true"></div>
+    <div class="wd-bg" aria-hidden="true">
+      <i style="--x:90%;--y2:0%;--l:0s"></i><i style="--x:90%;--y2:0%;--l:-2.7s"></i><i style="--x:90%;--y2:0%;--l:-5.3s"></i>
+      <i style="--x:6%;--y2:100%;--l:-1.3s"></i><i style="--x:6%;--y2:100%;--l:-4s"></i><i style="--x:6%;--y2:100%;--l:-6.6s"></i>
+    </div>
+
+    <div class="wd-wrap">
+      <div class="wd-head">
+        <div>
+          <span class="wd-badge"><i></i>Deliverables Stack</span>
+          <h2>What You Get Every Month<em>.</em></h2>
+        </div>
+        <p>Uncompromising consistency. Every single deliverable is tracked, peer-reviewed, and optimized for customer conversion.</p>
+      </div>
+
+      <div class="wd-grid">
+        <div class="wd-card" style="--i:0"><div class="wd-top"><div class="wd-g"><div class="g-posts"><i></i><i></i><i></i></div></div><span class="wd-n" data-n="8">8</span></div><h3>High-Impact Posts</h3><p>Curated single-image graphic creatives.</p><div class="wd-bar"></div></div>
+        <div class="wd-card" style="--i:1"><div class="wd-top"><div class="wd-g"><div class="g-car"><u><b></b><b></b><b></b></u></div></div><span class="wd-n" data-n="5">5</span></div><h3>Value Carousels</h3><p>Multi-slide educational swipe decks.</p><div class="wd-bar"></div></div>
+        <div class="wd-card" style="--i:2"><div class="wd-top"><div class="wd-g"><div class="g-reel"></div></div><span class="wd-n" data-n="8">8</span></div><h3>Viral-Optimized Reels</h3><p>Motion cut with dynamic pacing &amp; subs.</p><div class="wd-bar"></div></div>
+        <div class="wd-card" style="--i:3"><div class="wd-top"><div class="wd-g"><div class="g-story"></div></div><span class="wd-n" data-n="10">10</span></div><h3>Interactive Stories</h3><p>Polls, quizzes, and urgency drivers.</p><div class="wd-bar"></div></div>
+        <div class="wd-card" style="--i:4"><div class="wd-top"><div class="wd-g"><div class="g-rec"><b></b></div></div><span class="wd-n" data-n="8">8</span></div><h3>On-Location Shoot Days</h3><p>Full professional crew and cine cameras.</p><div class="wd-bar"></div></div>
+        <div class="wd-card" style="--i:5"><div class="wd-top"><div class="wd-g"><div class="g-blog"><i style="--k:0;--w:36px"></i><i style="--k:1;--w:26px"></i><i style="--k:2;--w:32px"></i></div></div><span class="wd-n" data-n="14">14</span></div><h3>Long-Form SEO Blogs</h3><p>Keyword optimized, 1,500+ words each.</p><div class="wd-bar"></div></div>
+        <div class="wd-card" style="--i:6"><div class="wd-top"><div class="wd-g"><div class="g-cal"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><i style="--k:6"></i><i style="--k:7"></i><i style="--k:8"></i></div></div><span class="wd-n" data-n="1">1</span></div><h3>Master Content Calendar</h3><p>Centralized Notion/Airtable schedule.</p><div class="wd-bar"></div></div>
+        <div class="wd-card" style="--i:7"><div class="wd-top"><div class="wd-g"><div class="g-bars"><i style="--k:0;--h:.45"></i><i style="--k:1;--h:.7"></i><i style="--k:2;--h:.55"></i><i style="--k:3;--h:1"></i></div></div><span class="wd-n" data-n="1">1</span></div><h3>In-Depth Performance Report</h3><p>Executive summary and strategic review.</p><div class="wd-bar"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var cards=document.querySelectorAll('.wd-card');if(!cards.length)return;
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+    function count(el){
+      var to=+el.getAttribute('data-n'),t0=null,dur=1100;
+      if(reduce||to<2){el.textContent=to;return}
+      el.textContent='0';
+      (function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)})(performance.now());
+    }
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var c=x.target;c.classList.add('wd-show');setTimeout(function(){count(c.querySelector('.wd-n'))},(+c.style.getPropertyValue('--i')||0)*80);io.unobserve(c)}})},{threshold:.15});
+      cards.forEach(function(c){io.observe(c)});
+    }else{cards.forEach(function(c){c.classList.add('wd-show')})}
+    cards.forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+  })();
+  </script>
+
+  <!-- ========================================================================
+       10. FINAL CTA SECTION
+       ======================================================================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="cta-box">
+        <!-- Ambient Glow & Floating Shapes -->
+        <div class="cta-glow-bg" aria-hidden="true"></div>
+        <div class="cta-floating-shape cta-shape-1" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <div class="cta-floating-shape cta-shape-2" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          </svg>
+        </div>
+        <div class="cta-floating-shape cta-shape-3" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </div>
+        <div class="cta-floating-shape cta-shape-4" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </div>
+
+        <div class="cta-content">
+          <div class="eyebrow-pill">
+            <span class="dot"></span>
+            <span>Let's Build Something Exceptional</span>
+          </div>
+          <h2 class="cta-title">Ready to grow your brand<span class="pulsing-dot">?</span></h2>
+          <p class="cta-desc">
+            Stop juggling six disconnected freelancers. Partner with a dedicated studio that delivers your creative direction, social momentum, and ad performance under one unified roof.
+          </p>
+          <button class="btn-accent" data-open-modal="contact" style="font-size: 1.05rem; padding: 16px 36px;">
+            <span>Schedule Discovery Call</span>
+            <svg class="btn-arrow-slide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       11. FOOTER (ZYROX MEDIA .ft COMPONENT)
+       ======================================================================== -->
+  <footer class="ft" id="sd-footer">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <symbol id="ft-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></symbol>
+      <symbol id="ft-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="ft-yt" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></symbol>
+      <symbol id="ft-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="ft-ph" viewBox="0 0 24 24"><path d="M22 16.900v3a2 2 0 0 1-2.200 2 19.800 19.800 0 0 1-8.600-3.100 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.100 4.200 2 2 0 0 1 4.100 2h3a2 2 0 0 1 2 1.700c.1 1 .4 1.900.7 2.800a2 2 0 0 1-.5 2.100L8.100 9.900a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.9.3 1.800.6 2.800.7a2 2 0 0 1 1.700 2z"/></symbol>
+      <symbol id="ft-ml" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.970 5.700a2 2 0 0 1-2.060 0L2 7"/></symbol>
+      <symbol id="ft-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    </defs></svg>
+
+    <div class="ft-mq" aria-hidden="true"><div>
+      <span>Social Media</span><span>Content Shoots</span><span>Meta Ads</span><span>SEO</span><span>Website Design</span><span>Branding</span><span>Blogs</span><span>Growth</span>
+      <span>Social Media</span><span>Content Shoots</span><span>Meta Ads</span><span>SEO</span><span>Website Design</span><span>Branding</span><span>Blogs</span><span>Growth</span>
+    </div></div>
+
+    <div class="ft-wrap">
+      <div class="ft-grid">
+        <div class="ft-rv">
+          <a class="ft-logo" href="#hero" aria-label="Zyrox Media home">
+            <img src="assets/logo2.png" alt="Zyrox Media - Digital Marketing Agency" width="260" height="75">
+          </a>
+          <p class="ft-about">Architecturally disciplined digital marketing agency engineering exponential organic and paid acquisition for ambitious global brands.</p>
+          <div class="ft-soc">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ft-ic"><use href="#ft-ig"/></svg></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ft-ic"><use href="#ft-in"/></svg></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg class="ft-ic"><use href="#ft-yt"/></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="ft-ic"><use href="#ft-fb"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ft-rv" style="--i:1"><h4>Quick Links</h4>
+          <ul>
+            <li><a class="ft-lk cur" href="#hero">Home</a></li>
+            <li><a class="ft-lk" href="#services">Services</a></li>
+            <li><a class="ft-lk" href="#founder">About Us</a></li>
+            <li><a class="ft-lk" href="#team">Team</a></li>
+            <li><a class="ft-lk" href="#projects">Projects</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-rv" style="--i:2"><h4>Core Services</h4>
+          <ul>
+            <li><a class="ft-lk" href="#services">Social Media Growth</a></li>
+            <li><a class="ft-lk" href="#services">Content Shoots</a></li>
+            <li><a class="ft-lk" href="#services">Performance Meta Ads</a></li>
+            <li><a class="ft-lk" href="#services">Search Engine SEO</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-rv" style="--i:3"><h4>Contact Studio</h4>
+          <div class="ft-ct">
+            <strong>Founder: Chandan Rai</strong>
+            <a href="tel:+916386706276"><b><svg class="ft-ic"><use href="#ft-ph"/></svg></b>+91 6386706276</a>
+            <a href="mailto:raichandan967@gmail.com"><b><svg class="ft-ic"><use href="#ft-ml"/></svg></b>raichandan967@gmail.com</a>
+            <div class="ft-av"><i></i>Available Mon - Sat for global inquiries.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ft-bot ft-rv">
+        <span>© <span id="ft-yr">2026</span> Zyrox Media. All rights reserved. Founded by Chandan Rai • +91 6386706276 • raichandan967@gmail.com</span>
+        <nav>
+          <a class="ft-lk" href="#hero">Privacy Policy</a>
+          <a class="ft-lk" href="#hero">Terms of Service</a>
+          <button class="ft-top" type="button" id="ft-top" style="border:0;font-family:inherit"><svg class="ft-ic"><use href="#ft-up"/></svg>Back to top</button>
+        </nav>
+      </div>
+      <div class="ft-big" aria-hidden="true">ZYROX</div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var f=document.getElementById('sd-footer');if(!f)return;
+    var yr=document.getElementById('ft-yr');if(yr)yr.textContent=new Date().getFullYear();
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(e,o){if(e[0].isIntersecting){f.classList.add('on');o.disconnect()}},{threshold:.1}).observe(f);
+    } else {
+      f.classList.add('on');
+    }
+    var topBtn=document.getElementById('ft-top');
+    if(topBtn){
+      topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+    }
+    if(!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+    f.querySelectorAll('.ft-soc a').forEach(function(a){
+      a.addEventListener('mousemove',function(e){var r=a.getBoundingClientRect();a.style.translate=((e.clientX-r.left-r.width/2)*.3)+'px '+((e.clientY-r.top-r.height/2)*.3)+'px'});
+      a.addEventListener('mouseleave',function(){a.style.translate=''});
+    });
+  })();
+  </script>
+
+  <!-- ========================================================================
+       CIRCULAR BACK-TO-TOP BUTTON WITH ACCENT PROGRESS RING
+       ======================================================================== -->
+  <button class="back-to-top-btn" aria-label="Back to top of page">
+    <svg class="progress-ring" viewBox="0 0 52 52">
+      <circle class="progress-ring-circle" cx="26" cy="26" r="25"></circle>
+    </svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ========================================================================
+       MODAL 1: INTRO SHOWREEL MODAL
+       ======================================================================== -->
+  <div class="modal-backdrop" id="introModal" role="dialog" aria-modal="true" aria-label="Zyrox Media Intro Showreel">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div class="eyebrow-pill" style="margin-bottom: 14px;">
+        <span class="dot"></span>
+        <span>Studio Showreel '26</span>
+      </div>
+      <h3 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 18px;">How Zyrox Drives Brand Growth</h3>
+      <div style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-subtle); margin-bottom: 20px;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle, #1B1B20 0%, #0A0A0B 100%);">
+          <div class="play-icon-box" style="width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: var(--text-on-accent); cursor: pointer; box-shadow: 0 0 24px var(--accent-glow);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </div>
+          <p style="margin-top: 14px; color: var(--text-secondary); font-size: 0.9rem;">Click to play 90-second agency methodology showcase</p>
+        </div>
+      </div>
+      <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;">
+        Explore our proprietary 3D rendering pipeline, on-set cinematography process, and algorithmic ad optimization engine.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 2: DISCOVERY CALL / CONTACT MODAL
+       ======================================================================== -->
+  <div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-label="Schedule Discovery Call">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div class="eyebrow-pill" style="margin-bottom: 12px;">
+        <span class="dot"></span>
+        <span>Start Your Growth Sprint</span>
+      </div>
+      <h3 style="font-size: 1.8rem; color: var(--text-primary); margin-bottom: 8px;">Schedule Discovery Call</h3>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 24px;">
+        Tell us about your brand targets. We will prepare an audit and show up to our call with actionable insights.
+      </p>
+
+      <form id="discoveryForm">
+        <div class="form-group">
+          <label class="form-label" for="clientName">Your Name</label>
+          <input type="text" id="clientName" class="form-input" placeholder="e.g. Elena Rostova" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="clientEmail">Work Email</label>
+          <input type="email" id="clientEmail" class="form-input" placeholder="elena@yourbrand.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="clientService">Primary Growth Goal</label>
+          <select id="clientService" class="form-select">
+            <option value="omnichannel">Full-Stack Retainer (Social + Ads + Web)</option>
+            <option value="meta_ads">High-ROAS Meta Ads Acceleration</option>
+            <option value="reels_content">Viral Short-Form Reels & Content Shoot</option>
+            <option value="web_seo">High-Conversion Web & Technical SEO</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="clientNotes">Brand Details or URL</label>
+          <textarea id="clientNotes" class="form-textarea" placeholder="Share your website, current monthly spend or specific challenges..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-accent" style="width: 100%; padding: 16px;">
+          <span>Submit Discovery Request</span>
+          <svg class="btn-arrow-slide" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       EXTERNAL SCRIPTS (GSAP, SCROLLTRIGGER, LENIS)
+       ======================================================================== -->
+  <!-- GSAP Core & ScrollTrigger from cdnjs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis Smooth Scroll CDN -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+  <!-- Main Application Logic -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+

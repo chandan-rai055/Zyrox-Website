@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 640" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Marble Gradients -->
+    <linearGradient id="marbleLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="45%" stop-color="#EDEAE4" />
+      <stop offset="100%" stop-color="#C8C4BA" />
+    </linearGradient>
+
+    <linearGradient id="marbleMid" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#EDEAE4" />
+      <stop offset="60%" stop-color="#C5C0B3" />
+      <stop offset="100%" stop-color="#8F8A7E" />
+    </linearGradient>
+
+    <linearGradient id="marbleDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9C978B" />
+      <stop offset="70%" stop-color="#5C574F" />
+      <stop offset="100%" stop-color="#36332E" />
+    </linearGradient>
+
+    <linearGradient id="marbleShadow" x1="30%" y1="10%" x2="70%" y2="90%">
+      <stop offset="0%" stop-color="#46423A" />
+      <stop offset="100%" stop-color="#1A1916" />
+    </linearGradient>
+
+    <!-- Accent Neon Sunglasses Gradients -->
+    <linearGradient id="sunglassesGlass" x1="0%" y1="0%" x2="100%" y2="40%">
+      <stop offset="0%" stop-color="#FFF275" />
+      <stop offset="25%" stop-color="#FFD400" />
+      <stop offset="70%" stop-color="#E5A900" />
+      <stop offset="100%" stop-color="#FFD400" />
+    </linearGradient>
+
+    <linearGradient id="sunglassesReflection" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.2" />
+      <stop offset="70%" stop-color="#FFD400" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.6" />
+    </linearGradient>
+
+    <linearGradient id="sunglassesFrame" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D2D35" />
+      <stop offset="50%" stop-color="#131316" />
+      <stop offset="100%" stop-color="#0A0A0B" />
+    </linearGradient>
+
+    <!-- Headband / Halo Gold -->
+    <linearGradient id="goldBand" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E6BF00" />
+      <stop offset="50%" stop-color="#FFF59D" />
+      <stop offset="100%" stop-color="#FFD400" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="haloGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Specular Marble Filter -->
+    <filter id="marbleTexture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.07 0" />
+      <feComposite in="SourceGraphic" in2="noise" operator="arithmetic" k1="0" k2="1" k3="0.08" k4="0" />
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND HALO / AURA RING -->
+  <g id="halo-ring" filter="url(#haloGlow)" opacity="0.65">
+    <ellipse cx="270" cy="275" rx="200" ry="195" stroke="#FFD400" stroke-width="2.5" stroke-dasharray="14 8" opacity="0.4" />
+    <circle cx="270" cy="270" r="160" stroke="#FFD400" stroke-width="1.2" opacity="0.25" />
+  </g>
+
+  <!-- STATUE BUST GROUP -->
+  <g id="statue-bust">
+    <!-- Pedestal / Drapery Base -->
+    <path d="M165 540 C175 490 200 460 270 460 C340 460 365 490 375 540 C350 565 310 585 270 585 C230 585 190 565 165 540 Z" fill="url(#marbleMid)" />
+    <path d="M190 535 C220 550 250 555 270 555 C290 555 320 550 350 535 C335 570 295 580 270 580 C245 580 205 570 190 535 Z" fill="url(#marbleLight)" opacity="0.7" />
+    <path d="M165 540 C190 515 220 500 250 510 C210 525 185 550 165 540 Z" fill="url(#marbleShadow)" opacity="0.8" />
+    <path d="M375 540 C350 515 320 500 290 510 C330 525 355 550 375 540 Z" fill="url(#marbleDark)" opacity="0.85" />
+
+    <!-- Shoulders & Upper Chest -->
+    <path d="M140 475 C160 410 200 395 240 380 C245 420 260 445 270 455 C255 465 200 480 140 475 Z" fill="url(#marbleMid)" />
+    <path d="M400 475 C380 410 340 395 300 380 C295 420 280 445 270 455 C285 465 340 480 400 475 Z" fill="url(#marbleShadow)" />
+    <path d="M220 400 C245 415 270 420 295 415 C285 440 255 440 220 400 Z" fill="url(#marbleLight)" opacity="0.6" />
+
+    <!-- Neck & Sternocleidomastoid -->
+    <path d="M232 320 C230 355 235 385 245 405 C258 412 278 412 295 405 C305 385 310 355 308 320 Z" fill="url(#marbleMid)" />
+    <path d="M270 330 C285 360 295 380 305 405 C300 375 295 345 288 325 Z" fill="url(#marbleShadow)" opacity="0.65" />
+    <path d="M235 330 C245 360 255 385 265 400 C255 390 245 365 240 330 Z" fill="url(#marbleLight)" opacity="0.85" />
+
+    <!-- Classical Chin & Jawline -->
+    <path d="M210 260 C212 300 230 345 270 355 C310 345 328 300 330 260 C310 275 290 280 270 280 C250 280 230 275 210 260 Z" fill="url(#marbleMid)" />
+    <path d="M270 325 C258 325 250 333 270 345 C290 333 282 325 270 325 Z" fill="url(#marbleLight)" />
+    <path d="M270 345 C278 345 285 348 270 353 C255 348 262 345 270 345 Z" fill="url(#marbleShadow)" opacity="0.5" />
+
+    <!-- Classical Sculpted Lips -->
+    <path d="M253 306 C262 302 270 305 278 302 C287 305 278 312 270 312 C262 312 253 306 253 306 Z" fill="url(#marbleLight)" />
+    <path d="M255 308 C263 310 270 310 277 308 C284 310 277 318 270 318 C263 318 255 310 255 308 Z" fill="#B3ADA0" />
+    <path d="M260 318 C265 320 275 320 280 318 C275 324 265 324 260 318 Z" fill="url(#marbleShadow)" opacity="0.6" />
+
+    <!-- Nose Base & Philtrum -->
+    <path d="M263 268 C267 274 273 274 277 268 C283 273 280 280 270 280 C260 280 257 273 263 268 Z" fill="url(#marbleLight)" />
+    <circle cx="264" cy="275" r="2.2" fill="#5A554D" />
+    <circle cx="276" cy="275" r="2.2" fill="#423E37" />
+    <path d="M268 281 L268 302 M272 281 L272 302" stroke="#B8B2A6" stroke-width="1.2" stroke-linecap="round" />
+
+    <!-- Head / Cranium / Temples Structure -->
+    <path d="M185 180 C180 220 190 260 210 285 C220 240 225 210 225 180 Z" fill="url(#marbleMid)" />
+    <path d="M355 180 C360 220 350 260 330 285 C320 240 315 210 315 180 Z" fill="url(#marbleShadow)" />
+    <path d="M210 160 C210 130 240 120 270 120 C300 120 330 130 330 160 C330 210 210 210 210 160 Z" fill="url(#marbleLight)" />
+
+    <!-- Classical Greco-Roman Sculpted Hair Curls (Intricate Facets) -->
+    <!-- Top Hair Volume -->
+    <path d="M200 155 C190 125 215 95 245 90 C265 86 280 88 298 94 C328 102 345 125 342 155 C355 130 340 100 315 85 C285 70 245 70 220 85 C195 102 185 130 200 155 Z" fill="url(#marbleMid)" />
+    <path d="M235 88 C255 78 285 78 305 88 C320 96 332 110 335 128 C320 115 300 105 275 105 C250 105 235 112 225 122 C225 105 230 95 235 88 Z" fill="url(#marbleLight)" />
+
+    <!-- Left Curls -->
+    <path d="M192 145 C175 160 172 185 180 208 C185 220 195 232 205 238 C198 220 195 200 200 180 C202 165 200 152 192 145 Z" fill="url(#marbleMid)" />
+    <path d="M175 180 C165 195 168 215 178 228 C182 220 185 210 185 198 C185 188 180 182 175 180 Z" fill="url(#marbleDark)" />
+    <path d="M202 140 C190 152 188 172 195 188 C198 172 205 160 215 152 C210 145 205 142 202 140 Z" fill="url(#marbleLight)" />
+    <path d="M182 225 C178 245 185 265 198 275 C195 260 192 245 195 232 C190 230 185 228 182 225 Z" fill="url(#marbleShadow)" />
+
+    <!-- Right Curls -->
+    <path d="M348 145 C365 160 368 185 360 208 C355 220 345 232 335 238 C342 220 345 200 340 180 C338 165 340 152 348 145 Z" fill="url(#marbleShadow)" />
+    <path d="M365 180 C375 195 372 215 362 228 C358 220 355 210 355 198 C355 188 360 182 365 180 Z" fill="#2E2B26" />
+    <path d="M338 140 C350 152 352 172 345 188 C342 172 335 160 325 152 C330 145 335 142 338 140 Z" fill="url(#marbleDark)" />
+    <path d="M358 225 C362 245 355 265 342 275 C345 260 348 245 345 232 C350 230 355 228 358 225 Z" fill="#201E1A" />
+
+    <!-- Forehead Curls / Ringlets -->
+    <path d="M225 130 C235 120 250 120 258 132 C250 135 240 135 232 142 C228 138 225 134 225 130 Z" fill="url(#marbleLight)" />
+    <path d="M255 125 C265 115 280 115 288 128 C280 132 272 132 265 138 C260 132 258 128 255 125 Z" fill="url(#marbleLight)" />
+    <path d="M285 128 C295 118 310 120 316 134 C308 136 300 135 294 142 C290 136 288 132 285 128 Z" fill="url(#marbleMid)" />
+    <path d="M242 145 C250 140 260 140 265 148 C258 150 250 150 245 155 Z" fill="url(#marbleMid)" />
+    <path d="M272 145 C280 140 290 140 295 148 C288 150 280 150 275 155 Z" fill="url(#marbleMid)" />
+
+    <!-- Classical Laurel Crown / Futuristic Gold Filigree Headband -->
+    <g id="gold-headband" filter="url(#neonGlow)">
+      <!-- Band across hair -->
+      <path d="M196 150 C235 130 305 130 344 150 C340 157 305 138 235 138 C198 157 196 150 196 150 Z" fill="url(#goldBand)" />
+      <!-- Golden Laurel Leaves -->
+      <path d="M220 134 C215 122 225 118 232 126 C228 132 224 135 220 134 Z" fill="#FFD400" />
+      <path d="M245 128 C242 116 254 112 259 122 C254 126 249 128 245 128 Z" fill="#FFF59D" />
+      <path d="M275 126 C275 114 288 114 289 124 C284 127 279 128 275 126 Z" fill="#FFD400" />
+      <path d="M305 128 C306 116 318 118 317 127 C312 129 308 129 305 128 Z" fill="#E6BF00" />
+      <path d="M328 136 C332 125 342 128 339 137 C335 138 331 138 328 136 Z" fill="#E6BF00" />
+    </g>
+
+    <!-- Classical Ears (Peeking behind curls) -->
+    <path d="M198 220 C190 225 190 248 198 258 C202 248 202 232 198 220 Z" fill="url(#marbleMid)" />
+    <path d="M342 220 C350 225 350 248 342 258 C338 248 338 232 342 220 Z" fill="url(#marbleDark)" />
+
+    <!-- Brow & Nose Bridge (Cast in shadow behind glasses) -->
+    <path d="M230 190 C250 185 270 185 270 215 C270 185 290 185 310 190 C300 205 285 210 270 215 C255 210 240 205 230 190 Z" fill="url(#marbleMid)" />
+    <path d="M265 200 L275 200 L276 265 L264 265 Z" fill="url(#marbleLight)" opacity="0.9" />
+    <path d="M274 205 L282 215 L278 266 L273 266 Z" fill="url(#marbleShadow)" opacity="0.6" />
+
+    <!-- ============================================== -->
+    <!-- MODERN VIBRANT YELLOW SUNGLASSES (CYBER-LUXE) -->
+    <!-- ============================================== -->
+    <g id="yellow-sunglasses" filter="url(#neonGlow)">
+      <!-- Cast Shadow of sunglasses on marble face -->
+      <path d="M178 235 C205 258 245 262 270 242 C295 262 335 258 362 235 C355 265 305 278 270 262 C235 278 185 265 178 235 Z" fill="#151412" opacity="0.75" />
+
+      <!-- Back Frame Structure / Bridge -->
+      <path d="M180 202 C210 196 250 196 270 206 C290 196 330 196 360 202 C366 208 368 218 362 236 C350 258 305 258 278 234 C275 230 265 230 262 234 C235 258 190 258 178 236 C172 218 174 208 180 202 Z" fill="url(#sunglassesFrame)" stroke="#FFD400" stroke-width="2.2" />
+
+      <!-- Top Brow Bar (Yellow Titanium Bar) -->
+      <path d="M175 198 C220 188 320 188 365 198 L363 204 C320 194 220 194 177 204 Z" fill="#FFD400" />
+      <circle cx="270" cy="197" r="3.5" fill="#FFFFFF" />
+
+      <!-- Left Lens -->
+      <path d="M185 206 C215 202 254 202 260 220 C264 235 245 250 220 250 C195 250 182 235 185 206 Z" fill="url(#sunglassesGlass)" stroke="#FFF59D" stroke-width="1.2" />
+      <!-- Left Lens Reflection Specular -->
+      <path d="M192 210 C212 207 232 208 242 216 C230 228 208 238 192 242 C189 232 189 218 192 210 Z" fill="url(#sunglassesReflection)" opacity="0.75" />
+      <line x1="195" y1="214" x2="218" y2="242" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+      <line x1="205" y1="214" x2="228" y2="242" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" opacity="0.5" />
+
+      <!-- Center Bridge Accent -->
+      <path d="M260 214 C266 210 274 210 280 214 L278 222 C273 219 267 219 262 222 Z" fill="#FFD400" />
+
+      <!-- Right Lens -->
+      <path d="M355 206 C325 202 286 202 280 220 C276 235 295 250 320 250 C345 250 358 235 355 206 Z" fill="url(#sunglassesGlass)" stroke="#FFF59D" stroke-width="1.2" />
+      <!-- Right Lens Reflection Specular -->
+      <path d="M348 210 C328 207 308 208 298 216 C310 228 332 238 348 242 C351 232 351 218 348 210 Z" fill="url(#sunglassesReflection)" opacity="0.75" />
+      <line x1="335" y1="214" x2="312" y2="242" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+      <line x1="345" y1="214" x2="322" y2="242" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" opacity="0.5" />
+
+      <!-- Left Temple Wing / Arm -->
+      <path d="M178 205 L160 212 L162 218 L180 212 Z" fill="#E6BF00" />
+      <!-- Right Temple Wing / Arm -->
+      <path d="M362 205 L380 212 L378 218 L360 212 Z" fill="#E6BF00" />
+    </g>
+
+    <!-- Subtle Neoclassical Cheek Highlights -->
+    <ellipse cx="225" cy="265" rx="14" ry="7" fill="#FFFFFF" opacity="0.25" transform="rotate(-15 225 265)" />
+    <ellipse cx="315" cy="265" rx="14" ry="7" fill="#FFFFFF" opacity="0.15" transform="rotate(15 315 265)" />
+  </g>
+
+  <!-- FLOATING NEON PARTICLES / SPARKS -->
+  <g id="sparks" opacity="0.8">
+    <circle cx="160" cy="180" r="2.5" fill="#FFD400" filter="url(#neonGlow)" />
+    <circle cx="380" cy="190" r="3" fill="#FFD400" filter="url(#neonGlow)" />
+    <circle cx="210" cy="100" r="2" fill="#FFF59D" />
+    <circle cx="340" cy="110" r="2.5" fill="#FFD400" />
+    <circle cx="140" cy="320" r="2" fill="#FFD400" filter="url(#neonGlow)" />
+    <circle cx="400" cy="310" r="2" fill="#FFD400" filter="url(#neonGlow)" />
+  </g>
+</svg>

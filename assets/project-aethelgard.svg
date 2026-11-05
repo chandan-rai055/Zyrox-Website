@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="aethBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181D" />
+      <stop offset="50%" stop-color="#121215" />
+      <stop offset="100%" stop-color="#0A0A0B" />
+    </linearGradient>
+    <linearGradient id="aethGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD400" />
+      <stop offset="100%" stop-color="#997E00" />
+    </linearGradient>
+    <radialGradient id="aethGlow" cx="65%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FFD400" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#FFD400" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="500" rx="16" fill="url(#aethBg)" />
+  <rect width="800" height="500" rx="16" fill="url(#aethGlow)" />
+
+  <!-- Subtle Minimal Grid -->
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <line x1="80" y1="0" x2="80" y2="500" />
+    <line x1="240" y1="0" x2="240" y2="500" />
+    <line x1="400" y1="0" x2="400" y2="500" />
+    <line x1="560" y1="0" x2="560" y2="500" />
+    <line x1="720" y1="0" x2="720" y2="500" />
+    <line x1="0" y1="125" x2="800" y2="125" />
+    <line x1="0" y1="250" x2="800" y2="250" />
+    <line x1="0" y1="375" x2="800" y2="375" />
+  </g>
+
+  <!-- Luxury Ad Creative Frame 1 (Main Mockup) -->
+  <g transform="translate(100, 60)">
+    <!-- Main Card Body -->
+    <rect width="360" height="380" rx="14" fill="#131316" stroke="rgba(255,255,255,0.1)" stroke-width="1.2" />
+    
+    <!-- Hero Product Imagery Graphic -->
+    <rect x="20" y="20" width="320" height="230" rx="10" fill="#1B1B20" />
+    <!-- Luxury Vase & Architecture Abstract Art -->
+    <ellipse cx="180" cy="180" rx="70" ry="12" fill="#0A0A0B" opacity="0.6" />
+    <path d="M150 170 C145 130 165 95 180 80 C195 95 215 130 210 170 Z" fill="#2A2A32" stroke="#FFD400" stroke-width="1" />
+    <path d="M165 80 L195 80 L190 70 L170 70 Z" fill="#FFD400" />
+    <ellipse cx="180" cy="125" rx="18" ry="4" fill="#FFD400" opacity="0.25" />
+    
+    <!-- Meta Ads Campaign Tag -->
+    <rect x="36" y="36" width="100" height="24" rx="12" fill="#0A0A0B" fill-opacity="0.8" stroke="rgba(255,255,255,0.12)" />
+    <circle cx="48" cy="48" r="4" fill="#3DDC97" />
+    <text x="58" y="52" fill="#F5F3EE" font-family="'Inter', sans-serif" font-size="10" font-weight="600">LIVE AD • 4.8x</text>
+
+    <!-- Ad Copy Simulation Lines -->
+    <text x="24" y="280" fill="#F5F3EE" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Autumn Living Collection '26</text>
+    <text x="24" y="302" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="11">Architectural furniture handcrafted in Nordic marble.</text>
+
+    <!-- Conversion Metric Bar -->
+    <rect x="24" y="328" width="312" height="34" rx="8" fill="#1B1B20" stroke="rgba(255,255,255,0.06)" />
+    <text x="36" y="350" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="11">CPA: $14.20</text>
+    <text x="240" y="350" fill="#3DDC97" font-family="'Inter', sans-serif" font-size="11" font-weight="600">+380% Conv. Val</text>
+  </g>
+
+  <!-- Floating Stats Card (Overlapping) -->
+  <g transform="translate(430, 110)">
+    <rect width="270" height="260" rx="14" fill="#1B1B20" fill-opacity="0.95" stroke="#FFD400" stroke-width="1.5" filter="drop-shadow(0 16px 32px rgba(0,0,0,0.6))" />
+    
+    <text x="26" y="44" fill="#6B6B73" font-family="'Inter', sans-serif" font-size="11" font-weight="600" letter-spacing="1">PAID MEDIA PERFORMANCE</text>
+    <text x="26" y="85" fill="#FFD400" font-family="'Syne', sans-serif" font-size="36" font-weight="800">4.82x</text>
+    <text x="145" y="82" fill="#3DDC97" font-family="'Inter', sans-serif" font-size="13" font-weight="700">▲ Blended ROAS</text>
+
+    <!-- Mini chart sparkline -->
+    <path d="M26 180 L60 165 L100 172 L140 140 L180 148 L220 115 L245 95" fill="none" stroke="#FFD400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M26 180 L60 165 L100 172 L140 140 L180 148 L220 115 L245 95 L245 200 L26 200 Z" fill="url(#aethGlow)" opacity="0.4" />
+    
+    <circle cx="245" cy="95" r="5" fill="#FFD400" />
+    <circle cx="245" cy="95" r="9" stroke="#FFD400" stroke-width="1.5" opacity="0.6" />
+
+    <!-- Meta / TikTok Pill badges -->
+    <rect x="26" y="215" width="85" height="24" rx="6" fill="#131316" stroke="rgba(255,255,255,0.08)" />
+    <text x="36" y="231" fill="#F5F3EE" font-family="'Inter', sans-serif" font-size="10" font-weight="500">Meta Advantage+</text>
+    <rect x="120" y="215" width="85" height="24" rx="6" fill="#131316" stroke="rgba(255,255,255,0.08)" />
+    <text x="130" y="231" fill="#F5F3EE" font-family="'Inter', sans-serif" font-size="10" font-weight="500">Dynamic Retarget</text>
+  </g>
+</svg>
