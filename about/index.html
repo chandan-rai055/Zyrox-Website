@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>About Us | Zyrox Media - Premier Digital Marketing Agency</title>
+  <meta name="description" content="Discover Zyrox Media. Founded by Chandan Rai, we engineer digital growth, high-ROAS Meta advertising, cinematic content shoots, and custom web architecture.">
+
+  <!-- Google Fonts: Outfit & Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v3 with Plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container": "#FFD60A",
+            primary: "#FFD60A",
+            "primary-fixed": "#FFD60A",
+            "primary-fixed-dim": "#E6BF00",
+            surface: "#111214",
+            "surface-container": "#14171C",
+            "surface-container-high": "#1E2229",
+            "surface-container-low": "#101113",
+            "surface-container-lowest": "#08090B",
+            background: "#08090B",
+            "on-surface": "#F4F4F2",
+            "on-surface-variant": "#A9A9AD",
+            "outline-variant": "rgba(255, 214, 10, 0.15)"
+          },
+          fontFamily: {
+            headline: ["Outfit", "sans-serif"],
+            body: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Global Brand Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    :root {
+      --y: #FFD60A;
+      --bg: #08090B;
+      --card-bg: #14171C;
+      --elevated-bg: #1E2229;
+      --text-main: #F4F4F2;
+      --text-muted: #A9A9AD;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      padding-top: 68px;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    .zx-about-card {
+      background: #14171C;
+      border: 1px solid rgba(255, 214, 10, 0.14);
+      border-radius: 1.25rem;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .zx-about-card:hover {
+      border-color: rgba(255, 214, 10, 0.55);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px -10px rgba(255, 214, 10, 0.16);
+    }
+
+    .tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: #1B1C20;
+      border: 1px solid rgba(255, 214, 10, 0.22);
+      color: var(--y);
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .tag-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--y);
+      box-shadow: 0 0 8px var(--y);
+    }
+
+    .custom-glow {
+      box-shadow: 0 0 70px -10px rgba(255, 214, 10, 0.22);
+    }
+
+    .btn-slide-hover:hover .slide-arrow {
+      transform: translateX(4px);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-primary-container selection:text-[#08090B] min-h-screen flex flex-col">
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       01. NAVBAR (Brand Header with Clean URLs)
+       ======================================================================== -->
+  <header class="navbar" role="banner">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="/" class="brand-logo" aria-label="Zyrox Media Home">
+        <img src="/assets/logo2.png" alt="Zyrox Media - Digital Marketing Agency" class="header-logo-img" width="175" height="42">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/projects" class="nav-link">Projects</a>
+        <a href="/about" class="nav-link active">About Us</a>
+        <a href="/contact" class="nav-link">Contact Us</a>
+      </nav>
+
+      <!-- CTA Button Right -->
+      <div class="nav-cta-btn">
+        <a href="/contact" class="btn-accent nav-btn-get-started" aria-label="Get Started with Zyrox Media">
+          <span>Get Started</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" aria-hidden="true">
+    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="/services" class="mobile-nav-link">Services</a>
+      <a href="/projects" class="mobile-nav-link">Projects</a>
+      <a href="/about" class="mobile-nav-link active">About Us</a>
+      <a href="/contact" class="mobile-nav-link">Contact Us</a>
+    </nav>
+    <a href="/contact" class="btn-accent nav-btn-get-started" style="align-self: flex-start; text-decoration: none; margin-top: 24px;">
+      <span>Get Started</span>
+      <span class="btn-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <!-- ========================================================================
+       MAIN CANVAS
+       ======================================================================== -->
+  <main class="flex-1 w-full max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20 flex flex-col gap-24">
+
+    <!-- 1. HERO SECTION -->
+    <section class="flex flex-col gap-6 max-w-4xl relative">
+      <div class="absolute -top-24 -left-20 w-[550px] h-[300px] bg-primary-container/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+      <div class="tag-badge self-start">
+        <span class="dot"></span>
+        <span>THE AGENCY BEHIND THE GROWTH</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-headline text-[#F4F4F2] tracking-tight leading-[1.14]">
+        Engineering Digital Authority for Visionary Brands<span class="text-primary-container">.</span>
+      </h1>
+
+      <p class="text-base sm:text-lg md:text-xl text-on-surface-variant leading-relaxed">
+        Zyrox Media is an architecturally disciplined digital marketing studio. We dismantle fragmented workflows and install synchronized growth engines—blending cinema-grade creative production with high-ROAS performance advertising, full-funnel SEO dominance, and high-conversion web development.
+      </p>
+
+      <!-- Agency Metrics Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 mt-2 border-t border-[rgba(255,214,10,0.14)]">
+        <div class="flex flex-col p-4 rounded-xl bg-[#14171C] border border-[rgba(255,214,10,0.12)]">
+          <span class="text-3xl md:text-4xl font-bold font-headline text-primary-container">100%</span>
+          <span class="text-xs sm:text-sm text-on-surface-variant mt-1 font-medium">In-House Studio</span>
+        </div>
+        <div class="flex flex-col p-4 rounded-xl bg-[#14171C] border border-[rgba(255,214,10,0.12)]">
+          <span class="text-3xl md:text-4xl font-bold font-headline text-primary-container">4.8x</span>
+          <span class="text-xs sm:text-sm text-on-surface-variant mt-1 font-medium">Blended ROAS Average</span>
+        </div>
+        <div class="flex flex-col p-4 rounded-xl bg-[#14171C] border border-[rgba(255,214,10,0.12)]">
+          <span class="text-3xl md:text-4xl font-bold font-headline text-primary-container">98%</span>
+          <span class="text-xs sm:text-sm text-on-surface-variant mt-1 font-medium">Retainer Retention</span>
+        </div>
+        <div class="flex flex-col p-4 rounded-xl bg-[#14171C] border border-[rgba(255,214,10,0.12)]">
+          <span class="text-3xl md:text-4xl font-bold font-headline text-primary-container">&lt; 2 Hrs</span>
+          <span class="text-xs sm:text-sm text-on-surface-variant mt-1 font-medium">Client Response SLA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FOUNDER STORY & PHILOSOPHY -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8 border-t border-[rgba(255,214,10,0.1)]">
+      <div class="lg:col-span-5 flex flex-col gap-6">
+        <div class="relative rounded-2xl overflow-hidden bg-[#14171C] border border-[rgba(255,214,10,0.2)] p-2">
+          <div class="aspect-square rounded-xl overflow-hidden relative bg-[#1E2229]">
+            <img class="w-full h-full object-cover" src="/Image/photo-1534528741775-53994a69daeb.avif" alt="Chandan Rai - Founder of Zyrox Media">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="tag-badge text-[10px] mb-2">FOUNDER &amp; GROWTH DIRECTOR</span>
+              <h3 class="text-2xl font-bold font-headline text-[#F4F4F2]">Chandan Rai</h3>
+              <p class="text-xs text-primary-container font-medium mt-1">Leading digital marketing architecture &amp; commercial strategy</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a class="flex-1 inline-flex items-center justify-center gap-2 p-3.5 rounded-xl bg-[#14171C] border border-[rgba(255,214,10,0.2)] hover:border-primary-container text-xs font-bold font-headline text-[#F4F4F2] hover:text-primary-container transition-all" href="tel:+916386706276">
+            <span class="material-symbols-outlined text-base" data-icon="call">call</span>
+            <span>+91 6386706276</span>
+          </a>
+          <a class="flex-1 inline-flex items-center justify-center gap-2 p-3.5 rounded-xl bg-[#14171C] border border-[rgba(255,214,10,0.2)] hover:border-primary-container text-xs font-bold font-headline text-[#F4F4F2] hover:text-primary-container transition-all" href="mailto:raichandan967@gmail.com">
+            <span class="material-symbols-outlined text-base" data-icon="mail">mail</span>
+            <span>raichandan967@gmail.com</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 flex flex-col gap-6">
+        <div class="tag-badge self-start">
+          <span class="dot"></span>
+          <span>MISSION &amp; VALUES</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-headline text-[#F4F4F2] leading-snug">
+          "We founded Zyrox Media because brands were exhausted from managing five disconnected agencies."
+        </h2>
+        <div class="space-y-4 text-base text-on-surface-variant leading-relaxed">
+          <p>
+            Most modern marketing fails not due to lack of talent, but lack of cohesion. An agency shoots videos without understanding paid ad hooks; an SEO firm produces content disconnected from customer psychology; and web developers build pages that look great but don't convert.
+          </p>
+          <p>
+            At Zyrox Media, we operate as a unified, full-stack growth laboratory. From Lucknow to global enterprise clients, our team takes complete ownership of your visual prestige, organic visibility, and acquisition numbers. We replace ambiguity with cloud-synced tracking sheets, verified ROAS attributions, and direct partner access.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. OUR FOUR CORE PILLARS -->
+    <section class="flex flex-col gap-10">
+      <div class="flex flex-col gap-2">
+        <div class="tag-badge self-start mb-2">
+          <span class="dot"></span>
+          <span>SYSTEMATIC ADVANTAGE</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-headline text-[#F4F4F2]">
+          How We Deliver Unmatched Value<span class="text-primary-container">.</span>
+        </h2>
+        <p class="text-base text-on-surface-variant max-w-2xl leading-relaxed">
+          Our methodology is constructed to ensure your investment returns compound month after month.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="zx-about-card p-6 flex flex-col justify-between gap-4">
+          <div class="w-12 h-12 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+            <span class="material-symbols-outlined text-2xl" data-icon="palette">palette</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold font-headline text-[#F4F4F2] mb-2">Aesthetic Authority</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Cinema-grade video, bespoke brand identities, and editorial carousels that instantly elevate perceived product value.
+            </p>
+          </div>
+        </div>
+
+        <div class="zx-about-card p-6 flex flex-col justify-between gap-4">
+          <div class="w-12 h-12 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+            <span class="material-symbols-outlined text-2xl" data-icon="query_stats">query_stats</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold font-headline text-[#F4F4F2] mb-2">Empirical Attribution</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Every marketing rupee is measured. Server-side CAPI telemetry, real CPA benchmarks, and verifiable return on ad spend.
+            </p>
+          </div>
+        </div>
+
+        <div class="zx-about-card p-6 flex flex-col justify-between gap-4">
+          <div class="w-12 h-12 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+            <span class="material-symbols-outlined text-2xl" data-icon="table_chart">table_chart</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold font-headline text-[#F4F4F2] mb-2">Live Tracking Sheets</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Zero guesswork. Transparent Google Cloud trackers monitor every post, creative review, and live publication milestone.
+            </p>
+          </div>
+        </div>
+
+        <div class="zx-about-card p-6 flex flex-col justify-between gap-4">
+          <div class="w-12 h-12 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+            <span class="material-symbols-outlined text-2xl" data-icon="speed">speed</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold font-headline text-[#F4F4F2] mb-2">Agile Delivery</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+              Structured 14-day execution cycles eliminate delays and accelerate your commercial market expansion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CTA BANNER -->
+    <section class="bg-primary-container rounded-3xl p-8 md:p-16 text-[#08090B] flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden custom-glow">
+      <div class="flex flex-col gap-4 max-w-2xl z-10">
+        <span class="text-xs font-headline font-bold tracking-widest uppercase bg-[#08090B] text-primary-container self-start px-3 py-1 rounded-full">
+          START YOUR GROWTH JOURNEY
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-headline leading-tight">
+          Ready to Partner with Zyrox Media?
+        </h2>
+        <p class="text-base sm:text-lg opacity-90 font-medium leading-relaxed">
+          Schedule a direct strategy roadmap call with our founder Chandan Rai. We examine your current digital funnel and identify high-leverage opportunities.
+        </p>
+      </div>
+
+      <div class="z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+        <a class="px-8 py-4 rounded-full bg-[#08090B] text-[#F4F4F2] hover:text-primary-container font-headline text-base font-bold transition-all shadow-xl hover:scale-105 text-center btn-slide-hover" href="/contact">
+          <span>Let's Talk</span>
+          <span class="slide-arrow transition-transform">→</span>
+        </a>
+      </div>
+
+      <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-white/20 blur-3xl pointer-events-none"></div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       05. FOOTER (Brand Footer with Clean URLs)
+       ======================================================================== -->
+  <footer class="ft" id="sd-footer">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <symbol id="ft-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></symbol>
+      <symbol id="ft-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="ft-yt" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></symbol>
+      <symbol id="ft-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="ft-ph" viewBox="0 0 24 24"><path d="M22 16.900v3a2 2 0 0 1-2.200 2 19.800 19.800 0 0 1-8.600-3.100 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.100 4.200 2 2 0 0 1 4.100 2h3a2 2 0 0 1 2 1.700c.1 1 .4 1.900.7 2.800a2 2 0 0 1-.5 2.100L8.100 9.900a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.9.3 1.800.6 2.800.7a2 2 0 0 1 1.700 2z"/></symbol>
+      <symbol id="ft-ml" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.970 5.700a2 2 0 0 1-2.060 0L2 7"/></symbol>
+      <symbol id="ft-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    </defs></svg>
+
+    <!-- Marquee Ticker Band -->
+    <div class="ft-mq" aria-hidden="true"><div>
+      <span>Social Media</span><span>Content Shoots</span><span>Meta Ads</span><span>SEO</span><span>Website Design</span><span>Branding</span><span>Blogs</span><span>Growth</span>
+      <span>Social Media</span><span>Content Shoots</span><span>Meta Ads</span><span>SEO</span><span>Website Design</span><span>Branding</span><span>Blogs</span><span>Growth</span>
+    </div></div>
+
+    <div class="ft-wrap">
+      <div class="ft-grid">
+        <div class="ft-rv">
+          <a class="ft-logo" href="/" aria-label="Zyrox Media home">
+            <img src="/assets/logo2.png" alt="Zyrox Media - Digital Marketing Agency" width="260" height="75">
+          </a>
+          <p class="ft-about">Architecturally disciplined digital marketing agency engineering exponential organic and paid acquisition for ambitious global brands.</p>
+          <div class="ft-soc">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ft-ic"><use href="#ft-ig"/></svg></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ft-ic"><use href="#ft-in"/></svg></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg class="ft-ic"><use href="#ft-yt"/></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="ft-ic"><use href="#ft-fb"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ft-rv" style="--i:1"><h4>Quick Links</h4>
+          <ul>
+            <li><a class="ft-lk" href="/">Home</a></li>
+            <li><a class="ft-lk" href="/services">Services</a></li>
+            <li><a class="ft-lk" href="/projects">Projects</a></li>
+            <li><a class="ft-lk cur" href="/about">About Us</a></li>
+            <li><a class="ft-lk" href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-rv" style="--i:2"><h4>Core Services</h4>
+          <ul>
+            <li><a class="ft-lk" href="/services#services">Social Media Management</a></li>
+            <li><a class="ft-lk" href="/services#services">Content Creation &amp; Shoots</a></li>
+            <li><a class="ft-lk" href="/services#services">Graphic Design &amp; Assets</a></li>
+            <li><a class="ft-lk" href="/services#services">Website Development</a></li>
+            <li><a class="ft-lk" href="/services#services">SEO &amp; Organic Rankings</a></li>
+            <li><a class="ft-lk" href="/services#services">High-ROAS Meta Ads</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-rv" style="--i:3"><h4>Contact Studio</h4>
+          <div class="ft-ct">
+            <strong>Founder: Chandan Rai</strong>
+            <a href="tel:+916386706276"><b><svg class="ft-ic"><use href="#ft-ph"/></svg></b>+91 6386706276</a>
+            <a href="mailto:raichandan967@gmail.com"><b><svg class="ft-ic"><use href="#ft-ml"/></svg></b>raichandan967@gmail.com</a>
+            <div class="ft-av"><i></i>Available Mon - Sat for global inquiries.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ft-bot ft-rv">
+        <span>© <span id="ft-yr">2026</span> Zyrox Media. All rights reserved. Founded by Chandan Rai • +91 6386706276 • raichandan967@gmail.com</span>
+        <nav>
+          <a class="ft-lk" href="/">Privacy Policy</a>
+          <a class="ft-lk" href="/">Terms of Service</a>
+          <button class="ft-top" type="button" id="ft-top" style="border:0;font-family:inherit;background:none;cursor:pointer;"><svg class="ft-ic"><use href="#ft-up"/></svg>Back to top</button>
+        </nav>
+      </div>
+      <div class="ft-big" aria-hidden="true">ZYROX</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+      if (mobileToggle && mobileOverlay) {
+        mobileToggle.addEventListener('click', () => {
+          const isOpen = mobileToggle.classList.toggle('active');
+          mobileOverlay.classList.toggle('open');
+          mobileToggle.setAttribute('aria-expanded', isOpen);
+          mobileOverlay.setAttribute('aria-hidden', !isOpen);
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            mobileOverlay.classList.remove('open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileOverlay.setAttribute('aria-hidden', 'true');
+          });
+        });
+      }
+
+      const ftYr = document.getElementById('ft-yr');
+      if (ftYr) ftYr.textContent = new Date().getFullYear();
+
+      const topBtn = document.getElementById('ft-top');
+      if (topBtn) {
+        topBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      const footer = document.getElementById('sd-footer');
+      if (footer) {
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver((entries, observer) => {
+            if (entries[0].isIntersecting) {
+              footer.classList.add('on');
+              observer.disconnect();
+            }
+          }, { threshold: 0.1 }).observe(footer);
+        } else {
+          footer.classList.add('on');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

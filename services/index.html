@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Services | Zyrox Media - Premier Digital Marketing Agency</title>
+  <meta name="description" content="Explore full-stack digital marketing capabilities by Zyrox Media. High-ROAS Meta Ads, viral content shoots, SEO dominance, bespoke web development, and 100% transparent live tracking.">
+
+  <!-- Google Fonts: Outfit for display/headings, Manrope for editorial body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v3 with Plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container": "#FFD60A",
+            primary: "#FFD60A",
+            "primary-fixed": "#FFD60A",
+            "primary-fixed-dim": "#E6BF00",
+            surface: "#111214",
+            "surface-container": "#14171C",
+            "surface-container-high": "#1E2229",
+            "surface-container-low": "#101113",
+            "surface-container-lowest": "#08090B",
+            background: "#08090B",
+            "on-surface": "#F4F4F2",
+            "on-surface-variant": "#A9A9AD",
+            "outline-variant": "rgba(255, 214, 10, 0.15)"
+          },
+          fontFamily: {
+            headline: ["Outfit", "sans-serif"],
+            body: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Global Brand Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Custom Styling Overrides for Services Page */
+    :root {
+      --y: #FFD60A;
+      --bg: #08090B;
+      --card-bg: #14171C;
+      --elevated-bg: #1E2229;
+      --text-main: #F4F4F2;
+      --text-muted: #A9A9AD;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      padding-top: 68px; /* Offset for fixed header */
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    /* Black and Yellow Block Card Hover */
+    .zx-service-card {
+      background: #14171C;
+      border: 1px solid rgba(255, 214, 10, 0.12);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .zx-service-card:hover {
+      border-color: rgba(255, 214, 10, 0.55);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px -10px rgba(255, 214, 10, 0.16);
+    }
+
+    .zx-service-card:hover .icon-box {
+      background-color: var(--y);
+      color: #08090B;
+      border-color: var(--y);
+      transform: scale(1.05);
+    }
+
+    .icon-box {
+      transition: all 0.3s ease;
+    }
+
+    /* Process Card Hover */
+    .zx-process-card {
+      background: #14171C;
+      border: 1px solid rgba(255, 214, 10, 0.12);
+      transition: all 0.3s ease;
+    }
+
+    .zx-process-card:hover {
+      border-color: var(--y);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -8px rgba(255, 214, 10, 0.18);
+    }
+
+    .zx-process-card:hover .step-num {
+      color: var(--y);
+      opacity: 1;
+    }
+
+    /* Glow Effects */
+    .custom-glow {
+      box-shadow: 0 0 70px -10px rgba(255, 214, 10, 0.22);
+    }
+
+    .ambient-elevation {
+      box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.85);
+    }
+
+    /* FAQ Item Accordion */
+    .zx-faq-card {
+      background: #14171C;
+      border: 1px solid rgba(255, 214, 10, 0.12);
+      border-radius: 1rem;
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .zx-faq-card:hover {
+      border-color: rgba(255, 214, 10, 0.35);
+    }
+
+    .zx-faq-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      color: inherit;
+    }
+
+    .zx-faq-answer {
+      padding: 0 2rem 1.5rem 4.25rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Pill Badges */
+    .tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: #1B1C20;
+      border: 1px solid rgba(255, 214, 10, 0.22);
+      color: var(--y);
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .tag-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--y);
+      box-shadow: 0 0 8px var(--y);
+    }
+
+    /* Button slide */
+    .btn-slide-hover:hover .slide-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Smooth anchor offset */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-primary-container selection:text-[#08090B]">
+
+  <!-- Noise Overlay for Cinematic Texture -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       01. NAVBAR (Brand Header matching index.html)
+       ======================================================================== -->
+  <header class="navbar" role="banner">
+    <div class="container nav-container">
+      <!-- Brand Logo (Zyrox Media logo2) -->
+      <a href="/" class="brand-logo" aria-label="Zyrox Media Home">
+        <img src="assets/logo2.png" alt="Zyrox Media - Digital Marketing Agency" class="header-logo-img" width="175" height="42">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/services" class="nav-link active">Services</a>
+        <a href="/projects" class="nav-link">Projects</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#faqs" class="nav-link">FAQs</a>
+        <a href="/#why-us" class="nav-link">About Us</a>
+        <a href="/contact" class="nav-link">Contact Us</a>
+      </nav>
+
+      <!-- CTA Button Right (Get Started ->) -->
+      <div class="nav-cta-btn">
+        <a href="/contact" class="btn-accent nav-btn-get-started" aria-label="Get Started with Zyrox Media">
+          <span>Get Started</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" aria-hidden="true">
+    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="/services" class="mobile-nav-link active">Services</a>
+      <a href="/projects" class="mobile-nav-link">Projects</a>
+      <a href="#process" class="mobile-nav-link">Process</a>
+      <a href="#faqs" class="mobile-nav-link">FAQs</a>
+      <a href="/#why-us" class="mobile-nav-link">About Us</a>
+      <a href="/contact" class="mobile-nav-link">Contact Us</a>
+    </nav>
+    <a href="/contact" class="btn-accent nav-btn-get-started" style="align-self: flex-start; text-decoration: none; margin-top: 24px;">
+      <span>Get Started</span>
+      <span class="btn-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <!-- ========================================================================
+       02. HERO BANNER
+       ======================================================================== -->
+  <section class="relative pt-16 pb-20 md:pt-28 md:pb-32 overflow-hidden border-b border-[rgba(255,214,10,0.1)]">
+    <!-- Glow Spotlight Behind Hero -->
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-primary-container/10 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center">
+      <!-- Eyebrow Pill -->
+      <div class="tag-badge mb-8">
+        <span class="dot"></span>
+        <span>OUR CAPABILITIES &amp; EXPERTISE</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-headline text-[#F4F4F2] max-w-5xl mx-auto tracking-tight mb-8 leading-[1.12]">
+        Digital Marketing Services to Grow Your Business Online<span class="text-primary-container">.</span>
+      </h1>
+
+      <!-- Subtitle Description -->
+      <p class="text-base sm:text-lg md:text-xl text-on-surface-variant max-w-3xl mx-auto leading-relaxed mb-12">
+        As a full-service digital marketing agency, Zyrox Media builds cohesive, revenue-focused online strategies. We seamlessly engineer organic audience growth, high-converting performance advertising, search engine dominance, and custom digital experiences that scale your market presence.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-primary-container text-[#08090B] font-bold font-headline text-base px-8 py-4 rounded-full hover:bg-primary-fixed-dim transition-all shadow-[0_4px_22px_rgba(255,214,10,0.35)] btn-slide-hover" href="#services">
+          <span>Explore Capabilities</span>
+          <span class="slide-arrow transition-transform">→</span>
+        </a>
+        <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#14171C] text-[#F4F4F2] font-semibold font-headline text-base border border-[rgba(255,214,10,0.22)] hover:border-primary-container px-8 py-4 rounded-full transition-all hover:bg-[#1E2229]" href="#audit-cta">
+          <span>Schedule Diagnostic</span>
+        </a>
+      </div>
+
+      <!-- Trust Badges Strip (Black & Yellow Styling) -->
+      <div class="mt-20 pt-10 border-t border-[rgba(255,214,10,0.12)] grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+        <div class="flex items-center gap-3.5 p-3 rounded-xl bg-[#14171C]/50 border border-[rgba(255,214,10,0.08)]">
+          <span class="material-symbols-outlined text-primary-container text-2xl" data-icon="verified">verified</span>
+          <div>
+            <div class="text-[#F4F4F2] font-headline text-sm font-bold">100% Digital Focus</div>
+            <div class="text-on-surface-variant text-xs">No Offline Distractions</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3.5 p-3 rounded-xl bg-[#14171C]/50 border border-[rgba(255,214,10,0.08)]">
+          <span class="material-symbols-outlined text-primary-container text-2xl" data-icon="trending_up">trending_up</span>
+          <div>
+            <div class="text-[#F4F4F2] font-headline text-sm font-bold">Data-Driven ROAS</div>
+            <div class="text-on-surface-variant text-xs">Full Funnel Conversion</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3.5 p-3 rounded-xl bg-[#14171C]/50 border border-[rgba(255,214,10,0.08)]">
+          <span class="material-symbols-outlined text-primary-container text-2xl" data-icon="speed">speed</span>
+          <div>
+            <div class="text-[#F4F4F2] font-headline text-sm font-bold">Agile Delivery</div>
+            <div class="text-on-surface-variant text-xs">Bi-Weekly Sprints &amp; Audits</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3.5 p-3 rounded-xl bg-[#14171C]/50 border border-[rgba(255,214,10,0.08)]">
+          <span class="material-symbols-outlined text-primary-container text-2xl" data-icon="analytics">analytics</span>
+          <div>
+            <div class="text-[#F4F4F2] font-headline text-sm font-bold">Transparent Sheets</div>
+            <div class="text-on-surface-variant text-xs">Real-Time Work Tracking</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       03. 8 COMPREHENSIVE SERVICE SECTIONS
+       ======================================================================== -->
+  <section class="py-20 md:py-32 max-w-7xl mx-auto px-6 md:px-12" id="services">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="tag-badge mb-4">
+        <span class="dot"></span>
+        <span>ARCHITECTED FOR EXPANSION</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-headline text-[#F4F4F2] tracking-tight">
+        Engineered Digital Solutions<span class="text-primary-container">.</span>
+      </h2>
+      <p class="text-base sm:text-lg text-on-surface-variant mt-4 leading-relaxed">
+        Every modern brand requires synchronized online mechanics. We dismantle fragmented workflows and install high-octane growth engines tailored for scalable conversion.
+      </p>
+    </div>
+
+    <!-- Grid of 8 Services in Black & Gold Blocks -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- 1. Social Media Management -->
+      <div class="zx-service-card p-8 md:p-10 rounded-2xl flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="icon-box w-14 h-14 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-3xl" data-icon="share">share</span>
+            </div>
+            <span class="tag-badge text-[11px] py-1 px-3">01 / ENGAGEMENT</span>
+          </div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-4">Social Media Management</h3>
+          <p class="text-base text-on-surface-variant mb-6 leading-relaxed">
+            Transform passive followers into ardent brand advocates across LinkedIn, Instagram, and X. We cultivate distinct digital voices through structured narrative cadence, authentic community interactions, and real-time cultural monitoring.
+          </p>
+          <ul class="space-y-3 mb-8 text-sm text-[#E3E2E5]">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Comprehensive profile optimization &amp; bio architecture</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Multi-platform strategic content planning &amp; narrative roadmaps</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Automated posting, time-slot scheduling &amp; peak velocity drops</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Dedicated community management, DM triage &amp; outbound networking</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Continuous trend monitoring &amp; cultural meme adaptation</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Deep monthly analytical debriefs &amp; audience cohort shifts</span>
+            </li>
+          </ul>
+        </div>
+        <a class="inline-flex items-center justify-between w-full bg-[#1E2229] hover:bg-primary-container text-[#F4F4F2] hover:text-[#08090B] font-bold font-headline text-sm px-6 py-4 rounded-xl border border-[rgba(255,214,10,0.18)] hover:border-transparent transition-all group-hover:border-primary-container/40 btn-slide-hover" href="#audit-cta">
+          <span>Get Started with Social Media</span>
+          <span class="material-symbols-outlined text-xl slide-arrow transition-transform" data-icon="arrow_forward">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- 2. Content Creation, Shoot & Editing -->
+      <div class="zx-service-card p-8 md:p-10 rounded-2xl flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="icon-box w-14 h-14 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-3xl" data-icon="videocam">videocam</span>
+            </div>
+            <span class="tag-badge text-[11px] py-1 px-3">02 / PRODUCTION</span>
+          </div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-4">Content Creation, Shoot &amp; Editing</h3>
+          <p class="text-base text-on-surface-variant mb-6 leading-relaxed">
+            High-fidelity video and photography designed for digital distribution. Our production crews architect short-form reels and commercial showcases with cinema-grade color grading, precision pacing, and hooks crafted to arrest infinite scrolling.
+          </p>
+          <ul class="space-y-3 mb-8 text-sm text-[#E3E2E5]">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Professional on-location photography &amp; high-definition video shoots</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>High-converting viral Reels, TikTok, and YouTube Shorts sequencing</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Brand documentary and commercial product spotlight videos</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Kinetic animated typography &amp; closed subtitle authoring</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Bespoke cinematic color correction, LUT styling, &amp; sound design</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Conversion-focused storyboards and narrative copywriting scripts</span>
+            </li>
+          </ul>
+        </div>
+        <a class="inline-flex items-center justify-between w-full bg-[#1E2229] hover:bg-primary-container text-[#F4F4F2] hover:text-[#08090B] font-bold font-headline text-sm px-6 py-4 rounded-xl border border-[rgba(255,214,10,0.18)] hover:border-transparent transition-all group-hover:border-primary-container/40 btn-slide-hover" href="#audit-cta">
+          <span>Get Started with Content Shoots</span>
+          <span class="material-symbols-outlined text-xl slide-arrow transition-transform" data-icon="arrow_forward">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- 3. Graphic Design -->
+      <div class="zx-service-card p-8 md:p-10 rounded-2xl flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="icon-box w-14 h-14 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-3xl" data-icon="palette">palette</span>
+            </div>
+            <span class="tag-badge text-[11px] py-1 px-3">03 / CREATIVE ASSETS</span>
+          </div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-4">Graphic Design</h3>
+          <p class="text-base text-on-surface-variant mb-6 leading-relaxed">
+            Distinguished visual assets tailored exclusively for digital platforms. We craft bespoke identity tokens, dynamic carousels, and high-impact digital campaign materials that solidify your aesthetic authority and enhance message retention.
+          </p>
+          <ul class="space-y-3 mb-8 text-sm text-[#E3E2E5]">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Modular social media post design libraries &amp; Figma UI kits</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Multi-slide thought leadership carousels with fluid swipe continuity</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Engaging Instagram Story systems and interactive highlight cards</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Festival, seasonal, and flash-sale digital campaign banners</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>High-converting paid advertising static &amp; animated graphics</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Vector brand mark refresh &amp; digital iconography kits</span>
+            </li>
+          </ul>
+        </div>
+        <a class="inline-flex items-center justify-between w-full bg-[#1E2229] hover:bg-primary-container text-[#F4F4F2] hover:text-[#08090B] font-bold font-headline text-sm px-6 py-4 rounded-xl border border-[rgba(255,214,10,0.18)] hover:border-transparent transition-all group-hover:border-primary-container/40 btn-slide-hover" href="#audit-cta">
+          <span>Get Started with Graphic Design</span>
+          <span class="material-symbols-outlined text-xl slide-arrow transition-transform" data-icon="arrow_forward">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- 4. Website Design & Development -->
+      <div class="zx-service-card p-8 md:p-10 rounded-2xl flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="icon-box w-14 h-14 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-3xl" data-icon="code">code</span>
+            </div>
+            <span class="tag-badge text-[11px] py-1 px-3">04 / ARCHITECTURE</span>
+          </div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-4">Website Design &amp; Development</h3>
+          <p class="text-base text-on-surface-variant mb-6 leading-relaxed">
+            Ultra-performant, conversion-obsessed web experiences designed to turn inbound digital traffic into enterprise revenue. Built with modern, clean tech stacks for instantaneous load times and impeccable responsiveness across devices.
+          </p>
+          <ul class="space-y-3 mb-8 text-sm text-[#E3E2E5]">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Fluid mobile-first UI/UX wireframing &amp; bespoke prototyping</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Sub-second page speeds, Core Web Vitals perfection &amp; asset CDN routing</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Conversion-optimized lead capture forms with CRM webhook integrations</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>One-tap WhatsApp chat links and direct telephonic click triggers</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Interactive Google Maps geolocation embeds &amp; localized schema</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Enterprise SSL, DDoS resistance, and zero-compromise security hardening</span>
+            </li>
+          </ul>
+        </div>
+        <a class="inline-flex items-center justify-between w-full bg-[#1E2229] hover:bg-primary-container text-[#F4F4F2] hover:text-[#08090B] font-bold font-headline text-sm px-6 py-4 rounded-xl border border-[rgba(255,214,10,0.18)] hover:border-transparent transition-all group-hover:border-primary-container/40 btn-slide-hover" href="#audit-cta">
+          <span>Get Started with Web Engineering</span>
+          <span class="material-symbols-outlined text-xl slide-arrow transition-transform" data-icon="arrow_forward">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- 5. SEO Services -->
+      <div class="zx-service-card p-8 md:p-10 rounded-2xl flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="icon-box w-14 h-14 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-3xl" data-icon="manage_search">manage_search</span>
+            </div>
+            <span class="tag-badge text-[11px] py-1 px-3">05 / ORGANIC GROWTH</span>
+          </div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-4">SEO Services</h3>
+          <p class="text-base text-on-surface-variant mb-6 leading-relaxed">
+            Capture unyielding buyer intent through holistic On-Page and Off-Page organic search optimization. We propel your business to position #1 across high-intent search commercial terms, establishing sustained, compounding search dominance.
+          </p>
+          <ul class="space-y-3 mb-8 text-sm text-[#E3E2E5]">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Comprehensive semantic keyword research &amp; SERP intent cluster analysis</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>On-Page meta titles, dynamic descriptions &amp; Open Graph tagging</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Advanced JSON-LD schema markup, robots.txt &amp; auto-updating XML sitemaps</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Off-Page editorial outreach, white-hat backlink acquisition &amp; domain rank scale</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Google Business Profile (GBP) local citation hardening &amp; regional prominence</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Authoritative digital publication placements and niche guest articles</span>
+            </li>
+          </ul>
+        </div>
+        <a class="inline-flex items-center justify-between w-full bg-[#1E2229] hover:bg-primary-container text-[#F4F4F2] hover:text-[#08090B] font-bold font-headline text-sm px-6 py-4 rounded-xl border border-[rgba(255,214,10,0.18)] hover:border-transparent transition-all group-hover:border-primary-container/40 btn-slide-hover" href="#audit-cta">
+          <span>Get Started with SEO Services</span>
+          <span class="material-symbols-outlined text-xl slide-arrow transition-transform" data-icon="arrow_forward">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- 6. SEO Blog Writing -->
+      <div class="zx-service-card p-8 md:p-10 rounded-2xl flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="icon-box w-14 h-14 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-3xl" data-icon="article">article</span>
+            </div>
+            <span class="tag-badge text-[11px] py-1 px-3">06 / AUTHORITY</span>
+          </div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-4">SEO Blog Writing</h3>
+          <p class="text-base text-on-surface-variant mb-6 leading-relaxed">
+            Authoritative, expertly researched editorial copy written to answer nuanced customer questions and capture rich Google snippets. We produce evergreen long-form literature that educates prospects while building massive search engine equity.
+          </p>
+          <ul class="space-y-3 mb-8 text-sm text-[#E3E2E5]">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Search-intent topic modeling and editorial content calendars</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>SEO-engineered copywriting calibrated for readability &amp; natural keyword density</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Direct CMS staging, custom featured graphic design &amp; WebP compression</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Siloing internal link structures to direct topical PageRank to core money pages</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Cross-platform social syndication snippets for maximum initial reach</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Data-backed topical authority expansion to outrank traditional industry leaders</span>
+            </li>
+          </ul>
+        </div>
+        <a class="inline-flex items-center justify-between w-full bg-[#1E2229] hover:bg-primary-container text-[#F4F4F2] hover:text-[#08090B] font-bold font-headline text-sm px-6 py-4 rounded-xl border border-[rgba(255,214,10,0.18)] hover:border-transparent transition-all group-hover:border-primary-container/40 btn-slide-hover" href="#audit-cta">
+          <span>Get Started with Blog Writing</span>
+          <span class="material-symbols-outlined text-xl slide-arrow transition-transform" data-icon="arrow_forward">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- 7. Meta Ads for Facebook & Instagram -->
+      <div class="zx-service-card p-8 md:p-10 rounded-2xl flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="icon-box w-14 h-14 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-3xl" data-icon="campaign">campaign</span>
+            </div>
+            <span class="tag-badge text-[11px] py-1 px-3">07 / PERFORMANCE</span>
+          </div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-4">Meta Ads for Facebook &amp; Instagram</h3>
+          <p class="text-base text-on-surface-variant mb-6 leading-relaxed">
+            Data-driven paid media execution designed to scale commercial returns with minimal cost per acquisition. We deploy full-funnel architectures with server-side telemetry, dynamic retargeting, and aggressive creative testing cycles.
+          </p>
+          <ul class="space-y-3 mb-8 text-sm text-[#E3E2E5]">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Full-funnel customer acquisition campaigns (TOF, MOF, BOF segmentation)</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Laser-focused custom audience building, lookalikes &amp; interest stacks</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Direct-response conversion ad creatives with thumb-stopping visual angles</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Rock-solid Meta Pixel &amp; Conversion API (CAPI) server-side integration</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Rigorous creative A/B testing: copy variations, thumbnails, &amp; calls-to-action</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Granular monthly performance audits highlighting exact ROAS and blended CPA</span>
+            </li>
+          </ul>
+        </div>
+        <a class="inline-flex items-center justify-between w-full bg-[#1E2229] hover:bg-primary-container text-[#F4F4F2] hover:text-[#08090B] font-bold font-headline text-sm px-6 py-4 rounded-xl border border-[rgba(255,214,10,0.18)] hover:border-transparent transition-all group-hover:border-primary-container/40 btn-slide-hover" href="#audit-cta">
+          <span>Get Started with Meta Ads</span>
+          <span class="material-symbols-outlined text-xl slide-arrow transition-transform" data-icon="arrow_forward">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- 8. Content Calendar & Work Tracking Sheet -->
+      <div class="zx-service-card p-8 md:p-10 rounded-2xl flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="icon-box w-14 h-14 rounded-xl bg-[#1E2229] border border-[rgba(255,214,10,0.2)] flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-3xl" data-icon="calendar_month">calendar_month</span>
+            </div>
+            <span class="tag-badge text-[11px] py-1 px-3">08 / GOVERNANCE</span>
+          </div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-4">Content Calendar &amp; Work Tracking Sheet</h3>
+          <p class="text-base text-on-surface-variant mb-6 leading-relaxed">
+            Absolute operational transparency with zero guesswork. We provide our agency clients with cloud-synced governance cockpits that track every piece of digital copy, creative asset, and launch date from conception to verified delivery.
+          </p>
+          <ul class="space-y-3 mb-8 text-sm text-[#E3E2E5]">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Predictable 30-day proactive content roadmap established before each month</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Cloud Google Workspace sheet with live milestone status tags</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Real-time color-coded indicators: Planned • In Progress • Approved • Published</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Asset preview integration with copy review and immediate feedback threads</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Comprehensive month-end deliverable audit and fulfillment verification</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary-container text-lg" data-icon="check_circle">check_circle</span>
+              <span>Direct communication lines with zero middleman bottlenecks or unreplied emails</span>
+            </li>
+          </ul>
+        </div>
+        <a class="inline-flex items-center justify-between w-full bg-[#1E2229] hover:bg-primary-container text-[#F4F4F2] hover:text-[#08090B] font-bold font-headline text-sm px-6 py-4 rounded-xl border border-[rgba(255,214,10,0.18)] hover:border-transparent transition-all group-hover:border-primary-container/40 btn-slide-hover" href="#audit-cta">
+          <span>Get Started with Tracking Setup</span>
+          <span class="material-symbols-outlined text-xl slide-arrow transition-transform" data-icon="arrow_forward">arrow_forward</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       04. SYSTEMATIC PROCESS (4 Structured Execution Phases)
+       ======================================================================== -->
+  <section class="py-20 md:py-32 bg-[#0C0D10] border-t border-b border-[rgba(255,214,10,0.12)] relative" id="process">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="tag-badge mb-4">
+          <span class="dot"></span>
+          <span>SYSTEMATIC METHODOLOGY</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-headline text-[#F4F4F2] tracking-tight">
+          Our Process<span class="text-primary-container">.</span>
+        </h2>
+        <p class="text-base sm:text-lg text-on-surface-variant mt-4 leading-relaxed">
+          Four structured execution phases designed to eliminate friction, maintain total clarity, and accelerate commercial velocity for modern brands.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+        <!-- Step 1: Audit -->
+        <div class="zx-process-card p-8 rounded-2xl relative group">
+          <div class="step-num text-5xl font-bold font-headline text-primary-container/30 group-hover:text-primary-container transition-all duration-300 mb-4">01</div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-3">Audit</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            Rigorous evaluation of current digital presence, funnel drop-offs, competitor positions, technical SEO discrepancies, and historical paid advertising return metrics.
+          </p>
+        </div>
+
+        <!-- Step 2: Strategy -->
+        <div class="zx-process-card p-8 rounded-2xl relative group">
+          <div class="step-num text-5xl font-bold font-headline text-primary-container/30 group-hover:text-primary-container transition-all duration-300 mb-4">02</div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-3">Strategy</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            Synthesizing analytical discoveries into an actionable digital marketing blueprint. We formalize messaging architectures, content calendars, and targeted media allocations.
+          </p>
+        </div>
+
+        <!-- Step 3: Execution -->
+        <div class="zx-process-card p-8 rounded-2xl relative group">
+          <div class="step-num text-5xl font-bold font-headline text-primary-container/30 group-hover:text-primary-container transition-all duration-300 mb-4">03</div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-3">Execution</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            High-discipline production deployment. Professional studio shoots, pixel-perfect design assets, rapid web engineering, copy uploads, and algorithmic ad campaign launches.
+          </p>
+        </div>
+
+        <!-- Step 4: Optimisation -->
+        <div class="zx-process-card p-8 rounded-2xl relative group">
+          <div class="step-num text-5xl font-bold font-headline text-primary-container/30 group-hover:text-primary-container transition-all duration-300 mb-4">04</div>
+          <h3 class="text-2xl font-bold font-headline text-[#F4F4F2] mb-3">Optimisation</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            Continuous iterative experimentation. We refine Meta ad targeting, enhance web conversion pathways, expand search ranking footprint, and compound your monthly ROI.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       05. MONTHLY REPORTING (Radical Transparency Dashboard Bento)
+       ======================================================================== -->
+  <section class="py-20 md:py-32 max-w-7xl mx-auto px-6 md:px-12" id="reporting">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="tag-badge mb-4">
+        <span class="dot"></span>
+        <span>RADICAL TRANSPARENCY</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-headline text-[#F4F4F2] tracking-tight">
+        Monthly Reporting<span class="text-primary-container">.</span>
+      </h2>
+      <p class="text-base sm:text-lg text-on-surface-variant mt-4 leading-relaxed">
+        No obscure vanity metrics. At the end of every operational cycle, we deliver a distilled, boardroom-ready diagnostic dissecting performance across all primary online vectors.
+      </p>
+    </div>
+
+    <!-- Dashboard Mockup Frame -->
+    <div class="bg-[#14171C] border border-[rgba(255,214,10,0.18)] rounded-3xl p-6 md:p-10 ambient-elevation relative overflow-hidden">
+      <!-- Glow Spotlight inside Frame -->
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <!-- Mockup Top Bar -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-8 border-b border-[rgba(255,214,10,0.1)]">
+        <div class="flex items-center gap-3">
+          <div class="w-3.5 h-3.5 rounded-full bg-red-500/80"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-yellow-500/80"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-green-500/80"></div>
+          <span class="ml-3 text-xs font-mono text-on-surface-variant bg-[#1E2229] border border-[rgba(255,214,10,0.15)] px-3 py-1 rounded-md">zyrox-growth-telemetry-live.io</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="inline-flex items-center gap-2 text-xs bg-emerald-950/70 border border-emerald-500/30 text-emerald-400 px-3 py-1.5 rounded-full font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Performance Data
+          </span>
+          <span class="text-xs text-on-surface-variant">Billing Period: 30-Day Cycle</span>
+        </div>
+      </div>
+
+      <!-- Bento Metric Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <!-- Metric 1: Follower & Reach -->
+        <div class="bg-[#1A1D24] border border-[rgba(255,214,10,0.14)] p-6 rounded-2xl hover:border-primary-container/40 transition-colors">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs uppercase tracking-wider font-semibold text-on-surface-variant font-headline">Organic Reach &amp; Followers</span>
+            <span class="material-symbols-outlined text-primary-container" data-icon="groups">groups</span>
+          </div>
+          <div class="text-3xl sm:text-4xl font-bold font-headline text-[#F4F4F2] mb-2">+48,250</div>
+          <div class="flex items-center gap-2 text-sm text-emerald-400 font-semibold mb-4">
+            <span class="material-symbols-outlined text-base" data-icon="north_east">north_east</span>
+            <span>+34.2% Month-over-Month</span>
+          </div>
+          <div class="w-full bg-[#121316] h-2 rounded-full overflow-hidden">
+            <div class="bg-primary-container h-full w-[78%] rounded-full shadow-[0_0_8px_rgba(255,214,10,0.5)]"></div>
+          </div>
+          <p class="text-xs text-on-surface-variant mt-3">Follower retention: 94.6% qualified business profiles.</p>
+        </div>
+
+        <!-- Metric 2: Meta Ads ROAS / CPA -->
+        <div class="bg-[#1A1D24] border border-[rgba(255,214,10,0.14)] p-6 rounded-2xl hover:border-primary-container/40 transition-colors">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs uppercase tracking-wider font-semibold text-on-surface-variant font-headline">Paid Media ROAS / CPA</span>
+            <span class="material-symbols-outlined text-primary-container" data-icon="payments">payments</span>
+          </div>
+          <div class="text-3xl sm:text-4xl font-bold font-headline text-[#F4F4F2] mb-2">4.82x ROAS</div>
+          <div class="flex items-center gap-2 text-sm text-emerald-400 font-semibold mb-4">
+            <span class="material-symbols-outlined text-base" data-icon="trending_down">trending_down</span>
+            <span>CPA reduced from $42.50 to $23.10</span>
+          </div>
+          <div class="w-full bg-[#121316] h-2 rounded-full overflow-hidden">
+            <div class="bg-primary-container h-full w-[91%] rounded-full shadow-[0_0_8px_rgba(255,214,10,0.5)]"></div>
+          </div>
+          <p class="text-xs text-on-surface-variant mt-3">Pixel &amp; CAPI verified conversions: 1,420 orders.</p>
+        </div>
+
+        <!-- Metric 3: SEO Keyword Rankings -->
+        <div class="bg-[#1A1D24] border border-[rgba(255,214,10,0.14)] p-6 rounded-2xl hover:border-primary-container/40 transition-colors">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs uppercase tracking-wider font-semibold text-on-surface-variant font-headline">Keyword SEO Movements</span>
+            <span class="material-symbols-outlined text-primary-container" data-icon="query_stats">query_stats</span>
+          </div>
+          <div class="text-3xl sm:text-4xl font-bold font-headline text-[#F4F4F2] mb-2">32 Top-3 SERPs</div>
+          <div class="flex items-center gap-2 text-sm text-emerald-400 font-semibold mb-4">
+            <span class="material-symbols-outlined text-base" data-icon="north_east">north_east</span>
+            <span>+19 First Page Jumps this month</span>
+          </div>
+          <div class="w-full bg-[#121316] h-2 rounded-full overflow-hidden">
+            <div class="bg-primary-container h-full w-[84%] rounded-full shadow-[0_0_8px_rgba(255,214,10,0.5)]"></div>
+          </div>
+          <p class="text-xs text-on-surface-variant mt-3">High-intent buyer search phrases gaining organic traffic.</p>
+        </div>
+      </div>
+
+      <!-- Verification Row -->
+      <div class="bg-[#1A1D24] border border-[rgba(255,214,10,0.14)] p-6 rounded-2xl">
+        <h4 class="text-lg font-bold font-headline text-[#F4F4F2] mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+          <span>Top Performing Creative &amp; Delivery Verification</span>
+          <span class="text-xs text-primary-container font-mono bg-primary-container/10 border border-primary-container/20 px-3 py-1 rounded-md">STATUS: 100% EXECUTED</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div class="bg-[#14171C] p-4 rounded-xl border border-[rgba(255,214,10,0.1)]">
+            <div class="text-xs text-on-surface-variant mb-1">Top Reel: Product Deep Dive</div>
+            <div class="text-[#F4F4F2] font-bold">142,300 Views • 9.2% Save Rate</div>
+            <div class="text-primary-container text-xs mt-2">→ Generated 184 direct link clicks</div>
+          </div>
+          <div class="bg-[#14171C] p-4 rounded-xl border border-[rgba(255,214,10,0.1)]">
+            <div class="text-xs text-on-surface-variant mb-1">Top Ad Creative: Founder Story</div>
+            <div class="text-[#F4F4F2] font-bold">5.8x Return on Ad Spend</div>
+            <div class="text-primary-container text-xs mt-2">→ $1,240 spent for $7,192 revenue</div>
+          </div>
+          <div class="bg-[#14171C] p-4 rounded-xl border border-[rgba(255,214,10,0.1)]">
+            <div class="text-xs text-on-surface-variant mb-1">Audit Sheet Status</div>
+            <div class="text-[#F4F4F2] font-bold">30/30 Assets Approved &amp; Deployed</div>
+            <div class="text-emerald-400 text-xs mt-2 font-semibold">✓ Verified on Google Cloud Ledger</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       06. SERVICE FAQS (Accordion Layout)
+       ======================================================================== -->
+  <section class="py-20 md:py-32 bg-[#0C0D10] border-t border-b border-[rgba(255,214,10,0.12)]" id="faqs">
+    <div class="max-w-4xl mx-auto px-6 md:px-12">
+      <div class="text-center mb-16">
+        <div class="tag-badge mb-4">
+          <span class="dot"></span>
+          <span>CLEAR EXPECTATIONS</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-headline text-[#F4F4F2] tracking-tight">
+          Service FAQs<span class="text-primary-container">.</span>
+        </h2>
+        <p class="text-base sm:text-lg text-on-surface-variant mt-4 leading-relaxed">
+          Honest answers regarding timelines, governance, budgets, and creative iterations.
+        </p>
+      </div>
+
+      <div class="space-y-5">
+        <!-- FAQ 1 -->
+        <div class="zx-faq-card">
+          <button class="zx-faq-btn" type="button" aria-expanded="false">
+            <span class="flex items-center gap-4 text-left font-bold font-headline text-lg sm:text-xl text-[#F4F4F2]">
+              <span class="text-primary-container font-mono text-base">01.</span>
+              <span>What does the launch timeline look like for new partnerships?</span>
+            </span>
+            <span class="material-symbols-outlined text-primary-container text-2xl faq-arrow transition-transform duration-300" data-icon="expand_more">expand_more</span>
+          </button>
+          <div class="zx-faq-answer">
+            Our onboarding sprints run within 7 to 10 business days. During this period, we conduct your deep audit, install the tracking sheet, configure tracking pixels or Google analytics, and deliver your initial 30-day content calendar for complete sign-off prior to going live.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="zx-faq-card">
+          <button class="zx-faq-btn" type="button" aria-expanded="false">
+            <span class="flex items-center gap-4 text-left font-bold font-headline text-lg sm:text-xl text-[#F4F4F2]">
+              <span class="text-primary-container font-mono text-base">02.</span>
+              <span>How are concrete deliverables and work tracking managed?</span>
+            </span>
+            <span class="material-symbols-outlined text-primary-container text-2xl faq-arrow transition-transform duration-300" data-icon="expand_more">expand_more</span>
+          </button>
+          <div class="zx-faq-answer">
+            Everything is structured inside a live cloud tracking sheet shared with your team. Every reel, ad creative, design asset, and SEO article features an exact status tag: <span class="text-primary-container font-semibold">Planned, In Progress, Approved, or Published</span>. You will always know what is being worked on and what has shipped without scheduling a meeting.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="zx-faq-card">
+          <button class="zx-faq-btn" type="button" aria-expanded="false">
+            <span class="flex items-center gap-4 text-left font-bold font-headline text-lg sm:text-xl text-[#F4F4F2]">
+              <span class="text-primary-container font-mono text-base">03.</span>
+              <span>Are advertising budgets included in the monthly agency fee?</span>
+            </span>
+            <span class="material-symbols-outlined text-primary-container text-2xl faq-arrow transition-transform duration-300" data-icon="expand_more">expand_more</span>
+          </button>
+          <div class="zx-faq-answer">
+            No, ad spend is billed directly from Meta or Google to your own corporate payment methods to ensure full transparency and account ownership. Our agency retains control over technical setup, conversion tracking, copy, design, testing, and continuous budget reallocation.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="zx-faq-card">
+          <button class="zx-faq-btn" type="button" aria-expanded="false">
+            <span class="flex items-center gap-4 text-left font-bold font-headline text-lg sm:text-xl text-[#F4F4F2]">
+              <span class="text-primary-container font-mono text-base">04.</span>
+              <span>What is your policy regarding creative revisions and adjustments?</span>
+            </span>
+            <span class="material-symbols-outlined text-primary-container text-2xl faq-arrow transition-transform duration-300" data-icon="expand_more">expand_more</span>
+          </button>
+          <div class="zx-faq-answer">
+            Because content roadmaps and storyboards are approved in advance, major surprises are eliminated. We provide up to two comprehensive rounds of revisions per asset within 48 hours of initial review to ensure the creative alignment is flawless prior to final publication.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       07. CTA BANNER (Vibrant Golden Yellow Block with Jet-Black Typography)
+       ======================================================================== -->
+  <section class="py-20 md:py-28 max-w-7xl mx-auto px-6 md:px-12" id="audit-cta">
+    <div class="bg-primary-container text-[#08090B] rounded-3xl p-10 md:p-16 text-center relative overflow-hidden custom-glow">
+      <div class="max-w-4xl mx-auto relative z-10">
+        <span class="inline-block bg-[#08090B] text-primary-container font-headline text-xs px-4 py-1.5 rounded-full mb-6 font-bold tracking-widest uppercase">
+          LET'S ELEVATE YOUR BRAND
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-headline tracking-tight mb-6 leading-tight">
+          Ready to Scale Your Online Revenue? Book Your Growth Audit.
+        </h2>
+        <p class="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-90 leading-relaxed font-medium">
+          Get a comprehensive 360-degree technical assessment of your social presence, search engine opportunities, and conversion funnels from Zyrox Media.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#08090B] text-[#F4F4F2] hover:text-primary-container font-bold font-headline text-base px-10 py-5 rounded-full hover:scale-105 transition-all shadow-2xl btn-slide-hover" href="/contact">
+            <span>Claim Free Diagnostic</span>
+            <span class="slide-arrow transition-transform">→</span>
+          </a>
+          <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-[#08090B] text-[#08090B] font-bold font-headline text-base px-8 py-5 rounded-full hover:bg-[#08090B] hover:text-primary-container transition-all" href="tel:+916386706276">
+            <span class="material-symbols-outlined text-xl" data-icon="call">call</span>
+            <span>+91 6386706276</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       08. FOOTER (Matching Zyrox Media Brand Footer Component)
+       ======================================================================== -->
+  <footer class="ft" id="sd-footer">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <symbol id="ft-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></symbol>
+      <symbol id="ft-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="ft-yt" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></symbol>
+      <symbol id="ft-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="ft-ph" viewBox="0 0 24 24"><path d="M22 16.900v3a2 2 0 0 1-2.200 2 19.800 19.800 0 0 1-8.600-3.100 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.100 4.200 2 2 0 0 1 4.100 2h3a2 2 0 0 1 2 1.700c.1 1 .4 1.900.7 2.800a2 2 0 0 1-.5 2.100L8.100 9.900a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.9.3 1.800.6 2.800.7a2 2 0 0 1 1.700 2z"/></symbol>
+      <symbol id="ft-ml" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.970 5.700a2 2 0 0 1-2.060 0L2 7"/></symbol>
+      <symbol id="ft-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    </defs></svg>
+
+    <!-- Marquee Ticker Band -->
+    <div class="ft-mq" aria-hidden="true"><div>
+      <span>Social Media</span><span>Content Shoots</span><span>Meta Ads</span><span>SEO</span><span>Website Design</span><span>Branding</span><span>Blogs</span><span>Growth</span>
+      <span>Social Media</span><span>Content Shoots</span><span>Meta Ads</span><span>SEO</span><span>Website Design</span><span>Branding</span><span>Blogs</span><span>Growth</span>
+    </div></div>
+
+    <div class="ft-wrap">
+      <div class="ft-grid">
+        <div class="ft-rv">
+          <a class="ft-logo" href="/" aria-label="Zyrox Media home">
+            <img src="assets/logo2.png" alt="Zyrox Media - Digital Marketing Agency" width="260" height="75">
+          </a>
+          <p class="ft-about">Architecturally disciplined digital marketing agency engineering exponential organic and paid acquisition for ambitious global brands.</p>
+          <div class="ft-soc">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ft-ic"><use href="#ft-ig"/></svg></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ft-ic"><use href="#ft-in"/></svg></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg class="ft-ic"><use href="#ft-yt"/></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="ft-ic"><use href="#ft-fb"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ft-rv" style="--i:1"><h4>Quick Links</h4>
+          <ul>
+            <li><a class="ft-lk" href="/">Home</a></li>
+            <li><a class="ft-lk cur" href="/services">Services</a></li>
+            <li><a class="ft-lk" href="/projects">Projects</a></li>
+            <li><a class="ft-lk" href="#process">Process</a></li>
+            <li><a class="ft-lk" href="#faqs">FAQs</a></li>
+            <li><a class="ft-lk" href="/about">About Us</a></li>
+            <li><a class="ft-lk" href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-rv" style="--i:2"><h4>Core Services</h4>
+          <ul>
+            <li><a class="ft-lk" href="#services">Social Media Management</a></li>
+            <li><a class="ft-lk" href="#services">Content Creation &amp; Shoots</a></li>
+            <li><a class="ft-lk" href="#services">Graphic Design &amp; Assets</a></li>
+            <li><a class="ft-lk" href="#services">Website Development</a></li>
+            <li><a class="ft-lk" href="#services">SEO &amp; Organic Rankings</a></li>
+            <li><a class="ft-lk" href="#services">High-ROAS Meta Ads</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-rv" style="--i:3"><h4>Contact Studio</h4>
+          <div class="ft-ct">
+            <strong>Founder: Chandan Rai</strong>
+            <a href="tel:+916386706276"><b><svg class="ft-ic"><use href="#ft-ph"/></svg></b>+91 6386706276</a>
+            <a href="mailto:raichandan967@gmail.com"><b><svg class="ft-ic"><use href="#ft-ml"/></svg></b>raichandan967@gmail.com</a>
+            <div class="ft-av"><i></i>Available Mon - Sat for global inquiries.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ft-bot ft-rv">
+        <span>© <span id="ft-yr">2026</span> Zyrox Media. All rights reserved. Founded by Chandan Rai • +91 6386706276 • raichandan967@gmail.com</span>
+        <nav>
+          <a class="ft-lk" href="/">Privacy Policy</a>
+          <a class="ft-lk" href="/">Terms of Service</a>
+          <button class="ft-top" type="button" id="ft-top" style="border:0;font-family:inherit;background:none;cursor:pointer;"><svg class="ft-ic"><use href="#ft-up"/></svg>Back to top</button>
+        </nav>
+      </div>
+      <div class="ft-big" aria-hidden="true">ZYROX</div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       PAGE INTERACTIVE JAVASCRIPT
+       ======================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu Toggle
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+      if (mobileToggle && mobileOverlay) {
+        mobileToggle.addEventListener('click', () => {
+          const isOpen = mobileToggle.classList.toggle('active');
+          mobileOverlay.classList.toggle('open');
+          mobileToggle.setAttribute('aria-expanded', isOpen);
+          mobileOverlay.setAttribute('aria-hidden', !isOpen);
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            mobileOverlay.classList.remove('open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileOverlay.setAttribute('aria-hidden', 'true');
+          });
+        });
+      }
+
+      // 2. Interactive FAQ Accordion
+      const faqCards = document.querySelectorAll('.zx-faq-card');
+      faqCards.forEach((card, idx) => {
+        const btn = card.querySelector('.zx-faq-btn');
+        const arrow = card.querySelector('.faq-arrow');
+        const answer = card.querySelector('.zx-faq-answer');
+
+        // Initially collapse all except the first one
+        if (idx !== 0) {
+          answer.style.display = 'none';
+        } else {
+          btn.setAttribute('aria-expanded', 'true');
+          if (arrow) arrow.style.transform = 'rotate(180deg)';
+        }
+
+        btn.addEventListener('click', () => {
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+          // Close all FAQs
+          faqCards.forEach(c => {
+            c.querySelector('.zx-faq-btn').setAttribute('aria-expanded', 'false');
+            c.querySelector('.zx-faq-answer').style.display = 'none';
+            const arr = c.querySelector('.faq-arrow');
+            if (arr) arr.style.transform = 'rotate(0deg)';
+          });
+
+          // Toggle current
+          if (!isExpanded) {
+            btn.setAttribute('aria-expanded', 'true');
+            answer.style.display = 'block';
+            if (arrow) arrow.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+
+      // 3. Footer Back to top and Year
+      const ftYr = document.getElementById('ft-yr');
+      if (ftYr) ftYr.textContent = new Date().getFullYear();
+
+      const topBtn = document.getElementById('ft-top');
+      if (topBtn) {
+        topBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // 4. Footer scroll reveal
+      const footer = document.getElementById('sd-footer');
+      if (footer) {
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver((entries, observer) => {
+            if (entries[0].isIntersecting) {
+              footer.classList.add('on');
+              observer.disconnect();
+            }
+          }, { threshold: 0.1 }).observe(footer);
+        } else {
+          footer.classList.add('on');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
