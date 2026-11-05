@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Our Projects | Zyrox Media - Digital Marketing Agency Case Studies</title>
+  <meta name="description" content="Explore real digital marketing case studies and verified results from Zyrox Media. High-ROAS Meta ads, viral reels, organic SEO surges, and custom web development.">
+
+  <!-- Google Fonts: Outfit & Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v3 with Plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-container": "#FFD60A",
+            primary: "#FFD60A",
+            "primary-fixed": "#FFD60A",
+            "primary-fixed-dim": "#E6BF00",
+            surface: "#111214",
+            "surface-container": "#14171C",
+            "surface-container-high": "#1E2229",
+            "surface-container-low": "#101113",
+            "surface-container-lowest": "#08090B",
+            background: "#08090B",
+            "on-surface": "#F4F4F2",
+            "on-surface-variant": "#A9A9AD",
+            "outline-variant": "rgba(255, 214, 10, 0.15)",
+            error: "#FF5252"
+          },
+          fontFamily: {
+            headline: ["Outfit", "sans-serif"],
+            body: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Global Brand Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Custom Styling Overrides for Projects Page */
+    :root {
+      --y: #FFD60A;
+      --bg: #08090B;
+      --card-bg: #14171C;
+      --elevated-bg: #1E2229;
+      --text-main: #F4F4F2;
+      --text-muted: #A9A9AD;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      padding-top: 68px; /* Offset for fixed navbar */
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    /* Black and Yellow Card Hover */
+    .zx-project-card {
+      background: #14171C;
+      border: 1px solid rgba(255, 214, 10, 0.14);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .zx-project-card:hover {
+      border-color: rgba(255, 214, 10, 0.55);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px -10px rgba(255, 214, 10, 0.16);
+    }
+
+    /* Yellow Outlined Credibility Cards */
+    .zx-cred-card {
+      background: #14171C;
+      border: 2px solid var(--y);
+      border-radius: 1.25rem;
+      transition: all 0.3s ease;
+    }
+
+    .zx-cred-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px -8px rgba(255, 214, 10, 0.25);
+      background: #1A1D24;
+    }
+
+    /* Filter Buttons */
+    .filter-btn {
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .filter-btn.active {
+      background-color: var(--y);
+      color: #08090B;
+      font-weight: 700;
+      border-color: var(--y);
+      box-shadow: 0 4px 18px rgba(255, 214, 10, 0.35);
+    }
+
+    .filter-btn:not(.active) {
+      background-color: #14171C;
+      border: 1px solid rgba(255, 214, 10, 0.2);
+      color: var(--text-muted);
+    }
+
+    .filter-btn:not(.active):hover {
+      border-color: var(--y);
+      color: #F4F4F2;
+      transform: translateY(-2px);
+    }
+
+    /* Glow Effects */
+    .custom-glow {
+      box-shadow: 0 0 70px -10px rgba(255, 214, 10, 0.22);
+    }
+
+    .ambient-elevation {
+      box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.85);
+    }
+
+    /* Pill Badges */
+    .tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: #1B1C20;
+      border: 1px solid rgba(255, 214, 10, 0.22);
+      color: var(--y);
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .tag-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--y);
+      box-shadow: 0 0 8px var(--y);
+    }
+
+    /* Button slide */
+    .btn-slide-hover:hover .slide-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Smooth anchor offset */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-primary-container selection:text-[#08090B] min-h-screen flex flex-col">
+
+  <!-- Noise Overlay for Cinematic Texture -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       01. NAVBAR (Brand Header matching index.html & services.html)
+       ======================================================================== -->
+  <header class="navbar" role="banner">
+    <div class="container nav-container">
+      <!-- Brand Logo (Zyrox Media logo2) -->
+      <a href="index.html" class="brand-logo" aria-label="Zyrox Media Home">
+        <img src="assets/logo2.png" alt="Zyrox Media - Digital Marketing Agency" class="header-logo-img" width="175" height="42">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="index.html#why-us" class="nav-link">About Us</a>
+        <a href="#growth-plan" class="nav-link">Strategy</a>
+      </nav>
+
+      <!-- CTA Button Right -->
+      <div class="nav-cta-btn">
+        <a href="#growth-plan" class="btn-accent nav-btn-get-started" aria-label="Get Started with Zyrox Media">
+          <span>Get Started</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" aria-hidden="true">
+    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="projects.html" class="mobile-nav-link active">Projects</a>
+      <a href="index.html#why-us" class="mobile-nav-link">About Us</a>
+      <a href="#growth-plan" class="mobile-nav-link">Strategy</a>
+    </nav>
+    <a href="#growth-plan" class="btn-accent nav-btn-get-started" style="align-self: flex-start; text-decoration: none; margin-top: 24px;">
+      <span>Get Started</span>
+      <span class="btn-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <!-- ========================================================================
+       MAIN CANVAS
+       ======================================================================== -->
+  <main class="flex-1 w-full max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20 flex flex-col gap-24">
+
+    <!-- 1. HERO SECTION -->
+    <section class="flex flex-col gap-6 max-w-4xl relative">
+      <!-- Glow Spotlight behind Hero -->
+      <div class="absolute -top-24 -left-20 w-[550px] h-[300px] bg-primary-container/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+      <!-- Eyebrow Pill -->
+      <div class="tag-badge self-start">
+        <span class="dot"></span>
+        <span>PORTFOLIO &amp; CASE STUDIES</span>
+      </div>
+
+      <!-- Single H1 Ending with a Yellow Dot -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold font-headline text-[#F4F4F2] tracking-tight leading-[1.14]">
+        Our Projects: Digital Marketing Work That Delivers Results<span class="text-primary-container">.</span>
+      </h1>
+
+      <!-- Primary Keyword in First 100 Words -->
+      <p class="text-base sm:text-lg md:text-xl text-on-surface-variant leading-relaxed">
+        Explore real case studies from Zyrox Media, a full-funnel digital marketing agency. From viral social campaigns to high-converting Meta ads and organic SEO turnarounds, discover how our cohesive digital strategies drive verified business growth. Every engagement is rooted in surgical consumer analysis, creative discipline, and transparent operational measurement that scales revenue predictability.
+      </p>
+
+      <!-- Quick Agency Metric Strip (Black & Yellow Styling) -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 mt-2 border-t border-[rgba(255,214,10,0.14)]">
+        <div class="flex flex-col p-4 rounded-xl bg-[#14171C] border border-[rgba(255,214,10,0.12)]">
+          <span class="text-3xl md:text-4xl font-bold font-headline text-primary-container">140+</span>
+          <span class="text-xs sm:text-sm text-on-surface-variant mt-1 font-medium">Live Client Deployments</span>
+        </div>
+        <div class="flex flex-col p-4 rounded-xl bg-[#14171C] border border-[rgba(255,214,10,0.12)]">
+          <span class="text-3xl md:text-4xl font-bold font-headline text-primary-container">$12.4M</span>
+          <span class="text-xs sm:text-sm text-on-surface-variant mt-1 font-medium">Attributed Revenue</span>
+        </div>
+        <div class="flex flex-col p-4 rounded-xl bg-[#14171C] border border-[rgba(255,214,10,0.12)]">
+          <span class="text-3xl md:text-4xl font-bold font-headline text-primary-container">4.8x</span>
+          <span class="text-xs sm:text-sm text-on-surface-variant mt-1 font-medium">Blended Campaign ROAS</span>
+        </div>
+        <div class="flex flex-col p-4 rounded-xl bg-[#14171C] border border-[rgba(255,214,10,0.12)]">
+          <span class="text-3xl md:text-4xl font-bold font-headline text-primary-container">34M+</span>
+          <span class="text-xs sm:text-sm text-on-surface-variant mt-1 font-medium">Verified Organic Views</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FILTER TABS (Interactive Filtering) -->
+    <section class="flex flex-wrap items-center gap-3" id="filters-container">
+      <button class="filter-btn active px-6 py-2.5 rounded-full font-headline text-sm font-bold shadow-lg" data-filter="all">All</button>
+      <button class="filter-btn px-6 py-2.5 rounded-full font-headline text-sm font-semibold" data-filter="social">Social Media</button>
+      <button class="filter-btn px-6 py-2.5 rounded-full font-headline text-sm font-semibold" data-filter="video">Reels &amp; Video</button>
+      <button class="filter-btn px-6 py-2.5 rounded-full font-headline text-sm font-semibold" data-filter="design">Graphic Design</button>
+      <button class="filter-btn px-6 py-2.5 rounded-full font-headline text-sm font-semibold" data-filter="websites">Websites</button>
+      <button class="filter-btn px-6 py-2.5 rounded-full font-headline text-sm font-semibold" data-filter="seo">SEO</button>
+      <button class="filter-btn px-6 py-2.5 rounded-full font-headline text-sm font-semibold" data-filter="ads">Meta Ads</button>
+    </section>
+
+    <!-- 3. FEATURED CASE STUDIES -->
+    <section class="flex flex-col gap-10">
+      <div class="flex flex-col gap-2">
+        <div class="tag-badge self-start mb-2">
+          <span class="dot"></span>
+          <span>ENTERPRISE HIGHLIGHTS</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-headline text-[#F4F4F2]">
+          Featured Case Studies<span class="text-primary-container">.</span>
+        </h2>
+        <p class="text-base text-on-surface-variant max-w-2xl leading-relaxed">
+          Deep-dive analyses of our integrated digital marketing architecture across diverse verticals, demonstrating systematic market penetration and client valuation expansion.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Case Study 1 -->
+        <article class="zx-project-card rounded-2xl overflow-hidden flex flex-col group" data-category="ads social video">
+          <div class="relative h-64 overflow-hidden bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Direct to consumer luxury lifestyle brand photoshoot featuring sleek cosmetic packaging on dark slate pedestals with cinematic golden rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoqsPVbo9JaUMXAF73UmnbJH23VMJ5CGQQ7ZMRqDtFh8oEskfbaC6frLOHDgJ5c6sX3QHVBXHORUo7L0bbVUckdb07uK0a6i2Sf6R9JvssEAql-LkfZx6byFRnsAeQBhgdY5m8pS-eobBWZZMLmb9DYJCEKcuvaD0wu7HD3ELW7LUXfEEUIBaMjFCUP6C2aHT7LHz9bgYvjYFbcBnJH9jfLrdie5WA8dnYGxZ8U6k">
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-[#08090B]/90 backdrop-blur-md text-primary-container font-headline text-xs font-bold border border-primary-container/40 uppercase">E-Commerce • D2C</span>
+            </div>
+          </div>
+          <div class="p-8 flex flex-col flex-1 justify-between gap-6">
+            <div class="flex flex-col gap-4">
+              <h3 class="text-2xl font-bold font-headline text-[#F4F4F2]">D2C Lifestyle Brand</h3>
+              <div class="space-y-3 text-sm text-on-surface-variant leading-relaxed">
+                <p><span class="text-primary-container font-semibold">Challenge:</span> High CPA &amp; stagnant reach caused by over-reliance on unoptimized, single-format photo ads and generic broad targeting.</p>
+                <p><span class="text-primary-container font-semibold">Solution:</span> Full-funnel Meta ads &amp; UGC reels paired with behavioral retargeting sequences and dynamic catalog creative refinement.</p>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-[rgba(255,214,10,0.12)] flex flex-col gap-4">
+              <div class="bg-[#1E2229] p-4 rounded-xl border border-primary-container/20">
+                <span class="text-xs font-headline font-bold text-on-surface-variant block uppercase tracking-wider">Key Outcome</span>
+                <span class="text-xl font-bold font-headline text-primary-container mt-1 block">+150% Organic Reach, 4.2x ROAS</span>
+              </div>
+              <a class="inline-flex items-center gap-2 text-primary-container font-headline font-bold text-sm hover:translate-x-1 transition-transform" href="#growth-plan">
+                <span>View Full Strategy Breakdown →</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 2 -->
+        <article class="zx-project-card rounded-2xl overflow-hidden flex flex-col group" data-category="seo social">
+          <div class="relative h-64 overflow-hidden bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Financial technology dashboard visualization on modern monitors showing analytics charts in midnight blue and golden amber tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGkGyQIfL-5uWoueb4NoXVmXd31W7vs9c-OubQwKTg2YDTY2emg1LSTHyhU8JDE-7bDg52yPcbsaSG-LeHp8vTxYfyHKVLVgyr7yzDUxwo9qaX6Xj5suo3WFt0qZ1CUUEKmFcVEol1D-4cGr3KY4FdLqphZbtr4t6NCSDzhLnlHeW8neZazQ_2eZGZNaZkEEH5JNfWa0mtraWC9guwd4siCkkNmNPJfnAstVPOuWE">
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-[#08090B]/90 backdrop-blur-md text-primary-container font-headline text-xs font-bold border border-primary-container/40 uppercase">Enterprise • B2B SaaS</span>
+            </div>
+          </div>
+          <div class="p-8 flex flex-col flex-1 justify-between gap-6">
+            <div class="flex flex-col gap-4">
+              <h3 class="text-2xl font-bold font-headline text-[#F4F4F2]">B2B FinTech Platform</h3>
+              <div class="space-y-3 text-sm text-on-surface-variant leading-relaxed">
+                <p><span class="text-primary-container font-semibold">Challenge:</span> Severe lack of qualified inbound leads and low organic domain trust against entrenched legacy financial competitors.</p>
+                <p><span class="text-primary-container font-semibold">Solution:</span> High-intent SEO pillar clusters &amp; thought leadership LinkedIn carousels designed to address specific enterprise compliance pain points.</p>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-[rgba(255,214,10,0.12)] flex flex-col gap-4">
+              <div class="bg-[#1E2229] p-4 rounded-xl border border-primary-container/20">
+                <span class="text-xs font-headline font-bold text-on-surface-variant block uppercase tracking-wider">Key Outcome</span>
+                <span class="text-xl font-bold font-headline text-primary-container mt-1 block">120 Qualified Leads in 30 Days</span>
+              </div>
+              <a class="inline-flex items-center gap-2 text-primary-container font-headline font-bold text-sm hover:translate-x-1 transition-transform" href="#growth-plan">
+                <span>View Full Strategy Breakdown →</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 3 -->
+        <article class="zx-project-card rounded-2xl overflow-hidden flex flex-col group" data-category="websites seo">
+          <div class="relative h-64 overflow-hidden bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Interior architecture of a luxury boutique hotel lobby illuminated by soft low light architectural fixtures with dark wood paneling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhtE6k7YrLHZv8Hgn3X6xRuIq9WZ60IOo-sCBECdGaz9TO67oK3M1V2bZU42GcoKAOnAzbI43NHDpT36I1mB4q71_8f5Kb4_9b4ATwLdhwqvyeGBW20uI6GUAI0fFT_AtMraXxNKLtD1X9gDVi6_krXLGgJ-920i3XhQnezjGVM8V5gHOal6AJv7Lt4p_r_qmph_2K92Kifb921WLCo8uhdPt7iZ-45N66IYYFb24">
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-[#08090B]/90 backdrop-blur-md text-primary-container font-headline text-xs font-bold border border-primary-container/40 uppercase">Hospitality • Boutique</span>
+            </div>
+          </div>
+          <div class="p-8 flex flex-col flex-1 justify-between gap-6">
+            <div class="flex flex-col gap-4">
+              <h3 class="text-2xl font-bold font-headline text-[#F4F4F2]">Premium Hospitality Group</h3>
+              <div class="space-y-3 text-sm text-on-surface-variant leading-relaxed">
+                <p><span class="text-primary-container font-semibold">Challenge:</span> Low direct website bookings with commission bleed to OTAs alongside an outdated, slow mobile digital storefront.</p>
+                <p><span class="text-primary-container font-semibold">Solution:</span> Custom responsive website &amp; localized hyper-targeted SEO with Google Business profile optimization and rich schema markup.</p>
+              </div>
+            </div>
+            <div class="pt-6 border-t border-[rgba(255,214,10,0.12)] flex flex-col gap-4">
+              <div class="bg-[#1E2229] p-4 rounded-xl border border-primary-container/20">
+                <span class="text-xs font-headline font-bold text-on-surface-variant block uppercase tracking-wider">Key Outcome</span>
+                <span class="text-xl font-bold font-headline text-primary-container mt-1 block">+280% Direct Inquiries &amp; Top 3 Maps</span>
+              </div>
+              <a class="inline-flex items-center gap-2 text-primary-container font-headline font-bold text-sm hover:translate-x-1 transition-transform" href="#growth-plan">
+                <span>View Full Strategy Breakdown →</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. SOCIAL MEDIA & GRAPHIC DESIGN WORK (9 Project Grid) -->
+    <section class="flex flex-col gap-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="tag-badge mb-2">
+            <span class="dot"></span>
+            <span>CREATIVE COLLATERAL</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold font-headline text-[#F4F4F2]">
+            Social Media &amp; Graphic Design Work<span class="text-primary-container">.</span>
+          </h2>
+          <p class="text-base text-on-surface-variant max-w-xl mt-2 leading-relaxed">
+            High-conviction creative collateral engineered for thumb-stopping feed disruption, seamless brand storytelling, and elevated visual authority.
+          </p>
+        </div>
+        <span class="tag-badge text-xs py-1.5 px-4">9 Selected Production Artifacts</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1 -->
+        <div class="zx-project-card rounded-2xl overflow-hidden group" data-category="design social">
+          <div class="h-56 overflow-hidden relative bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Minimalist luxury visual identity brand book displayed on a slate black table with golden accent stationery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq_yQ-S_o3MAww4PznvvKWKYREWyPrripaquKBa404mitMntu67lXAHifikoVj3hIrDfjHR7XLYuKbgrNKmMbGE_b99P3cp5ogXUKupgudzgjQUK9zcRLYeHTTLMQ8WbQ8pY--9pQFFVbn0N_Gh2LYOF4T_lVJJ5XqZykfgl6MRjDrniSDWR8NCzFJCYUyyorXL_zahMlvLbcH4nnbG04kDr3ANRO3znU4JmT9v7c">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#14171C] via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-2">
+            <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider">Identity Framework</span>
+            <h3 class="text-xl font-bold font-headline text-[#F4F4F2]">Brand Identity Systems</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Modular guidelines, responsive vectors, and unified design token architectures developed for swift multi-channel scalability.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="zx-project-card rounded-2xl overflow-hidden group" data-category="design social">
+          <div class="h-56 overflow-hidden relative bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Sequential educational carousel design for social media rendered with bold dark UI aesthetics and golden highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR7vp3wM1K-5BqJ1LMXbLAHxMEmM7Mn4xQrG5X5BVpifDdrOF7Yiv1wX_hxLx6__J4ehqiZjTFgZiZRd82aZ2YKLRrisZnQWMTuydQ2uOagpN0LflHy1GElZPlC9bUou_LWZu7iU7i0GVNvLwkqqu6bzQq5wsdcKuXbHSTPipnjINyx1dPDcoHrDgBeh9pqW_pVoMYClsnVvURp0JlZV_wiH_fcvbXAmOAgkpaViU">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#14171C] via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-2">
+            <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider">Educational Content</span>
+            <h3 class="text-xl font-bold font-headline text-[#F4F4F2]">Carousel Series</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Data-packed LinkedIn and Instagram swipe decks delivering actionable tactical advice with an average 18.4% save rate.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="zx-project-card rounded-2xl overflow-hidden group" data-category="social design">
+          <div class="h-56 overflow-hidden relative bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Viral static social media graphic with high contrast typography and golden yellow line art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj3xvv2YW3fvkSMpwz7ri-TSC9-PsW76mS3dZq71vJ5OTrWXAQij3tO8g-vsXn-IJ23CcgZXkOYFJVDvrCqYMobMwRxohhuYaa2ISrkL9F9FkdnrzhiKIfEKtE_7P17SBUUqpH1xS7iIcenwKH35cMcmDkjtj7iCBwmDgqYO2FS_5hzOhBUdNBdx7XG0n761VU04WzM2rwUgOs8lU-MnoOWjWk0IkK8lgFWB2CbvU">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#14171C] via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-2">
+            <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider">Feed Disruption</span>
+            <h3 class="text-xl font-bold font-headline text-[#F4F4F2]">Viral Statics</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">High-salience single image posts engineered to provoke commentary, community shares, and algorithmic prioritization.</p>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="zx-project-card rounded-2xl overflow-hidden group" data-category="social design">
+          <div class="h-56 overflow-hidden relative bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Mobile mockups presenting dynamic vertical ephemeral story sequences with interactive polls and golden layouts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7BLr8dOsnv_CgaAGCo3Nj6lyCIaqK3384IetGZw7HqbhG96aAkj0g3i-wNg93QhVV3mqtfXX_UfAFFvqIdgmNAwDQxy1ePez2tjv4UObtADK34zYP5Y2wiVB17ZO6i8MbzHNyP1hUuUaKSPvyozGNOyPNbZ0QIrgEXCTJn78ljAhSgSnahbGsgYMqWtUgKx8ugNsWtL6Eg9xLPbleZPA55TfkIN1gR5LPnMlX_X8">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#14171C] via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-2">
+            <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider">Interactive Stories</span>
+            <h3 class="text-xl font-bold font-headline text-[#F4F4F2]">Story Takeovers</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Immersive 24-hour campaign activations incorporating native quizzes, interactive sliders, and immediate checkout links.</p>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="zx-project-card rounded-2xl overflow-hidden group" data-category="ads design">
+          <div class="h-56 overflow-hidden relative bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Black Friday digital banner ad campaign design featuring bold typography and electric yellow accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdKW-tOIialQzeWAgSbknVXKIOjUy0sLWG5qPSCNiqwO6Ll3f86AVsb9Z_Ji_o7ZVrWJBddFrpkJJpi7SIMbcTmZXJB6_6B5lAz8KvUG6v2dx39c_QNwt2rDfAnOASGfKK6vCHU0wwpfF2HBX-AqrJYwqfN9lClnIxX8pWvm8OlIDwyXApy6IiFyC5kXiGjqX-gWbZcx9RQ0kTp1o5iLXgYSA77dbnA9Z870jfeFc">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#14171C] via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-2">
+            <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider">Seasonal Conversion</span>
+            <h3 class="text-xl font-bold font-headline text-[#F4F4F2]">Black-Friday Ad Creative</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Urgency-inducing promotional assets designed for rapid Meta and Google Ads auction clearing during peak Q4 spend.</p>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="zx-project-card rounded-2xl overflow-hidden group" data-category="design social">
+          <div class="h-56 overflow-hidden relative bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Editorial infographic social post outlining market research metrics and growth funnels with golden highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOqRzZ8GF0PFFcEoJIG_9yV4t2bCAxslqcf2AZBt84M-XlKW-fSaqsgBNXuuAlFMVyuz1T6nlpYoC-BAtQZibZ5AHRnNtyVS8vUji0X44yUjYFACMQiKMoz4VzlkuC-gib9ftXm1zWid6AmNTfsK25y8WK2_0oE3QuzTynOadnsEP-qZmkmL7AuNRZ6TfEcoPeXK_7gVJ7w4hOZhxjOcAWLNvkZp4EDNh7u13-Sh8">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#14171C] via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-2">
+            <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider">Data Storytelling</span>
+            <h3 class="text-xl font-bold font-headline text-[#F4F4F2]">Infographic Posts</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Complex consumer statistics distilled into digestible, highly-reputable infographics tailored for industry authority.</p>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="zx-project-card rounded-2xl overflow-hidden group" data-category="design social">
+          <div class="h-56 overflow-hidden relative bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Architectural quote template graphic featuring large elegant serif punctuation on pitch black studio canvas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkDb6TjqDde2fJXtofqVU-PFZS0vUjGYX9xAm1LhRYP0qkVfoVM9R2q62weU32eaFn09eW4H0fd_E9Rwe9kwkxDUDnLMN2nPvLGQTXUf5o8cUduQ_qsJHKKFtJyIEOWOM21_qtEmIYyPEayOHKwUT4_e5_qSGmvfjv4phPWVBaWFcilJ4zyiwynV1o-tRtvA5rDxCpCYyjXoJPllK4aB274OwODP8-nvjvN_V4YDU">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#14171C] via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-2">
+            <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider">Editorial Voice</span>
+            <h3 class="text-xl font-bold font-headline text-[#F4F4F2]">Quote Templates</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Bespoke typographic framing for CEO statements, industry aphorisms, and client endorsements maintaining brand sanctity.</p>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="zx-project-card rounded-2xl overflow-hidden group" data-category="design ads">
+          <div class="h-56 overflow-hidden relative bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Premium product display showcase graphic with 3D product render casting soft shadow over dark ground" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5w68n9CqdWjiOUsbr9VtVUSudNSQNTxhQoxWBjV8unpc0-_y888wfWNw_8ntqqL73YMtrAI_uw1NSA28KzScrDOWHquSy21wfVpuOv2su4x26Y8Wp8Ify0rVMuXcG87g2iS7Uz8yf-6OZKWV59EnMlK2Sfo_39l8B2S6Gw0kh7DZBK7FR5XZIBQp-Z5_J9nmzx_EO-RCSLyPRQqhbyucusjHKnWnmfCAN8UexSjA">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#14171C] via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-2">
+            <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider">Feature Showcase</span>
+            <h3 class="text-xl font-bold font-headline text-[#F4F4F2]">Product Highlight Graphics</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Exploded technical views and micro-benefit spotlights optimized to accelerate mid-funnel consideration stages.</p>
+          </div>
+        </div>
+
+        <!-- Project 9 -->
+        <div class="zx-project-card rounded-2xl overflow-hidden group" data-category="design video social">
+          <div class="h-56 overflow-hidden relative bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="High tech cinematic product launch teaser visual with silhouetted packaging and neon golden accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUhfHRVL1p8-2pT9LIoLMkKiWcGN5umklvJTyEHNgDZZmOEo8NTvC_OCnIy4a3i508bzbmYvBF_q3LESfRU3rGPRXHUT2H_DWT8CtSmMEqra7EGQb6Ye9-iCc52CJ8dl9OH5ZLwpDFTiZNodzcYTjYgxP977TyEKRQc7uMoQhjjnGbCMpgby5FpKpJhnfkX22rSqI4AXhb2emtsScNxCk8-gAz-hy8esj5hYkgv1A">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#14171C] via-transparent to-transparent"></div>
+          </div>
+          <div class="p-6 flex flex-col gap-2">
+            <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider">Anticipation Engines</span>
+            <h3 class="text-xl font-bold font-headline text-[#F4F4F2]">Feature Teaser Creatives</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">Pre-launch episodic teasers building subscriber anticipation and direct email waitlist conversions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. REELS AND VIDEO HIGHLIGHTS -->
+    <section class="flex flex-col gap-10">
+      <div class="flex flex-col gap-2">
+        <div class="tag-badge self-start mb-2">
+          <span class="dot"></span>
+          <span>HIGH-VELOCITY SHORT FORM</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-headline text-[#F4F4F2]">
+          Reels and Video Highlights<span class="text-primary-container">.</span>
+        </h2>
+        <p class="text-base text-on-surface-variant max-w-2xl leading-relaxed">
+          Short-form video assets calibrated specifically for algorithmic discovery on TikTok, Instagram Reels, and YouTube Shorts.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Video 1 -->
+        <div class="zx-project-card rounded-2xl p-4 flex flex-col gap-4 group" data-category="video social">
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Street lifestyle fashion creator walking through city under golden sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnXCfMk2k1VgYZfMKlrVGe3L0GpJ09x6QdLAbFkheIrNQHx5kjye6uNweQKwTHA8rwmsJ-jtnRQr2pa86sjK0nWt7lX1juyJHXnre5SPCaEs6653gpZfvt9KFleipYuzIoOrgmGuBaL_90tR6PpC-BAaqUAOE5DrsgeiDVIch4pXtYF0EwL6XsctQmbYp682m14JGZ_P5Hf_TpwVJq2Pg8TDxy7E912mPyXz4a8RY">
+            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#08090B]/85 backdrop-blur-sm border border-[rgba(255,214,10,0.2)] text-xs font-mono text-[#F4F4F2] flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              0:28
+            </div>
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-primary-container text-[#08090B] text-xs font-bold font-headline">
+              850K Views
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-primary-container text-[#08090B] flex items-center justify-center shadow-[0_0_24px_rgba(255,214,10,0.5)] group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-3xl font-bold" data-icon="play_arrow">play_arrow</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold font-headline text-[#F4F4F2]">Urban Streetwear Drop</h3>
+            <p class="text-xs text-on-surface-variant">Paced beat-synced transitions generating over 42K direct shares.</p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="zx-project-card rounded-2xl p-4 flex flex-col gap-4 group" data-category="video social">
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Minimalist workspace desk setup showing software productivity creator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ01JNmnqqt-J11T-OM01ei79-HpkKUDy1nQfYP5rVvh-AZXu2sz311VPELDOZw3GwAeKuCiaXp_YCbV6nOKvBz6k84Ysv0vm2LlE6QmsI2WymjlQjyEM7tSDULdA9dILLy6P2Kyo6cm1jNglS1qvsyr74fcTXQ4-ppfmtlahepyzTadfqh97rONBRDbIY_RIXFt9mVQgajZ8nka6j-P_Lj4ze002ZPwzrHK822yg">
+            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#08090B]/85 backdrop-blur-sm border border-[rgba(255,214,10,0.2)] text-xs font-mono text-[#F4F4F2] flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              0:45
+            </div>
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-primary-container text-[#08090B] text-xs font-bold font-headline">
+              1.2M Views
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-primary-container text-[#08090B] flex items-center justify-center shadow-[0_0_24px_rgba(255,214,10,0.5)] group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-3xl font-bold" data-icon="play_arrow">play_arrow</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold font-headline text-[#F4F4F2]">SaaS Productivity Hack</h3>
+            <p class="text-xs text-on-surface-variant">Hook-first narrative format yielding 9,400 free software sign-ups.</p>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="zx-project-card rounded-2xl p-4 flex flex-col gap-4 group" data-category="video social">
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Artisan pour over coffee brewing in a moody espresso bar with cinematic steam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr4l7hNPpINCFciROjk0BxaYR7ET4fanAndUAUDCdSadnmlbPPufeQqJwRPKzZT0SxZ-e6DJNvvh8D20Z8T06C8oqdOkL26TdFN_g4esxp6CHs0qIUwkBxy5X7Bv32tpFEJrAT-iEkSVa5SHJ-r5kaiUVJDnYs5NMMIa1LAxIhI5jgt_KPEuocp8DYSXEx7ZrmktLrP-MDa4Zx-g18h7CkOgVOU0WYDVGc8SXRoGk">
+            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#08090B]/85 backdrop-blur-sm border border-[rgba(255,214,10,0.2)] text-xs font-mono text-[#F4F4F2] flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              0:19
+            </div>
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-primary-container text-[#08090B] text-xs font-bold font-headline">
+              430K Views
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-primary-container text-[#08090B] flex items-center justify-center shadow-[0_0_24px_rgba(255,214,10,0.5)] group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-3xl font-bold" data-icon="play_arrow">play_arrow</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold font-headline text-[#F4F4F2]">Cafe Brand Immersion</h3>
+            <p class="text-xs text-on-surface-variant">Sensory ASMR video establishing regional viral foot traffic for a local venue.</p>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="zx-project-card rounded-2xl p-4 flex flex-col gap-4 group" data-category="video social">
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-[#1E2229]">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Fitness trainer performing athletic exercise in an upscale dark aesthetic gymnasium with golden rim studio spot lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkOdIwy88ChMM_7gj0zI8-RaabEXCcK4DyTJybyQJzPV7Vk6emGvFHVZ9PKicK80RYtdZoFIEDvTrqIlcOC4QpvE2kBUsyj1sQ9SBtezQJ2cUtmW7npOK1qSlcT9S75OfRnOHXo8PDWXXs10J-r6jhKEk9yjgZ1TMqVgk0avkm9yF3CCPVFKN6oht3ngJBhP9HlofRJ3n7cO_xLYvbiz7XXULzP0X6xorrDxcbCRM">
+            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#08090B]/85 backdrop-blur-sm border border-[rgba(255,214,10,0.2)] text-xs font-mono text-[#F4F4F2] flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              0:34
+            </div>
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-primary-container text-[#08090B] text-xs font-bold font-headline">
+              920K Views
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-primary-container text-[#08090B] flex items-center justify-center shadow-[0_0_24px_rgba(255,214,10,0.5)] group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-3xl font-bold" data-icon="play_arrow">play_arrow</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold font-headline text-[#F4F4F2]">Athletic Gear Spotlight</h3>
+            <p class="text-xs text-on-surface-variant">High-impact motion cuts triggering immediate checkout conversions on TikTok Shop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. WEBSITE AND SEO RESULTS (Before & After Comparison) -->
+    <section class="flex flex-col gap-10">
+      <div class="flex flex-col gap-2">
+        <div class="tag-badge self-start mb-2">
+          <span class="dot"></span>
+          <span>EMPIRICAL VERIFICATION</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-headline text-[#F4F4F2]">
+          Website and SEO Results<span class="text-primary-container">.</span>
+        </h2>
+        <p class="text-base text-on-surface-variant max-w-2xl leading-relaxed">
+          Verifiable proof of organic equity creation: technical website speed optimizations and keyword positioning transformations tracked via Google Search Console.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Comparative Card 1: SEO Keyword & Performance Curve -->
+        <div class="zx-project-card rounded-2xl p-8 flex flex-col gap-6">
+          <div class="flex items-center justify-between pb-4 border-b border-[rgba(255,214,10,0.12)]">
+            <div>
+              <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider">Enterprise Organic Surge</span>
+              <h3 class="text-xl font-bold font-headline text-[#F4F4F2] mt-1">FinTech Keyword Dominance</h3>
+            </div>
+            <span class="tag-badge text-xs py-1 px-3">6-Month Transformation</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Before -->
+            <div class="bg-[#0D0E11] p-5 rounded-xl border border-[rgba(255,255,255,0.08)] flex flex-col gap-3">
+              <span class="text-xs font-bold font-headline text-error uppercase tracking-wider flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-error"></span> Baseline (Before Zyrox)
+              </span>
+              <div class="space-y-2.5 text-xs sm:text-sm">
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Keywords in Top 3:</span>
+                  <span class="text-[#F4F4F2] font-bold font-mono">4</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Monthly Organic Clicks:</span>
+                  <span class="text-[#F4F4F2] font-bold font-mono">2,140</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Avg Search Position:</span>
+                  <span class="text-[#F4F4F2] font-bold font-mono">38.4</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Bounce Rate:</span>
+                  <span class="text-error font-bold font-mono">68.2%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- After -->
+            <div class="bg-[#1A1D24] p-5 rounded-xl border border-primary-container/40 flex flex-col gap-3 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-16 h-16 bg-primary-container/10 rounded-bl-full pointer-events-none"></div>
+              <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span> Current (After Zyrox)
+              </span>
+              <div class="space-y-2.5 text-xs sm:text-sm">
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Keywords in Top 3:</span>
+                  <span class="text-primary-container font-bold font-mono">42 (+950%)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Monthly Organic Clicks:</span>
+                  <span class="text-primary-container font-bold font-mono">28,450 (+1,230%)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Avg Search Position:</span>
+                  <span class="text-primary-container font-bold font-mono">4.2 (Top 5)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Bounce Rate:</span>
+                  <span class="text-emerald-400 font-bold font-mono">34.8% (-49%)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Abstract Search Console Performance Graphic -->
+          <div class="bg-[#0D0E11] p-5 rounded-xl border border-[rgba(255,214,10,0.14)] flex flex-col gap-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-on-surface-variant">Google Search Console Impressions Growth</span>
+              <span class="text-primary-container font-bold font-mono">+520% YoY Curve</span>
+            </div>
+            <div class="h-16 w-full flex items-end gap-1.5 pt-2">
+              <div class="bg-[rgba(255,214,10,0.15)] w-full h-[15%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.18)] w-full h-[18%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.22)] w-full h-[22%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.28)] w-full h-[25%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.36)] w-full h-[32%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.48)] w-full h-[45%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.65)] w-full h-[58%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.82)] w-full h-[74%] rounded-t"></div>
+              <div class="bg-primary-container w-full h-[95%] rounded-t shadow-[0_0_12px_rgba(255,214,10,0.6)]"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparative Card 2: Core Web Vitals & Direct Inquiries -->
+        <div class="zx-project-card rounded-2xl p-8 flex flex-col gap-6">
+          <div class="flex items-center justify-between pb-4 border-b border-[rgba(255,214,10,0.12)]">
+            <div>
+              <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider">Web Infrastructure Refactor</span>
+              <h3 class="text-xl font-bold font-headline text-[#F4F4F2] mt-1">Core Web Vitals &amp; Speed</h3>
+            </div>
+            <span class="tag-badge text-xs py-1 px-3">Next.js + Edge Stack</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Before -->
+            <div class="bg-[#0D0E11] p-5 rounded-xl border border-[rgba(255,255,255,0.08)] flex flex-col gap-3">
+              <span class="text-xs font-bold font-headline text-error uppercase tracking-wider flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-error"></span> Baseline (Before Zyrox)
+              </span>
+              <div class="space-y-2.5 text-xs sm:text-sm">
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Mobile PageSpeed:</span>
+                  <span class="text-error font-bold font-mono">38 / 100</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">LCP Load Time:</span>
+                  <span class="text-[#F4F4F2] font-bold font-mono">4.8s</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Layout Shift (CLS):</span>
+                  <span class="text-error font-bold font-mono">0.42 (Poor)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Checkout Funnel Drop:</span>
+                  <span class="text-error font-bold font-mono">74%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- After -->
+            <div class="bg-[#1A1D24] p-5 rounded-xl border border-primary-container/40 flex flex-col gap-3 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-16 h-16 bg-primary-container/10 rounded-bl-full pointer-events-none"></div>
+              <span class="text-xs font-bold font-headline text-primary-container uppercase tracking-wider flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span> Current (After Zyrox)
+              </span>
+              <div class="space-y-2.5 text-xs sm:text-sm">
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Mobile PageSpeed:</span>
+                  <span class="text-emerald-400 font-bold font-mono">99 / 100</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">LCP Load Time:</span>
+                  <span class="text-primary-container font-bold font-mono">0.8s (-83%)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Layout Shift (CLS):</span>
+                  <span class="text-emerald-400 font-bold font-mono">0.01 (Near Zero)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-on-surface-variant">Checkout Funnel Drop:</span>
+                  <span class="text-primary-container font-bold font-mono">28% (3.8x Lift)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Abstract Search Console Performance Graphic -->
+          <div class="bg-[#0D0E11] p-5 rounded-xl border border-[rgba(255,214,10,0.14)] flex flex-col gap-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-on-surface-variant">Conversion Velocity &amp; Transaction Rate</span>
+              <span class="text-primary-container font-bold font-mono">3.8x Lift Factor</span>
+            </div>
+            <div class="h-16 w-full flex items-end gap-1.5 pt-2">
+              <div class="bg-[rgba(255,214,10,0.15)] w-full h-[20%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.20)] w-full h-[24%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.26)] w-full h-[28%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.34)] w-full h-[32%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.48)] w-full h-[48%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.66)] w-full h-[66%] rounded-t"></div>
+              <div class="bg-[rgba(255,214,10,0.82)] w-full h-[82%] rounded-t"></div>
+              <div class="bg-primary-container w-full h-[100%] rounded-t shadow-[0_0_12px_rgba(255,214,10,0.6)]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. WHY BRANDS TRUST ZYROX MEDIA (4 Metric Cards with Yellow Outlines) -->
+    <section class="flex flex-col gap-10">
+      <div class="flex flex-col gap-2">
+        <div class="tag-badge self-start mb-2">
+          <span class="dot"></span>
+          <span>THE ZYROX STANDARD</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-headline text-[#F4F4F2]">
+          Why Brands Trust Zyrox Media<span class="text-primary-container">.</span>
+        </h2>
+        <p class="text-base text-on-surface-variant max-w-2xl leading-relaxed">
+          We strip away agency bureaucracy in favor of concrete engineering rigor, extreme transparency, and relentless campaign optimization.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Credibility Metric 1 -->
+        <div class="zx-cred-card p-8 flex flex-col justify-between gap-6 group">
+          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="handshake">handshake</span>
+          <div>
+            <div class="text-4xl font-bold font-headline text-primary-container tracking-tight">98%</div>
+            <div class="text-lg font-bold font-headline text-[#F4F4F2] mt-1">Client Retention</div>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Over 98% of our growth accounts renew quarterly retainers due to predictable, positive attribution models.</p>
+        </div>
+
+        <!-- Credibility Metric 2 -->
+        <div class="zx-cred-card p-8 flex flex-col justify-between gap-6 group">
+          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="trending_up">trending_up</span>
+          <div>
+            <div class="text-4xl font-bold font-headline text-primary-container tracking-tight">4.8x</div>
+            <div class="text-lg font-bold font-headline text-[#F4F4F2] mt-1">Average Campaign ROAS</div>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Blended return across Meta and Google advertising networks calculated after creative and platform expenses.</p>
+        </div>
+
+        <!-- Credibility Metric 3 -->
+        <div class="zx-cred-card p-8 flex flex-col justify-between gap-6 group">
+          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="schedule">schedule</span>
+          <div>
+            <div class="text-4xl font-bold font-headline text-primary-container tracking-tight">45 Days</div>
+            <div class="text-lg font-bold font-headline text-[#F4F4F2] mt-1">To First Ranking Jump</div>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Agile sprint indexing and technical cleanup trigger significant Google SERP position improvements within weeks.</p>
+        </div>
+
+        <!-- Credibility Metric 4 -->
+        <div class="zx-cred-card p-8 flex flex-col justify-between gap-6 group">
+          <span class="material-symbols-outlined text-primary-container text-4xl" data-icon="verified">verified</span>
+          <div>
+            <div class="text-4xl font-bold font-headline text-primary-container tracking-tight">100%</div>
+            <div class="text-lg font-bold font-headline text-[#F4F4F2] mt-1">In-House Production</div>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Zero outsourced freelancers. Direct alignment with specialized motion artists, media buyers, and code engineers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. HIGH-IMPACT CTA BANNER (Vibrant Yellow Card with Jet-Black Typography) -->
+    <section class="bg-primary-container rounded-3xl p-8 md:p-16 text-[#08090B] flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden custom-glow" id="growth-plan">
+      <div class="flex flex-col gap-4 max-w-2xl z-10">
+        <span class="text-xs font-headline font-bold tracking-widest uppercase bg-[#08090B] text-primary-container self-start px-3 py-1 rounded-full">
+          ACCELERATE YOUR PIPELINE
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-headline leading-tight">
+          Ready for Results Like These? Let's Plan Your Growth.
+        </h2>
+        <p class="text-base sm:text-lg opacity-90 font-medium leading-relaxed">
+          Schedule a direct strategy roadmap call with Chandan Rai. We inspect your current digital marketing agency performance, identify hidden attribution leaks, and outline clear milestones.
+        </p>
+      </div>
+
+      <div class="z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+        <a class="px-8 py-4 rounded-full bg-[#08090B] text-[#F4F4F2] hover:text-primary-container font-headline text-base font-bold transition-all shadow-xl hover:scale-105 text-center btn-slide-hover" href="mailto:raichandan967@gmail.com?subject=Growth%20Audit%20Roadmap%20-%20Zyrox%20Media">
+          <span>Claim Growth Audit</span>
+          <span class="slide-arrow transition-transform">→</span>
+        </a>
+        <a class="px-6 py-4 rounded-full border-2 border-[#08090B] text-[#08090B] font-headline text-base font-bold hover:bg-[#08090B] hover:text-primary-container transition-all text-center flex items-center justify-center gap-2" href="tel:+916386706276">
+          <span class="material-symbols-outlined text-lg" data-icon="call">call</span>
+          <span>+91 6386706276</span>
+        </a>
+      </div>
+
+      <!-- Ambient Architectural Line Glow -->
+      <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-white/20 blur-3xl pointer-events-none"></div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       09. FOOTER (Matching Zyrox Media Brand Footer Component)
+       ======================================================================== -->
+  <footer class="ft" id="sd-footer">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <symbol id="ft-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></symbol>
+      <symbol id="ft-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="ft-yt" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></symbol>
+      <symbol id="ft-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="ft-ph" viewBox="0 0 24 24"><path d="M22 16.900v3a2 2 0 0 1-2.200 2 19.800 19.800 0 0 1-8.600-3.100 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.100 4.200 2 2 0 0 1 4.100 2h3a2 2 0 0 1 1.700c.1 1 .4 1.900.7 2.800a2 2 0 0 1-.5 2.100L8.100 9.900a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.9.3 1.800.6 2.800.7a2 2 0 0 1 1.700 2z"/></symbol>
+      <symbol id="ft-ml" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.970 5.700a2 2 0 0 1-2.060 0L2 7"/></symbol>
+      <symbol id="ft-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    </defs></svg>
+
+    <!-- Marquee Ticker Band -->
+    <div class="ft-mq" aria-hidden="true"><div>
+      <span>Social Media</span><span>Content Shoots</span><span>Meta Ads</span><span>SEO</span><span>Website Design</span><span>Branding</span><span>Blogs</span><span>Growth</span>
+      <span>Social Media</span><span>Content Shoots</span><span>Meta Ads</span><span>SEO</span><span>Website Design</span><span>Branding</span><span>Blogs</span><span>Growth</span>
+    </div></div>
+
+    <div class="ft-wrap">
+      <div class="ft-grid">
+        <div class="ft-rv">
+          <a class="ft-logo" href="index.html" aria-label="Zyrox Media home">
+            <img src="assets/logo2.png" alt="Zyrox Media - Digital Marketing Agency" width="260" height="75">
+          </a>
+          <p class="ft-about">Architecturally disciplined digital marketing agency engineering exponential organic and paid acquisition for ambitious global brands.</p>
+          <div class="ft-soc">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ft-ic"><use href="#ft-ig"/></svg></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ft-ic"><use href="#ft-in"/></svg></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg class="ft-ic"><use href="#ft-yt"/></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="ft-ic"><use href="#ft-fb"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ft-rv" style="--i:1"><h4>Quick Links</h4>
+          <ul>
+            <li><a class="ft-lk" href="index.html">Home</a></li>
+            <li><a class="ft-lk" href="services.html">Services</a></li>
+            <li><a class="ft-lk cur" href="projects.html">Projects</a></li>
+            <li><a class="ft-lk" href="index.html#why-us">About Us</a></li>
+            <li><a class="ft-lk" href="services.html#process">Process</a></li>
+            <li><a class="ft-lk" href="services.html#reporting">Reporting</a></li>
+            <li><a class="ft-lk" href="services.html#faqs">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-rv" style="--i:2"><h4>Core Services</h4>
+          <ul>
+            <li><a class="ft-lk" href="services.html#services">Social Media Management</a></li>
+            <li><a class="ft-lk" href="services.html#services">Content Creation &amp; Shoots</a></li>
+            <li><a class="ft-lk" href="services.html#services">Graphic Design &amp; Assets</a></li>
+            <li><a class="ft-lk" href="services.html#services">Website Development</a></li>
+            <li><a class="ft-lk" href="services.html#services">SEO &amp; Organic Rankings</a></li>
+            <li><a class="ft-lk" href="services.html#services">High-ROAS Meta Ads</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-rv" style="--i:3"><h4>Contact Studio</h4>
+          <div class="ft-ct">
+            <strong>Founder: Chandan Rai</strong>
+            <a href="tel:+916386706276"><b><svg class="ft-ic"><use href="#ft-ph"/></svg></b>+91 6386706276</a>
+            <a href="mailto:raichandan967@gmail.com"><b><svg class="ft-ic"><use href="#ft-ml"/></svg></b>raichandan967@gmail.com</a>
+            <div class="ft-av"><i></i>Available Mon - Sat for global inquiries.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ft-bot ft-rv">
+        <span>© <span id="ft-yr">2026</span> Zyrox Media. All rights reserved. Founded by Chandan Rai • +91 6386706276 • raichandan967@gmail.com</span>
+        <nav>
+          <a class="ft-lk" href="index.html">Privacy Policy</a>
+          <a class="ft-lk" href="index.html">Terms of Service</a>
+          <button class="ft-top" type="button" id="ft-top" style="border:0;font-family:inherit;background:none;cursor:pointer;"><svg class="ft-ic"><use href="#ft-up"/></svg>Back to top</button>
+        </nav>
+      </div>
+      <div class="ft-big" aria-hidden="true">ZYROX</div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       PAGE INTERACTIVE JAVASCRIPT
+       ======================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu Toggle
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+      if (mobileToggle && mobileOverlay) {
+        mobileToggle.addEventListener('click', () => {
+          const isOpen = mobileToggle.classList.toggle('active');
+          mobileOverlay.classList.toggle('open');
+          mobileToggle.setAttribute('aria-expanded', isOpen);
+          mobileOverlay.setAttribute('aria-hidden', !isOpen);
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            mobileOverlay.classList.remove('open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileOverlay.setAttribute('aria-hidden', 'true');
+          });
+        });
+      }
+
+      // 2. Interactive Filter Buttons
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const filterableCards = document.querySelectorAll('[data-category]');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filterVal = btn.getAttribute('data-filter');
+
+          filterableCards.forEach(card => {
+            const categories = card.getAttribute('data-category') || '';
+            if (filterVal === 'all' || categories.includes(filterVal)) {
+              card.style.display = '';
+              card.style.opacity = '0';
+              setTimeout(() => {
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                card.style.opacity = '1';
+              }, 30);
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 3. Footer Back to top and Year
+      const ftYr = document.getElementById('ft-yr');
+      if (ftYr) ftYr.textContent = new Date().getFullYear();
+
+      const topBtn = document.getElementById('ft-top');
+      if (topBtn) {
+        topBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // 4. Footer scroll reveal
+      const footer = document.getElementById('sd-footer');
+      if (footer) {
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver((entries, observer) => {
+            if (entries[0].isIntersecting) {
+              footer.classList.add('on');
+              observer.disconnect();
+            }
+          }, { threshold: 0.1 }).observe(footer);
+        } else {
+          footer.classList.add('on');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
