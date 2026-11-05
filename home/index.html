@@ -23,152 +23,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{ --gold:#F9C80E; --bg:#0a0a0a; }
-    body.loading{ overflow:hidden !important; }
-   
-    /* ===== ZYROX PRELOADER ===== */
-    #preloader{ position:fixed; inset:0; z-index:999999; background:radial-gradient(ellipse at center,#16130b 0%,#0a0a0a 70%); font-family:'Space Grotesk',system-ui,sans-serif; }
-    #c{ display:block; width:100%; height:100%; }
-    #ring{ position:absolute; left:50%; top:50%; border:2px solid var(--gold); border-radius:50%; transform:translate(-50%,-50%);
-           box-shadow:0 0 36px rgba(249,200,14,.7); display:none; pointer-events:none; }
-    .meter{ position:absolute; left:50%; bottom:7vh; transform:translateX(-50%); width:140px; text-align:center; transition:opacity .4s; }
-    .meter.hide{ opacity:0; }
-    #num{ font-size:14px; letter-spacing:.18em; font-variant-numeric:tabular-nums; color:var(--gold); }
-    .track{ height:2px; margin-top:10px; background:#25221a; overflow:hidden; }
-    #bar{ height:100%; width:0; background:var(--gold); }
-   
-    @media (prefers-reduced-motion: reduce){
-      #preloader{ display:none; }
-    }
-  </style>
-
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="loading">
-
-  <!-- ========== PRELOADER START ========== -->
-  <div id="preloader" aria-label="Loading">
-    <canvas id="c"></canvas>
-    <div id="ring"></div>
-    <div class="meter" id="meter"><div id="num">0%</div><div class="track"><div id="bar"></div></div></div>
-  </div>
-
-  <script>
-  (function(){
-  var WORDS=['SEO','ADS','BRAND','SOCIAL','REELS','GROWTH','LEADS','CONTENT','ROI','WEB','STRATEGY','ZYROX','ANALYTICS','CAMPAIGN','CLICKS','REACH','DESIGN','VIRAL','SALES','डिजिटल','मार्केटिंग','ब्रांड','ग्रोथ'];
-  var pre=document.getElementById('preloader'),cv=document.getElementById('c'),ctx=cv.getContext('2d'),
-      ring=document.getElementById('ring'),num=document.getElementById('num'),bar=document.getElementById('bar'),meter=document.getElementById('meter');
-  var W,H,cx,cy,dpr,lw,lh,ox,oy,step=2,parts=[],words=[],img=new Image(),loaded=(document.readyState==='complete'),t0=0,tc=-1,Rm=1,mn=1,irisOn=false;
-  var clamp=function(v){return v<0?0:v>1?1:v},lerp=function(a,b,t){return a+(b-a)*t},
-      eo=function(t){return 1-Math.pow(1-t,4)},eio=function(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2};
-  window.addEventListener('load',function(){loaded=true});
-   
-  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.body.classList.remove('loading');
-    if(pre) pre.remove(); return;
-  }
-   
-  function build(){
-    dpr=Math.min(window.devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cx=W/2;cy=H/2;
-    cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
-    Rm=Math.hypot(W,H)/2;mn=Math.min(W,H);
-    var asp=(img.height&&img.width)?(img.height/img.width):1;lw=Math.min(W*.8,600);lh=lw*asp;
-    if(lh>H*.55){lh=H*.55;lw=lh/asp}
-    lw=Math.round(lw);lh=Math.round(lh);ox=Math.round(cx-lw/2);oy=Math.round(cy-lh/2);
-    var o=document.createElement('canvas');o.width=lw;o.height=lh;
-    var c=o.getContext('2d');c.drawImage(img,0,0,lw,lh);
-    parts=[];
-    try{
-      var d=c.getImageData(0,0,lw,lh).data,n=0,i;
-      for(i=3;i<d.length;i+=4)if(d[i]>140)n++;
-      step=Math.max(1.6,Math.sqrt(n/3600));
-      for(var y=0;y<lh;y+=step)for(var x=0;x<lw;x+=step){
-        var k=((y|0)*lw+(x|0))*4;if(d[k+3]<140)continue;
-        parts.push({tx:ox+x,ty:oy+y,c:'rgb('+d[k]+','+d[k+1]+','+d[k+2]+')',
-          r0:Rm*(1.05+Math.random()*.7),r1:mn*(.08+Math.random()*.42),a0:Math.random()*6.283,
-          w:.9+Math.random()*.9,dl:Math.random()*.6,cd:Math.random()*.35});
-      }
-    }catch(e){}
-    words=[];var NW=W<600?26:42;
-    for(i=0;i<NW;i++)words.push({s:WORDS[i%WORDS.length],f:Math.round(mn*(.022+Math.random()*.03))+8,
-      r0:Rm*(1.05+Math.random()*.6),r1:mn*(.14+Math.random()*.4),a0:Math.random()*6.283,
-      w:.7+Math.random()*.7,dl:Math.random()*.7,al:.4+Math.random()*.6,g:Math.random()<.7});
-  }
-   
-  /* swirl: bahar se andar spiral mein aata hua */
-  function pos(o,t){
-    var a=clamp((t-o.dl)/1.9),r=lerp(o.r0,o.r1,eo(a));
-    r*=1-.3*clamp((t-2)/1.5);
-    var th=o.a0+o.w*t*1.1;
-    return [cx+r*Math.cos(th),cy+r*Math.sin(th),th,a];
-  }
-   
-  function frame(now){
-    var t=(now-t0)/1000;
-    if(tc<0&&loaded&&t>3.4)tc=t;
-    var u0=tc<0?0:t-tc,i,q,e,u,x,y;
-    ctx.clearRect(0,0,W,H);ctx.globalAlpha=1;
-   
-    var gl=.04+.16*clamp(u0/1.2),g=ctx.createRadialGradient(cx,cy,0,cx,cy,mn*.6);
-    g.addColorStop(0,'rgba(249,200,14,'+gl+')');g.addColorStop(1,'rgba(249,200,14,0)');
-    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-   
-    ctx.textAlign='center';ctx.textBaseline='middle';
-    for(i=0;i<words.length;i++){
-      var w=words[i];q=pos(w,t);u=tc<0?0:clamp((u0-w.dl*.3)/1);e=eio(u);
-      var al=w.al*clamp(q[3]*2.2)*(1-e);if(al<.01)continue;
-      ctx.save();ctx.translate(lerp(q[0],cx,e),lerp(q[1],cy,e));ctx.rotate(q[2]+1.5708);
-      ctx.font='700 '+(w.f*(1-.6*e)).toFixed(1)+'px "Space Grotesk",system-ui,sans-serif';
-      ctx.fillStyle=w.g?'#F9C80E':'#8a8578';ctx.globalAlpha=al;ctx.fillText(w.s,0,0);ctx.restore();
-    }
-   
-    var fp=1-clamp((u0-1.3)/.5);
-    if(fp>0&&parts.length>0)for(i=0;i<parts.length;i++){
-      var p=parts[i];q=pos(p,t);u=tc<0?0:clamp((u0-p.cd)/1);e=eio(u);
-      x=lerp(q[0],p.tx,e);y=lerp(q[1],p.ty,e);
-      var s=lerp(1.6,step*1.1,e);
-      ctx.globalAlpha=(.3+.7*e)*clamp(q[3]*3)*fp;ctx.fillStyle=p.c;ctx.fillRect(x-s/2,y-s/2,s,s);
-    }
-   
-    var la=clamp((u0-1.1)/.5);
-    if(la>0){ctx.globalAlpha=la;ctx.drawImage(img,ox,oy,lw,lh);}
-    var ru=clamp((u0-1.15)/.9);
-    if(ru>0&&ru<1){ctx.globalAlpha=(1-ru)*.8;ctx.strokeStyle='#F9C80E';ctx.lineWidth=2;
-      ctx.beginPath();ctx.arc(cx,cy,eo(ru)*mn*.7,0,6.283);ctx.stroke();}
-   
-    var pr=tc<0?88*eo(clamp(t/3.4)):88+12*clamp(u0/1.3);
-    num.textContent=Math.round(pr)+'%';bar.style.width=pr+'%';
-    if(u0>1.5)meter.classList.add('hide');
-   
-    /* iris: logo ke beech se website khulti hai */
-    if(tc>=0&&u0>2.3){
-      var iu=clamp((u0-2.3)/1.1),R=eio(iu)*Rm*1.1;
-      if(!irisOn){irisOn=true;document.body.classList.remove('loading');ring.style.display='block';}
-      var m='radial-gradient(circle at 50% 50%, transparent '+R+'px, #000 '+(R+1.5)+'px)';
-      pre.style.webkitMaskImage=m;pre.style.maskImage=m;
-      ring.style.width=ring.style.height=(2*R+6)+'px';ring.style.opacity=1-iu*iu;
-      if(iu>=1){pre.remove();return;}
-    }
-    requestAnimationFrame(frame);
-  }
-   
-  img.onload=function(){build();t0=performance.now();requestAnimationFrame(frame);};
-  img.onerror=function(){
-    img.onerror=null;
-    img.src='assets/logo-zyrox.png';
-  };
-  img.src='logo-zyrox.png';
-  setTimeout(function(){
-    if(tc<0){ loaded=true; tc=(performance.now()-t0)/1000; }
-  }, 7000);
-  window.addEventListener('resize',function(){if(img.complete&&pre.parentNode)build()});
-  })();
-  </script>
-  <!-- ========== PRELOADER END ========== -->
+<body>
 
   <!-- ========================================================================
        TOP SCROLL PROGRESS BAR
@@ -244,6 +102,37 @@
     </a>
   </div>
 
+  <script>
+  (function(){
+    var t=document.querySelector('.mobile-toggle'),o=document.querySelector('.mobile-menu-overlay'),n=document.querySelector('.navbar');
+    if(!t||!o)return;
+    t._bound=true;
+    t.addEventListener('click',function(e){
+      e.preventDefault();
+      var open=o.classList.toggle('open');
+      t.classList.toggle('active',open);
+      t.setAttribute('aria-expanded',open?'true':'false');
+      o.setAttribute('aria-hidden',open?'false':'true');
+      if(n)n.classList.remove('navbar-hidden');
+      document.body.style.overflow=open?'hidden':'';
+    });
+    o.addEventListener('click',function(e){
+      if(e.target.closest('.mobile-nav-link')||e.target.closest('.nav-btn-get-started')){
+        o.classList.remove('open');t.classList.remove('active');
+        t.setAttribute('aria-expanded','false');o.setAttribute('aria-hidden','true');
+        document.body.style.overflow='';
+      }
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&o.classList.contains('open')){
+        o.classList.remove('open');t.classList.remove('active');
+        t.setAttribute('aria-expanded','false');o.setAttribute('aria-hidden','true');
+        document.body.style.overflow='';
+      }
+    });
+  })();
+  </script>
+
   <!-- ========================================================================
        02. HERO SECTION (.sd-hero)
        ======================================================================== -->
@@ -311,7 +200,7 @@
           <b style="top:50%;left:0"><svg class="sd-ic"><use href="#i-mega"/></svg></b>
         </div>
         <div class="sd-img">
-          <img src="hero banner image.png" alt="Zyrox Media David sculpture with sunglasses and headphones">
+          <img src="hero banner image.png" alt="Zyrox Media David sculpture with sunglasses and headphones" loading="eager" fetchpriority="high" decoding="async" width="600" height="600">
         </div>
         <div class="sd-chip a">
           <span class="dot"></span>
