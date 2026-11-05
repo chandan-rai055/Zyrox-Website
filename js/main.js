@@ -704,14 +704,19 @@
     contactBtns.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        openModal(contactModal);
+        const ctSection = document.getElementById('contact') || document.getElementById('ct-card');
+        if (ctSection) {
+          ctSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.location.href = '/contact';
+        }
       });
     });
 
     closeBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
-        closeModal(introModal);
-        closeModal(contactModal);
+        if (introModal) closeModal(introModal);
+        if (contactModal) closeModal(contactModal);
       });
     });
 
@@ -728,8 +733,8 @@
     // Close on Esc key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        closeModal(introModal);
-        closeModal(contactModal);
+        if (introModal) closeModal(introModal);
+        if (contactModal) closeModal(contactModal);
       }
     });
 

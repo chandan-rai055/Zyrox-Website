@@ -206,12 +206,12 @@
         <a href="/services" class="nav-link">Services</a>
         <a href="/projects" class="nav-link">Projects</a>
         <a href="#why-us" class="nav-link">About Us</a>
-        <a href="/contact" class="nav-link">Contact Us</a>
+        <a href="#contact" class="nav-link">Contact Us</a>
       </nav>
 
       <!-- CTA Button Right (Get Started ->) -->
       <div class="nav-cta-btn">
-        <a href="/contact" class="btn-accent nav-btn-get-started" aria-label="Get Started with Zyrox Media">
+        <a href="#contact" class="btn-accent nav-btn-get-started" aria-label="Get Started with Zyrox Media">
           <span>Get Started</span>
           <span class="btn-arrow" aria-hidden="true">→</span>
         </a>
@@ -233,9 +233,9 @@
       <a href="/services" class="mobile-nav-link">Services</a>
       <a href="/projects" class="mobile-nav-link">Projects</a>
       <a href="#why-us" class="mobile-nav-link">About Us</a>
-      <a href="/contact" class="mobile-nav-link">Contact Us</a>
+      <a href="#contact" class="mobile-nav-link">Contact Us</a>
     </nav>
-    <a href="/contact" class="btn-accent nav-btn-get-started" style="align-self: flex-start; text-decoration: none;">
+    <a href="#contact" class="btn-accent nav-btn-get-started" style="align-self: flex-start; text-decoration: none;">
       <span>Get Started</span>
       <span class="btn-arrow" aria-hidden="true">→</span>
     </a>
@@ -1416,53 +1416,138 @@
   </script>
 
   <!-- ========================================================================
-       10. FINAL CTA SECTION
+       10. CONTACT SECTION (.ct-sec) - Yellow & Black Interactive Form
        ======================================================================== -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="cta-box">
-        <!-- Ambient Glow & Floating Shapes -->
-        <div class="cta-glow-bg" aria-hidden="true"></div>
-        <div class="cta-floating-shape cta-shape-1" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-          </svg>
-        </div>
-        <div class="cta-floating-shape cta-shape-2" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-          </svg>
-        </div>
-        <div class="cta-floating-shape cta-shape-3" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
-        </div>
-        <div class="cta-floating-shape cta-shape-4" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-          </svg>
-        </div>
+  <section class="ct-sec" id="contact" aria-label="Contact Zyrox Media">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <symbol id="c-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+      <symbol id="c-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a2 2 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="c-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="c-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="c-arr" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+      <symbol id="c-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4zM22 2 11 13"/></symbol>
+    </defs></svg>
 
-        <div class="cta-content">
-          <div class="eyebrow-pill">
-            <span class="dot"></span>
-            <span>Let's Build Something Exceptional</span>
-          </div>
-          <h2 class="cta-title">Ready to grow your brand<span class="pulsing-dot">?</span></h2>
-          <p class="cta-desc">
-            Stop juggling six disconnected freelancers. Partner with a dedicated studio that delivers your creative direction, social momentum, and ad performance under one unified roof.
-          </p>
-          <a href="/contact" class="btn-accent" style="font-size: 1.05rem; padding: 16px 36px; text-decoration: none;">
-            <span>Schedule Discovery Call</span>
-            <svg class="btn-arrow-slide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+    <div class="ct-blob a" aria-hidden="true"></div>
+    <div class="ct-blob b" aria-hidden="true"></div>
+
+    <div class="ct-wrap">
+      <div>
+        <span class="ct-badge ct-in" style="--i:0"><i></i>We reply within 2 hours</span>
+        <h2 class="ct-title ct-in" style="--i:1">Let’s talk<em>.</em><br>Let’s grow.</h2>
+        <p class="ct-lead ct-in" style="--i:2">Tell us about your brand and goals. Our in-house team of designers, filmmakers, writers and media buyers will come back with a clear plan, not a sales pitch.</p>
+
+        <div class="ct-list ct-in" style="--i:3">
+          <a class="ct-item" href="tel:+916386706276">
+            <span class="ct-ico"><svg class="ct-ic"><use href="#c-phone"/></svg></span>
+            <span><small>Call us</small><b>+91 63867 06276</b></span>
+            <svg class="ct-ic go"><use href="#c-arr"/></svg>
+          </a>
+          <a class="ct-item" href="mailto:zyroxmediaa@gmail.com">
+            <span class="ct-ico"><svg class="ct-ic"><use href="#c-mail"/></svg></span>
+            <span><small>Email us</small><b>zyroxmediaa@gmail.com</b></span>
+            <svg class="ct-ic go"><use href="#c-arr"/></svg>
+          </a>
+          <a class="ct-item" href="https://wa.me/916386706276" target="_blank" rel="noopener">
+            <span class="ct-ico"><svg class="ct-ic"><use href="#c-chat"/></svg></span>
+            <span><small>WhatsApp</small><b>Chat with us instantly</b></span>
+            <svg class="ct-ic go"><use href="#c-arr"/></svg>
+          </a>
+          <a class="ct-item" href="#" target="_blank" rel="noopener">
+            <span class="ct-ico"><svg class="ct-ic"><use href="#c-pin"/></svg></span>
+            <span><small>Visit the studio</small><b>Gomti Nagar, Lucknow</b></span>
+            <svg class="ct-ic go"><use href="#c-arr"/></svg>
           </a>
         </div>
       </div>
+
+      <div class="ct-card ct-in" style="--i:2" id="ct-card">
+        <h2>Start your project</h2>
+        <p class="sub">Fill this in and we’ll get back to you shortly.</p>
+
+        <form id="ct-form" novalidate>
+          <input type="hidden" name="access_key" value="b0fb4fda-6623-46cb-90aa-7de140dc3e5f">
+          <input type="hidden" name="subject" value="New enquiry from Zyrox Media website">
+          <input type="hidden" name="from_name" value="Zyrox Media Website">
+          <input type="checkbox" name="botcheck" class="ct-hp" tabindex="-1" autocomplete="off">
+
+          <div class="ct-row">
+            <div class="ct-f">
+              <input type="text" id="ct-name" name="name" placeholder=" " required autocomplete="name">
+              <label class="fl" for="ct-name">Your name *</label>
+              <span class="ln"></span>
+            </div>
+            <div class="ct-f">
+              <input type="tel" id="ct-phone" name="phone" placeholder=" " required autocomplete="tel">
+              <label class="fl" for="ct-phone">Phone / WhatsApp *</label>
+              <span class="ln"></span>
+            </div>
+          </div>
+
+          <div class="ct-row">
+            <div class="ct-f">
+              <input type="email" id="ct-email" name="email" placeholder=" " autocomplete="email">
+              <label class="fl" for="ct-email">Email</label>
+              <span class="ln"></span>
+            </div>
+            <div class="ct-f">
+              <input type="text" id="ct-biz" name="business" placeholder=" " autocomplete="organization">
+              <label class="fl" for="ct-biz">Business name</label>
+              <span class="ln"></span>
+            </div>
+          </div>
+
+          <span class="ct-lab">What do you need? (select any)</span>
+          <div class="ct-chips" id="ct-services">
+            <label><input type="checkbox" value="Social Media Management"><span>Social Media</span></label>
+            <label><input type="checkbox" value="Content Shoot & Editing"><span>Content Shoot</span></label>
+            <label><input type="checkbox" value="Graphic Design"><span>Graphic Design</span></label>
+            <label><input type="checkbox" value="Website Design & Development"><span>Website</span></label>
+            <label><input type="checkbox" value="SEO"><span>SEO</span></label>
+            <label><input type="checkbox" value="Blogs"><span>Blogs</span></label>
+            <label><input type="checkbox" value="Meta Ads"><span>Meta Ads</span></label>
+            <label><input type="checkbox" value="Content Calendar & Tracking"><span>Content Calendar</span></label>
+          </div>
+
+          <div class="ct-f">
+            <textarea id="ct-msg" name="message" placeholder=" " rows="3"></textarea>
+            <label class="fl" for="ct-msg">Tell us about your project</label>
+            <span class="ln"></span>
+          </div>
+
+          <button type="submit" class="ct-btn" id="ct-btn">
+            <span style="display:flex;align-items:center;gap:10px">
+              <span id="ct-bt">Send Message</span>
+              <svg class="ct-ic"><use href="#c-send"/></svg>
+            </span>
+          </button>
+
+          <div class="ct-or">or</div>
+
+          <button type="button" class="ct-wa" id="ct-wa">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.2-.4.700-1.300.1-.2 0-.3 0-.5l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.300-.2.300-.9.900-.9 2.200s.9 2.500 1 2.700c.1.200 1.800 2.800 4.400 3.900 1.600.7 2.300.8 3.100.7.500-.1 1.500-.6 1.700-1.200.2-.6.2-1.100.2-1.200-.1-.1-.3-.2-.5-.3z"/></svg>
+            <span>Send on WhatsApp</span>
+          </button>
+
+          <p class="ct-msg" id="ct-err" role="alert"></p>
+          <p class="ct-note">No spam. Your details stay with our team.</p>
+        </form>
+
+        <div class="ct-ok" aria-live="polite">
+          <div class="tick">
+            <svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+          </div>
+          <h3>Message sent!</h3>
+          <p>Thank you for reaching out. Our team will contact you within 2 hours.</p>
+        </div>
+      </div>
     </div>
+
+    <!-- Ticker Marquee -->
+    <div class="ct-marq" aria-hidden="true"><div class="ct-track">
+      <span>Social Media</span><span>Content Shoot</span><span>Graphic Design</span><span>Website</span><span>SEO</span><span>Blogs</span><span>Meta Ads</span><span>Content Calendar</span>
+      <span>Social Media</span><span>Content Shoot</span><span>Graphic Design</span><span>Website</span><span>SEO</span><span>Blogs</span><span>Meta Ads</span><span>Content Calendar</span>
+    </div></div>
   </section>
 
   <!-- ========================================================================
@@ -1602,59 +1687,7 @@
   </div>
 
   <!-- ========================================================================
-       MODAL 2: DISCOVERY CALL / CONTACT MODAL
-       ======================================================================== -->
-  <div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-label="Schedule Discovery Call">
-    <div class="modal-card">
-      <button class="modal-close-btn" aria-label="Close modal">✕</button>
-      <div class="eyebrow-pill" style="margin-bottom: 12px;">
-        <span class="dot"></span>
-        <span>Start Your Growth Sprint</span>
-      </div>
-      <h3 style="font-size: 1.8rem; color: var(--text-primary); margin-bottom: 8px;">Schedule Discovery Call</h3>
-      <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 24px;">
-        Tell us about your brand targets. We will prepare an audit and show up to our call with actionable insights.
-      </p>
-
-      <form id="discoveryForm">
-        <div class="form-group">
-          <label class="form-label" for="clientName">Your Name</label>
-          <input type="text" id="clientName" class="form-input" placeholder="e.g. Elena Rostova" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="clientEmail">Work Email</label>
-          <input type="email" id="clientEmail" class="form-input" placeholder="elena@yourbrand.com" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="clientService">Primary Growth Goal</label>
-          <select id="clientService" class="form-select">
-            <option value="omnichannel">Full-Stack Retainer (Social + Ads + Web)</option>
-            <option value="meta_ads">High-ROAS Meta Ads Acceleration</option>
-            <option value="reels_content">Viral Short-Form Reels & Content Shoot</option>
-            <option value="web_seo">High-Conversion Web & Technical SEO</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="clientNotes">Brand Details or URL</label>
-          <textarea id="clientNotes" class="form-textarea" placeholder="Share your website, current monthly spend or specific challenges..."></textarea>
-        </div>
-
-        <button type="submit" class="btn-accent" style="width: 100%; padding: 16px;">
-          <span>Submit Discovery Request</span>
-          <svg class="btn-arrow-slide" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- ========================================================================
-       EXTERNAL SCRIPTS (GSAP, SCROLLTRIGGER, LENIS)
+       EXTERNAL SCRIPTS (GSAP, SCROLLTRIGGER, LENIS & CONTACT FORM)
        ======================================================================== -->
   <!-- GSAP Core & ScrollTrigger from cdnjs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -1663,6 +1696,49 @@
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
   <!-- Main Application Logic -->
   <script src="js/main.js"></script>
+
+  <!-- Contact Form Controller (Web3Forms + WhatsApp) -->
+  <script>
+  (function(){
+    var f=document.getElementById('ct-form');if(!f)return;
+    var btn=document.getElementById('ct-btn'),bt=document.getElementById('ct-bt'),err=document.getElementById('ct-err'),card=document.getElementById('ct-card');
+    var wa=document.getElementById('ct-wa');
+    if (wa) {
+      wa.addEventListener('click',function(){
+        err.textContent='';
+        var name=f.name.value.trim(),phone=f.phone.value.trim();
+        if(!name||!phone){err.textContent='Please enter your name and phone number.';return}
+        var sv=[].map.call(document.querySelectorAll('#ct-services input:checked'),function(i){return i.value}).join(', ');
+        var t='Hi Zyrox Media, I would like to enquire about your services.\n\n'+
+          'Name: '+name+'\nPhone: '+phone+
+          (f.email.value.trim()?'\nEmail: '+f.email.value.trim():'')+
+          (f.business.value.trim()?'\nBusiness: '+f.business.value.trim():'')+
+          (sv?'\nServices: '+sv:'')+
+          (f.message.value.trim()?'\nMessage: '+f.message.value.trim():'');
+        window.open('https://wa.me/916386706276?text='+encodeURIComponent(t),'_blank','noopener');
+      });
+    }
+    f.addEventListener('submit',function(e){
+      e.preventDefault();err.textContent='';
+      var name=f.name.value.trim(),phone=f.phone.value.trim(),email=f.email.value.trim();
+      if(!name||!phone){err.textContent='Please enter your name and phone number.';return}
+      if(email&&!/^\S+@\S+\.\S+$/.test(email)){err.textContent='Please enter a valid email address.';return}
+      if(f.botcheck&&f.botcheck.checked)return;
+      var sv=[].map.call(document.querySelectorAll('#ct-services input:checked'),function(i){return i.value}).join(', ');
+      var data={access_key:f.access_key.value,subject:f.subject.value,from_name:f.from_name.value,name:name,phone:phone,email:email||'Not provided',business:f.business.value.trim()||'Not provided',services:sv||'Not selected',message:f.message.value.trim()||'Not provided'};
+      if(email)data.replyto=email;
+      btn.disabled=true;bt.textContent='Sending...';
+      fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)})
+        .then(function(r){return r.json()})
+        .then(function(j){
+          if(j.success){card.classList.add('sent');f.reset()}
+          else{err.textContent='Something went wrong. Please try again or call us.'}
+        })
+        .catch(function(){err.textContent='Network error. Please try again or WhatsApp us.'})
+        .then(function(){btn.disabled=false;bt.textContent='Send Message'});
+    });
+  })();
+  </script>
 </body>
 </html>
 
