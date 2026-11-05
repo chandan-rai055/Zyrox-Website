@@ -399,7 +399,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  z-index: 1200;
+  z-index: 1000;
   transition: transform 0.35s var(--ease-out-expo), background-color 0.3s ease;
 }
 
@@ -602,26 +602,18 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   gap: 6px;
-  z-index: 1250;
-  cursor: pointer;
-  position: relative;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  z-index: 1100;
 }
 
 .hamburger-line {
-  pointer-events: none;
-  width: 22px;
+  width: 20px;
   height: 2px;
   background-color: var(--text-primary);
-  border-radius: 2px;
-  transition: transform 0.3s var(--ease-out-expo), opacity 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.3s var(--ease-out-expo), opacity 0.2s ease;
 }
 
 .mobile-toggle.active .hamburger-line:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
-  background-color: var(--accent);
 }
 
 .mobile-toggle.active .hamburger-line:nth-child(2) {
@@ -631,7 +623,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-toggle.active .hamburger-line:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
-  background-color: var(--accent);
 }
 
 /* Full-Screen Mobile Menu Overlay */
@@ -641,49 +632,40 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(14, 15, 18, 0.98);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  z-index: 1100;
+  background-color: var(--bg-elevated);
+  z-index: 1050;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 90px 32px 40px;
-  box-sizing: border-box;
-  opacity: 0;
-  visibility: hidden;
+  padding: 40px;
+  transform: translateY(-100%);
+  transition: transform 0.5s var(--ease-out-expo);
   pointer-events: none;
-  transform: translateY(-16px);
-  transition: opacity 0.35s ease, transform 0.35s var(--ease-out-expo), visibility 0.35s ease;
-  overflow-y: auto;
 }
 
 .mobile-menu-overlay.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  margin-bottom: 36px;
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
 .mobile-nav-link {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 6.5vw, 2.5rem);
+  font-size: clamp(2rem, 6vw, 2.8rem);
   font-weight: 700;
   color: var(--text-primary);
-  text-decoration: none;
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.25s ease, transform 0.25s var(--ease-out-expo), color 0.2s ease;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s var(--ease-out-expo), color 0.2s ease;
 }
 
-.mobile-nav-link:hover, .mobile-nav-link.active {
+.mobile-nav-link:hover {
   color: var(--accent);
 }
 
@@ -691,12 +673,6 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
   transform: translateY(0);
 }
-
-.mobile-menu-overlay.open .mobile-nav-link:nth-child(1) { transition-delay: 0.04s; }
-.mobile-menu-overlay.open .mobile-nav-link:nth-child(2) { transition-delay: 0.08s; }
-.mobile-menu-overlay.open .mobile-nav-link:nth-child(3) { transition-delay: 0.12s; }
-.mobile-menu-overlay.open .mobile-nav-link:nth-child(4) { transition-delay: 0.16s; }
-.mobile-menu-overlay.open .mobile-nav-link:nth-child(5) { transition-delay: 0.2s; }
 
 /* --------------------------------------------------------------------------
    07. HERO SECTION (.sd-hero)
@@ -3545,7 +3521,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 900px) {
   :root {
     --section-pad-y: 80px;
   }
@@ -3557,11 +3533,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .nav-links, .nav-cta-btn {
-    display: none !important;
+    display: none;
   }
 
   .mobile-toggle {
-    display: flex !important;
+    display: flex;
   }
 
   .why-section-layout {

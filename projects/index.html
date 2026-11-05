@@ -1000,43 +1000,25 @@
        PAGE INTERACTIVE JAVASCRIPT
        ======================================================================== -->
   <script>
-    function initProjectsPage() {
+    document.addEventListener('DOMContentLoaded', () => {
       // 1. Mobile Menu Toggle
       const mobileToggle = document.querySelector('.mobile-toggle');
       const mobileOverlay = document.querySelector('.mobile-menu-overlay');
       if (mobileToggle && mobileOverlay) {
-        function toggleMenu(e) {
-          if (e) e.preventDefault();
-          const isOpen = mobileOverlay.classList.toggle('open');
-          mobileToggle.classList.toggle('active', isOpen);
-          mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-          mobileOverlay.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-          document.body.style.overflow = isOpen ? 'hidden' : '';
-        }
-
-        function closeMenu() {
-          mobileOverlay.classList.remove('open');
-          mobileToggle.classList.remove('active');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-          mobileOverlay.setAttribute('aria-hidden', 'true');
-          document.body.style.overflow = '';
-        }
-
-        mobileToggle.addEventListener('click', toggleMenu);
-
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-          link.addEventListener('click', closeMenu);
+        mobileToggle.addEventListener('click', () => {
+          const isOpen = mobileToggle.classList.toggle('active');
+          mobileOverlay.classList.toggle('open');
+          mobileToggle.setAttribute('aria-expanded', isOpen);
+          mobileOverlay.setAttribute('aria-hidden', !isOpen);
         });
 
-        const overlayCta = mobileOverlay.querySelector('.nav-btn-get-started');
-        if (overlayCta) {
-          overlayCta.addEventListener('click', closeMenu);
-        }
-
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && mobileOverlay.classList.contains('open')) {
-            closeMenu();
-          }
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            mobileOverlay.classList.remove('open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileOverlay.setAttribute('aria-hidden', 'true');
+          });
         });
       }
 
@@ -1092,13 +1074,7 @@
           footer.classList.add('on');
         }
       }
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initProjectsPage);
-    } else {
-      initProjectsPage();
-    }
+    });
   </script>
 </body>
 </html>

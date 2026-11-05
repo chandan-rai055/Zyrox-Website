@@ -185,41 +185,19 @@
     }, { passive: true });
 
     // Mobile Hamburger
-    if (mobileToggle && mobileMenu && !mobileToggle._bound) {
-      mobileToggle._bound = true;
-      function toggleMenu(e) {
-        if (e) e.preventDefault();
+    if (mobileToggle && mobileMenu) {
+      mobileToggle.addEventListener('click', () => {
         const isOpen = mobileMenu.classList.toggle('open');
         mobileToggle.classList.toggle('active', isOpen);
-        mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-        if (navbar) navbar.classList.remove('navbar-hidden');
         document.body.style.overflow = isOpen ? 'hidden' : '';
-      }
-
-      function closeMenu() {
-        mobileMenu.classList.remove('open');
-        mobileToggle.classList.remove('active');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-
-      mobileToggle.addEventListener('click', toggleMenu);
-
-      mobileLinks.forEach((link) => {
-        link.addEventListener('click', closeMenu);
       });
 
-      const overlayCta = mobileMenu.querySelector('.nav-btn-get-started');
-      if (overlayCta) {
-        overlayCta.addEventListener('click', closeMenu);
-      }
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-          closeMenu();
-        }
+      mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          mobileToggle.classList.remove('active');
+          document.body.style.overflow = '';
+        });
       });
     }
 
@@ -784,28 +762,22 @@
   }
 
   /* ==========================================================================
-     14. INITIALIZE ALL MODULES DEFENSIVELY
+     14. INITIALIZE ALL MODULES ON DOM READY
      ========================================================================== */
-  function initAll() {
-    try { initNavbar(); } catch (e) { console.error('initNavbar error:', e); }
-    try { initSmoothScroll(); } catch (e) { console.error('initSmoothScroll error:', e); }
-    try { initCustomCursor(); } catch (e) { console.error('initCustomCursor error:', e); }
-    try { initMagneticButtons(); } catch (e) { console.error('initMagneticButtons error:', e); }
-    try { initHeroAnimations(); } catch (e) { console.error('initHeroAnimations error:', e); }
-    try { initMarquee(); } catch (e) { console.error('initMarquee error:', e); }
-    try { initStatsCounters(); } catch (e) { console.error('initStatsCounters error:', e); }
-    try { initServicesSpotlight(); } catch (e) { console.error('initServicesSpotlight error:', e); }
-    try { initDeliverables(); } catch (e) { console.error('initDeliverables error:', e); }
-    try { initWhyChooseUs(); } catch (e) { console.error('initWhyChooseUs error:', e); }
-    try { initTimeline(); } catch (e) { console.error('initTimeline error:', e); }
-    try { initProjectsFilter(); } catch (e) { console.error('initProjectsFilter error:', e); }
-    try { initModals(); } catch (e) { console.error('initModals error:', e); }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAll);
-  } else {
-    initAll();
-  }
+  document.addEventListener('DOMContentLoaded', () => {
+    initSmoothScroll();
+    initCustomCursor();
+    initNavbar();
+    initMagneticButtons();
+    initHeroAnimations();
+    initMarquee();
+    initStatsCounters();
+    initServicesSpotlight();
+    initDeliverables();
+    initWhyChooseUs();
+    initTimeline();
+    initProjectsFilter();
+    initModals();
+  });
 
 })();
