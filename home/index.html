@@ -667,14 +667,14 @@
   /* TEAM */
   .tm-head{text-align:center;max-width:640px;margin:0 auto 56px}
   .tm-head p{color:var(--mu);line-height:1.7;margin:16px 0 0}
-  .tm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;perspective:1200px}
-  .tm-card{--mx:50%;--my:50%;position:relative;padding:26px;border-radius:22px;background:var(--cd);border:1px solid #26272b;overflow:hidden;transform:rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .25s ease-out,border-color .3s}
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;perspective:1200px;max-width:1160px;margin:0 auto}
+  .tm-card{--mx:50%;--my:50%;position:relative;padding:26px;border-radius:22px;background:var(--cd);border:1px solid #26272b;overflow:hidden;transform:rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .25s ease-out,border-color .3s;display:flex;flex-direction:column}
   .zx.js .tm-card.zrv{transition:opacity .8s,transform .25s ease-out,border-color .3s;transition-delay:calc(var(--i,0)*100ms),0s,0s}
   .tm-card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(255,214,10,.18),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
   .tm-card:hover{border-color:rgba(255,214,10,.5)}.tm-card:hover::before{opacity:1}
   .tm-ph{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:linear-gradient(145deg,#2a2b30,#1d1e22);display:grid;place-items:center;margin-bottom:20px}
   .tm-ph span{font:700 52px 'Outfit',sans-serif;color:var(--y)}
-  .tm-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+  .tm-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
   .tm-card:hover .tm-ph img{transform:scale(1.08)}
   .tm-soc{position:absolute;left:0;right:0;bottom:0;display:flex;gap:8px;justify-content:center;padding:36px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.75));transform:translateY(101%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
   .tm-card:hover .tm-soc{transform:none}
@@ -682,15 +682,14 @@
   .tm-soc a:hover{transform:translateY(-4px) scale(1.1)}
   .tm-card h3{font:600 20px 'Outfit',sans-serif;margin:0;color:var(--tx)}
   .tm-role{display:block;color:var(--y);font:600 12px 'Outfit',sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:6px 0 14px}
-  .tm-card p{font-size:14px;line-height:1.65;color:var(--mu);margin:0 0 16px}
-  .tm-card ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:7px}
+  .tm-card p{font-size:14px;line-height:1.65;color:var(--mu);margin:0 0 16px;flex:1}
+  .tm-card ul{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-wrap:wrap;gap:7px}
   .tm-card li{padding:6px 11px;border-radius:99px;font:600 11.5px 'Outfit',sans-serif;background:rgba(255,214,10,.08);border:1px solid rgba(255,214,10,.25);color:var(--y);transition:transform .3s}
   .tm-card:hover li{transform:translateY(-3px)}
   .tm-card:hover li:nth-child(2){transition-delay:.06s}.tm-card:hover li:nth-child(3){transition-delay:.12s}
   @keyframes zspin{to{transform:rotate(360deg)}}@keyframes zspinr{to{transform:rotate(-360deg)}}@keyframes zflt{50%{transform:translateY(-12px)}}
   @media(max-width:1100px){.tm-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:900px){.fd-wrap{grid-template-columns:1fr;gap:48px}.fd-vis{width:min(360px,88%)}.fd-steps{grid-template-columns:1fr}}
-  @media(max-width:600px){.tm-grid{grid-template-columns:1fr}.fd-wrap,.tm-wrap{padding:64px 18px}}
+  @media(max-width:700px){.tm-grid{grid-template-columns:1fr}.fd-wrap,.tm-wrap{padding:64px 18px}}
   @media(prefers-reduced-motion:reduce){.fd *,.tm *{animation:none!important;transition:none!important}.zx .zrv{opacity:1!important;transform:none!important}}
 
   /* ---------- PORTFOLIO INTRO (button dabane par khulta hai) ---------- */
@@ -698,7 +697,7 @@
   .pf-btn .ic{font-size:16px}
   .pf-btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(255,214,10,.35)}
   .pf-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
-  .pf-btn.full{width:100%;margin-top:18px}
+  .pf-btn.full{width:100%;margin-top:auto}
   .pf{--y:#FFD60A;--y2:#FFF27A;--y3:#C79A00;position:fixed!important;inset:0;z-index:2147483000;background:#0b0c0d;overflow:hidden;color:#fff;font-family:'Manrope',sans-serif;transition:background .9s ease .6s}
   .pf *{box-sizing:border-box}
   :where(.pf *){margin:0;padding:0}
@@ -740,16 +739,18 @@
   @keyframes pfDim{to{opacity:.55}}
   .pf-tag{position:absolute;top:8vh;left:5vw;right:5vw;display:flex;justify-content:space-between;font:italic 500 clamp(14px,2vw,26px)/1 'Playfair Display',serif;color:#f3ecd0;opacity:0;animation:pfIn .8s ease 2.0s forwards}
   @keyframes pfIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-  .pf-man{position:absolute;left:50%;bottom:0;height:min(84vh,170vw);aspect-ratio:539/1000;transform:translateX(-50%) translateY(40%) scale(.92);opacity:0;animation:pfRise 1.2s cubic-bezier(.2,.8,.2,1) 3.1s forwards}
+  .pf-man{position:absolute;left:50%;bottom:0;height:min(84vh,130vw);aspect-ratio:4/5;max-width:540px;transform:translateX(-50%) translateY(40%) scale(.92);opacity:0;animation:pfRise 1.2s cubic-bezier(.2,.8,.2,1) 3.1s forwards;border-radius:24px 24px 0 0;overflow:hidden}
   .pf-man::before{content:"";position:absolute;left:50%;top:30%;width:130%;aspect-ratio:1;transform:translate(-50%,-30%);background:radial-gradient(circle,rgba(255,214,10,.38),transparent 62%);z-index:-1;animation:pfPulseG 4s ease-in-out infinite}
-  .pf-man img{position:relative;width:100%;height:100%;display:block;filter:drop-shadow(0 0 22px rgba(255,214,10,.28)) drop-shadow(0 20px 30px rgba(0,0,0,.6));animation:pfFloat 6s ease-in-out 4.4s infinite}
+  .pf-man img{position:relative;width:100%;height:100%;display:block;object-fit:cover;object-position:top center;filter:drop-shadow(0 0 22px rgba(255,214,10,.28)) drop-shadow(0 20px 30px rgba(0,0,0,.6));animation:pfFloat 6s ease-in-out 4.4s infinite}
   @keyframes pfRise{to{transform:translateX(-50%);opacity:1}}
   @keyframes pfFloat{50%{transform:translateY(-8px)}}
   @keyframes pfPulseG{50%{opacity:.6;transform:translate(-50%,-30%) scale(1.08)}}
   .pf-hi{position:absolute;left:5vw;top:47%;font-family:'Playfair Display',serif}
   .pf-hi small{display:block;font:italic 500 clamp(13px,1.5vw,20px)/1 'Outfit',sans-serif;color:#fff;margin-bottom:8px;min-height:1.2em}
   .pf-hi b{display:block;font:600 clamp(26px,4.4vw,60px)/1.05 'Playfair Display',serif;color:var(--y2);min-height:1.1em}
-  .pf-card{position:absolute;left:5vw;bottom:9vh;width:min(32vw,400px);padding:22px 24px;border-radius:20px;background:linear-gradient(145deg,rgba(255,214,10,.22),rgba(255,214,10,.06));border:1px solid rgba(255,214,10,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 0 40px rgba(255,214,10,.08);transform:translateX(-40px) scale(.9);opacity:0;animation:pfCard .8s cubic-bezier(.2,.8,.2,1) 5.2s forwards}
+  .pf-card{position:absolute;left:5vw;bottom:7vh;width:min(34vw,420px);max-height:54vh;overflow-y:auto;padding:22px 24px;border-radius:20px;background:linear-gradient(145deg,rgba(255,214,10,.22),rgba(255,214,10,.06));border:1px solid rgba(255,214,10,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 0 40px rgba(255,214,10,.08);transform:translateX(-40px) scale(.9);opacity:0;animation:pfCard .8s cubic-bezier(.2,.8,.2,1) 5.2s forwards}
+  .pf-card::-webkit-scrollbar{width:4px}
+  .pf-card::-webkit-scrollbar-thumb{background:rgba(255,214,10,.4);border-radius:4px}
   @keyframes pfCard{to{transform:none;opacity:1}}
   .pf-card h3{font:600 clamp(16px,1.7vw,22px)/1 'Playfair Display',serif;color:#fff;margin-bottom:12px;min-height:1em}
   .pf-card p{font:500 clamp(11px,1.05vw,14px)/1.65 'Manrope',sans-serif;color:#f1ead0;min-height:6.6em}
@@ -806,32 +807,32 @@
      </div>
      <div class="fd-photo">
       <span>CR</span>
-      <!-- Founder ki photo: src me apni photo ka URL daalo (WordPress Media Library ka link) -->
-      <img src="/founder.webp" alt="Chandan Rai, Founder of Zyrox Media" onerror="this.style.display='none'">
+      <!-- Founder Photo -->
+      <img src="assets/chandan rai.png" alt="Chandan Rai, Founder of Zyrox Media" onerror="this.style.display='none'">
      </div>
-     <div class="fd-chip a"><strong>8+</strong>Years of Experience</div>
-     <div class="fd-chip b"><strong>150+</strong>Brands Grown</div>
+     <div class="fd-chip a"><strong>3+</strong>Years Groundwork</div>
+     <div class="fd-chip b"><strong>150+</strong>Brands Scaled</div>
     </div>
 
     <div class="fd-txt">
      <span class="tag zrv"><i></i>Meet the Founder</span>
      <h2 id="fd-title" class="zrv" style="--i:1">Hi, I’m Chandan Rai<em>.</em></h2>
-     <p class="zrv" style="--i:2">I started Zyrox Media with one simple belief: good design should do more than look good, it should bring customers. After years of working with local businesses and growing brands, I saw the same problem again and again. Great products, but no clear online presence.</p>
-     <p class="zrv" style="--i:2">Today, my team and I handle social media, content, websites, SEO and Meta ads under one roof, so you don’t have to run after five different agencies. Every campaign we build is tracked, measured and improved until it delivers real leads.</p>
-     <blockquote class="fd-quote zrv" style="--i:3">“We don’t chase likes. We build brands that grow.”</blockquote>
+     <p class="zrv" style="--i:2">I didn’t just learn digital marketing—I spent the last three years doing the actual groundwork. Because I have personally sat down and executed everything from website coding and SEO to video editing, I understand the core of this work better than anyone.</p>
+     <p class="zrv" style="--i:2">I know exactly what it takes to build things from scratch and deliver real results. Now, as the Founder of Zyrox Media, I bring that unmatched, hands-on expertise to scale brands effectively.</p>
+     <blockquote class="fd-quote zrv" style="--i:3">“We don’t chase vanity metrics. We build brands that deliver real revenue.”</blockquote>
 
      <ul class="fd-steps">
       <li class="zrv" style="--i:4"><b><svg class="ic" aria-hidden="true"><use href="#zx-target"/></svg></b><h4>Understand</h4><small>We study your brand, audience and competitors before we design anything.</small></li>
-      <li class="zrv" style="--i:5"><b><svg class="ic" aria-hidden="true"><use href="#zx-bolt"/></svg></b><h4>Execute</h4><small>Creative, content and ads go live fast, with a clear monthly calendar.</small></li>
+      <li class="zrv" style="--i:5"><b><svg class="ic" aria-hidden="true"><use href="#zx-bolt"/></svg></b><h4>Execute</h4><small>Creative, content, code and ads go live fast, with a clear monthly calendar.</small></li>
       <li class="zrv" style="--i:6"><b><svg class="ic" aria-hidden="true"><use href="#zx-trend"/></svg></b><h4>Scale</h4><small>We track every number and double down on what brings the best ROI.</small></li>
      </ul>
 
      <div class="fd-sign zrv" style="--i:7">
       <div><strong>Chandan Rai</strong><small>Founder, Zyrox Media</small></div>
-      <a href="#" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
-      <a href="#" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
-      <a href="#" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
-      <button type="button" class="pf-btn" data-name="Chandan Rai" data-initials="CR" data-photo="/founder.webp" data-tagline="Digital Marketer|&amp;|Growth Partner" data-summary="Founder of Zyrox Media. I help brands grow with social media, content, websites, SEO and Meta ads, tracked and improved until it brings real leads." data-stat="8+|Years of|Experience" data-skills="Social Media Growth|Content Shoots|Performance Meta Ads|Search Engine SEO|Website Design"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
+      <a href="mailto:zyroxmediaa@gmail.com" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
+      <button type="button" class="pf-btn" data-name="Chandan Rai" data-initials="CR" data-photo="assets/chandan rai.png" data-tagline="Founder &amp; Growth Architect|&amp;|Digital Strategist" data-summary="I didn’t just learn digital marketing—I spent the last three years doing the actual groundwork. Because I have personally sat down and executed everything from website coding and SEO to video editing, I understand the core of this work better than anyone. I know exactly what it takes to build things from scratch and deliver real results. Now, as the Founder of Zyrox Media, I bring that unmatched, hands-on expertise to scale brands effectively." data-stat="3+|Years of|Groundwork" data-skills="SEO Expert|Web Developer (WordPress &amp; Shopify)|Graphic Design|Video Editing &amp; Shoot|AI Tools &amp; Digital Strategy"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
      </div>
     </div>
    </div>
@@ -843,77 +844,62 @@
     <div class="tm-head">
      <span class="tag zrv"><i></i>Our Team</span>
      <h2 id="tm-title" class="zrv" style="--i:1">The People Behind Your Growth<em>.</em></h2>
-     <p class="zrv" style="--i:2">A small, focused team of creators, marketers and developers who work together on every project.</p>
+     <p class="zrv" style="--i:2">A small, focused team of creators, marketers and strategists who work together on every project.</p>
     </div>
     <div class="tm-grid">
 
-     <!-- Team member 1: photo ke liye neeche <img src=""> me URL daalo (optional) -->
+     <!-- Team member 1: Nitin Soni -->
      <article class="tm-card zrv" style="--i:0">
       <div class="tm-ph">
        <span>NS</span>
-       <img src="" alt="Nitin Sone, Creative Director at Zyrox Media" loading="lazy" onerror="this.style.display='none'" style="display:none">
+       <img src="assets/nitin soni.png" alt="Nitin Soni, Professional Video Editor at Zyrox Media" loading="lazy" onerror="this.style.display='none'">
        <div class="tm-soc">
-        <a href="#" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
-        <a href="#" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
+        <a href="mailto:zyroxmediaa@gmail.com" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
        </div>
       </div>
-      <h3>Nitin Sone</h3>
-      <span class="tm-role">Creative Director</span>
-      <p>Leads brand identity and design. Turns your idea into posts, carousels and ad creatives that stop the scroll.</p>
-      <ul><li>Branding</li><li>Graphic Design</li><li>Art Direction</li></ul>
-      <button type="button" class="pf-btn full" data-name="Nitin Sone" data-initials="NS" data-photo="" data-tagline="Creative Director|&amp;|Brand Storyteller" data-summary="Creative director at Zyrox Media. I turn ideas into brand identities, carousels and ad creatives that stop the scroll." data-stat="200+|Designs|Delivered" data-skills="Branding|Graphic Design|Art Direction"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
+      <h3>Nitin Soni</h3>
+      <span class="tm-role">Professional Video Editor</span>
+      <p>I’m a passionate video editor who loves turning raw footage into eye-catching videos. I specialize in reels, shorts, cinematic edits, transitions, and social media content. My goal is to make every video look unique, creative, and engaging.</p>
+      <ul><li>Premiere Pro</li><li>After Effects</li><li>Photoshop</li><li>AI Avatar Video</li></ul>
+      <button type="button" class="pf-btn full" data-name="Nitin Soni" data-initials="NS" data-photo="assets/nitin soni.png" data-tagline="Professional Video Editor|&amp;|Cinematic Storyteller" data-summary="I’m a passionate video editor who loves turning raw footage into eye-catching videos. I specialize in reels, shorts, cinematic edits, transitions, and social media content. My goal is to make every video look unique, creative, and engaging." data-stat="500+|Videos|Produced" data-skills="Premiere Pro|After Effects|Photoshop|AI Avatar Video"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
      </article>
 
+     <!-- Team member 2: Kumkum Rai -->
      <article class="tm-card zrv" style="--i:1">
       <div class="tm-ph">
        <span>KR</span>
-       <img src="" alt="Kumkum Rai, Performance Marketer at Zyrox Media" loading="lazy" onerror="this.style.display='none'" style="display:none">
+       <img src="assets/kum kum.png" alt="Kumkum Rai, Social Media Manager &amp; Graphic Designer at Zyrox Media" loading="lazy" onerror="this.style.display='none'">
        <div class="tm-soc">
-        <a href="#" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
-        <a href="#" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
+        <a href="mailto:zyroxmediaa@gmail.com" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
        </div>
       </div>
       <h3>Kumkum Rai</h3>
-      <span class="tm-role">Performance Marketer</span>
-      <p>Plans and runs Meta ad campaigns, tests audiences and keeps your cost per lead going down every week.</p>
-      <ul><li>Meta Ads</li><li>Retargeting</li><li>ROAS</li></ul>
-      <button type="button" class="pf-btn full" data-name="Kumkum Rai" data-initials="KR" data-photo="" data-tagline="Performance Marketer|&amp;|Growth Hacker" data-summary="Performance marketer at Zyrox Media. I run Meta ad campaigns, test audiences and bring the cost per lead down every week." data-stat="50+|Campaigns|Managed" data-skills="Meta Ads|Retargeting|ROAS"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
+      <span class="tm-role">Social Media Manager &amp; Graphic Designer</span>
+      <p>Creative Graphic Designer &amp; Video Editor with hands-on experience in Adobe Photoshop and Adobe Premiere Pro. Skilled in creating attractive social media posts, posters, creative designs, video editing, transitions, effects, and professional visual content. Passionate about creativity, design, and storytelling through visuals.</p>
+      <ul><li>Premiere Pro</li><li>After Effects</li><li>Adobe Photoshop</li></ul>
+      <button type="button" class="pf-btn full" data-name="Kumkum Rai" data-initials="KR" data-photo="assets/kum kum.png" data-tagline="Social Media Manager|&amp;|Graphic Designer" data-summary="Creative Graphic Designer &amp; Video Editor with hands-on experience in Adobe Photoshop and Adobe Premiere Pro. Skilled in creating attractive social media posts, posters, creative designs, video editing, transitions, effects, and professional visual content. Passionate about creativity, design, and storytelling through visuals." data-stat="350+|Designs &amp; Posts|Crafted" data-skills="Premiere Pro|After Effects|Adobe Photoshop"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
      </article>
 
+     <!-- Team member 3: Vishal Singh -->
      <article class="tm-card zrv" style="--i:2">
       <div class="tm-ph">
        <span>VS</span>
-       <img src="" alt="Vishal Singh, SEO &amp; Content Lead at Zyrox Media" loading="lazy" onerror="this.style.display='none'" style="display:none">
+       <img src="assets/vishal singh.png" alt="Vishal Singh, Client Acquisition Specialist at Zyrox Media" loading="lazy" onerror="this.style.display='none'">
        <div class="tm-soc">
-        <a href="#" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
-        <a href="#" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
+        <a href="mailto:zyroxmediaa@gmail.com" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
        </div>
       </div>
       <h3>Vishal Singh</h3>
-      <span class="tm-role">SEO &amp; Content Lead</span>
-      <p>Researches keywords, writes blogs and fixes technical issues so your website shows up when buyers search.</p>
-      <ul><li>SEO</li><li>Blogs</li><li>Analytics</li></ul>
-      <button type="button" class="pf-btn full" data-name="Vishal Singh" data-initials="VS" data-photo="" data-tagline="SEO Specialist|&amp;|Content Thinker" data-summary="SEO and content lead at Zyrox Media. I research keywords, write blogs and fix technical issues so brands rank when buyers search." data-stat="100+|Articles|Published" data-skills="SEO|Blogs|Analytics"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
-     </article>
-
-     <article class="tm-card zrv" style="--i:3">
-      <div class="tm-ph">
-       <span>JS</span>
-       <img src="" alt="Jeeval Singh, Web Developer at Zyrox Media" loading="lazy" onerror="this.style.display='none'" style="display:none">
-       <div class="tm-soc">
-        <a href="#" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#zx-in"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg class="ic" aria-hidden="true"><use href="#zx-ig"/></svg></a>
-        <a href="#" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#zx-mail"/></svg></a>
-       </div>
-      </div>
-      <h3>Jeeval Singh</h3>
-      <span class="tm-role">Web Developer</span>
-      <p>Builds fast, mobile-friendly WordPress websites and landing pages designed to turn visitors into enquiries.</p>
-      <ul><li>WordPress</li><li>Speed</li><li>UX</li></ul>
-      <button type="button" class="pf-btn full" data-name="Jeeval Singh" data-initials="JS" data-photo="" data-tagline="Web Developer|&amp;|UX Thinker" data-summary="Web developer at Zyrox Media. I build fast, mobile-friendly WordPress websites and landing pages that turn visitors into enquiries." data-stat="40+|Websites|Launched" data-skills="WordPress|Speed|UX"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
+      <span class="tm-role">Client Acquisition Specialist</span>
+      <p>Growth-focused digital marketer and client success specialist. I help businesses scale by combining strategic lead generation with high-converting email marketing campaigns. Known for building strong client relationships and turning cold prospects into loyal partners, I bridge the gap between initial contact and long-term revenue growth.</p>
+      <ul><li>Google Sheets</li><li>Email Marketing (Brevo &amp; Mailchimp)</li><li>Lusha</li><li>SEO Optimizer</li><li>Canva</li></ul>
+      <button type="button" class="pf-btn full" data-name="Vishal Singh" data-initials="VS" data-photo="assets/vishal singh.png" data-tagline="Client Acquisition|&amp;|Lead Generation Specialist" data-summary="Growth-focused digital marketer and client success specialist. I help businesses scale by combining strategic lead generation with high-converting email marketing campaigns. Known for building strong client relationships and turning cold prospects into loyal partners, I bridge the gap between initial contact and long-term revenue growth." data-stat="100k+|Outreach &amp; Leads|Generated" data-skills="Google Sheets|Email Marketing (Brevo &amp; Mailchimp)|Lusha|SEO Optimizer|Canva"><svg class="ic" aria-hidden="true"><use href="#zx-play"/></svg> View Portfolio</button>
      </article>
 
     </div>

@@ -2404,9 +2404,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .tm-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
   perspective: 1200px;
+  max-width: 1160px;
+  margin: 0 auto;
 }
 .tm-card {
   --mx: 50%;
