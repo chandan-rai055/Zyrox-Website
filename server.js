@@ -30,8 +30,8 @@ const server = http.createServer((req, res) => {
   let reqPath = decodeURI(parsedUrl[0]);
   const query = parsedUrl[1] ? '?' + parsedUrl[1] : '';
 
-  // 1. Clean URL redirect: If user accesses any .html file directly, redirect to clean URL
-  if (reqPath.endsWith('.html')) {
+  // 1. Clean URL redirect: If user accesses any .html file directly, redirect to clean URL (except Google verification files)
+  if (reqPath.endsWith('.html') && !reqPath.startsWith('/google')) {
     let clean = reqPath.slice(0, -5);
     if (clean === '/index') clean = '/';
     res.writeHead(301, { 'Location': clean + query });
