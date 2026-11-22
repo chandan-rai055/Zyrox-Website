@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Zyrox Media</title>
+  <meta name="description" content="The page you are looking for does not exist or has been moved. Explore Zyrox Media services, projects, and contact us.">
+  <base href="/">
+
+  <!-- Instant Smart Redirection Script for Legacy / Alias URLs -->
+  <script>
+    (function() {
+      var path = window.location.pathname.toLowerCase();
+      // Remove trailing slash for matching
+      var clean = path.replace(/\/+$/, '') || '/';
+      
+      var redirects = {
+        '/contact-us': '/contact',
+        '/about-us': '/about',
+        '/work': '/projects',
+        '/portfolio': '/projects',
+        '/case-studies': '/projects',
+        '/service': '/services',
+        '/services.html': '/services',
+        '/projects.html': '/projects',
+        '/about.html': '/about',
+        '/contact.html': '/contact',
+        '/index.html': '/',
+        '/home': '/',
+        '/team': '/#team',
+        '/founder': '/#founder',
+        '/why-us': '/#why-us',
+        '/process': '/services#process',
+        '/faq': '/services#faqs',
+        '/faqs': '/services#faqs'
+      };
+
+      if (redirects[clean]) {
+        window.location.replace(redirects[clean]);
+      }
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #08090B;
+      --card-bg: #111214;
+      --accent: #FFD60A;
+      --accent-glow: rgba(255, 214, 10, 0.25);
+      --text: #F4F4F2;
+      --muted: #A9A9AD;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+    /* Subtle background grid & glow */
+    body::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .nf-container {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      width: 100%;
+      background: rgba(17, 18, 20, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 56px 36px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+    }
+    .nf-logo {
+      display: inline-block;
+      margin-bottom: 32px;
+    }
+    .nf-logo img {
+      width: 180px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .nf-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(255, 214, 10, 0.1);
+      border: 1px solid rgba(255, 214, 10, 0.25);
+      color: var(--accent);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .nf-code {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(80px, 18vw, 130px);
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      letter-spacing: -0.04em;
+    }
+    .nf-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .nf-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+    .nf-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .btn-pri {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #08090B;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .btn-pri:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px var(--accent-glow);
+    }
+    .btn-sec {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.25s, border-color 0.25s, transform 0.25s;
+    }
+    .btn-sec:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 214, 10, 0.4);
+      transform: translateY(-2px);
+    }
+    .nf-footer {
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .nf-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .nf-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="nf-container">
+    <a href="/" class="nf-logo" aria-label="Zyrox Media Home">
+      <img src="assets/Zyrox logo.png" alt="Zyrox Media - Digital Marketing Agency">
+    </a>
+
+    <div class="nf-badge">404 Error</div>
+    <div class="nf-code">404</div>
+    <h1 class="nf-title">Page Not Found</h1>
+    <p class="nf-desc">The page you were looking for doesn't exist, has been moved, or the link may have expired. Use the links below to navigate back to our core experience.</p>
+
+    <div class="nf-actions">
+      <a href="/" class="btn-pri">Back to Home →</a>
+      <a href="/services" class="btn-sec">Our Services</a>
+      <a href="/projects" class="btn-sec">Case Studies</a>
+      <a href="/contact" class="btn-sec">Contact Us</a>
+    </div>
+
+    <div class="nf-footer">
+      Need immediate assistance? Call us at <a href="tel:+919455495623">+91 94554 95623</a> or WhatsApp <a href="https://wa.me/919455495623" target="_blank" rel="noopener">instantly</a>.
+    </div>
+  </div>
+</body>
+</html>

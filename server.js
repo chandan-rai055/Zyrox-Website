@@ -39,14 +39,19 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // 2. Redirect alias routes (e.g. /contact-us -> /contact, /about-us -> /about)
-  if (reqPath === '/contact-us' || reqPath === '/contact-us/') {
-    res.writeHead(301, { 'Location': '/contact' + query });
-    res.end();
-    return;
-  }
-  if (reqPath === '/about-us' || reqPath === '/about-us/') {
-    res.writeHead(301, { 'Location': '/about' + query });
+  // 2. Redirect alias routes (e.g. /contact-us -> /contact, /about-us -> /about, /work -> /projects)
+  const aliasMap = {
+    '/contact-us': '/contact',
+    '/about-us': '/about',
+    '/work': '/projects',
+    '/portfolio': '/projects',
+    '/case-studies': '/projects',
+    '/service': '/services',
+    '/home': '/'
+  };
+  const normPath = (reqPath.endsWith('/') && reqPath.length > 1) ? reqPath.slice(0, -1) : reqPath;
+  if (aliasMap[normPath]) {
+    res.writeHead(301, { 'Location': aliasMap[normPath] + query });
     res.end();
     return;
   }
@@ -75,8 +80,14 @@ const server = http.createServer((req, res) => {
 
   function tryNextFile(index) {
     if (index >= candidateFiles.length) {
-      res.writeHead(404, { 'Content-Type': 'text/plain' });
-      res.end('404 Not Found');
+      const nfPath = path.join(ROOT, '404.html');
+      if (fs.existsSync(nfPath)) {
+        res.writeHead(404, { 'Content-Type': 'text/html; charset=UTF-8' });
+        fs.createReadStream(nfPath).pipe(res);
+      } else {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('404 Not Found');
+      }
       return;
     }
 
