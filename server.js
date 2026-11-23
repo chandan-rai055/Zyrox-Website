@@ -47,6 +47,10 @@ const server = http.createServer((req, res) => {
     '/portfolio': '/projects',
     '/case-studies': '/projects',
     '/service': '/services',
+    '/blog': '/blogs',
+    '/blogs.html': '/blogs',
+    '/articles': '/blogs',
+    '/insights': '/blogs',
     '/home': '/'
   };
   const normPath = (reqPath.endsWith('/') && reqPath.length > 1) ? reqPath.slice(0, -1) : reqPath;

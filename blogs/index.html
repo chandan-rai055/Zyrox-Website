@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Blogs & Insights | Zyrox Media - Digital Marketing Agency in Lucknow</title>
+  <meta name="description" content="Explore actionable digital marketing playbooks, local SEO strategies in Lucknow, Meta ad scaling guides, and web conversion tips from Zyrox Media.">
+  <meta name="keywords" content="Digital Marketing Agency in Lucknow, Local SEO Lucknow, Meta Ads Agency Lucknow, Social Media Marketing Lucknow, Zyrox Media blogs">
+  <link rel="canonical" href="https://zyroxmedia.com/blogs">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zyroxmedia.com/blogs">
+  <meta property="og:title" content="Blogs & Insights | Zyrox Media">
+  <meta property="og:description" content="Actionable growth playbooks on SEO, performance marketing, and branding in Lucknow.">
+  <meta property="og:image" content="assets/Zyrox logo.png">
+
+  <!-- Google Fonts: Outfit & Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Sitewide Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ===== BLOG SPECIFIC STYLING ===== */
+    :root {
+      --bg: #0b0b0c;
+      --surface: #151516;
+      --surface-hover: #1c1c1e;
+      --text: #f6f6f2;
+      --muted: #a6a6a0;
+      --accent: #ffd60a;
+      --accent2: #ffc400;
+      --border: #27272a;
+      --head: rgba(11, 11, 12, 0.92);
+      color-scheme: dark;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Outfit", "Manrope", system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    #bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      z-index: 9999;
+      transition: width 0.1s ease-out;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Glow Orbs */
+    .hero-glow-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-glow-wrap::before, .hero-glow-wrap::after {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.22;
+      z-index: -1;
+      pointer-events: none;
+      animation: floatOrbs 12s ease-in-out infinite alternate;
+    }
+    .hero-glow-wrap::before {
+      background: var(--accent);
+      left: -100px;
+      top: -80px;
+    }
+    .hero-glow-wrap::after {
+      background: var(--accent2);
+      right: -100px;
+      bottom: -60px;
+      animation-delay: -6s;
+    }
+    @keyframes floatOrbs {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(50px, 40px) scale(1.15); }
+    }
+
+    /* Typography */
+    .g {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 214, 10, 0.3);
+      background: rgba(255, 214, 10, 0.08);
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .hero-section {
+      padding: 72px 0 48px;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-size: clamp(2.3rem, 5.5vw, 4rem);
+      line-height: 1.12;
+      margin: 0 0 18px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+    .hero-section .sub {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 32px;
+      font-size: 1.12rem;
+      line-height: 1.65;
+    }
+
+    /* Stats Row */
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: clamp(20px, 5vw, 64px);
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+    .hero-stats-item {
+      text-align: center;
+    }
+    .hero-stats-item b {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.1;
+    }
+    .hero-stats-item span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* Marquee Ticker */
+    .tick-wrap {
+      border-block: 1px solid var(--border);
+      overflow: hidden;
+      padding: 14px 0;
+      white-space: nowrap;
+      margin: 40px 0 52px;
+      background: rgba(21, 21, 22, 0.4);
+    }
+    .tick-track {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 32s linear infinite;
+    }
+    .tick-track span {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 24px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .tick-track span::after {
+      content: "✦";
+      margin-left: 24px;
+      color: var(--accent);
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Tools Bar (Search & Chips) */
+    .tools-container {
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .search-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .search-box {
+      flex: 1;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 14px 22px 14px 50px;
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .search-box input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 214, 10, 0.15);
+    }
+    .search-box .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+      font-size: 1.25rem;
+    }
+    .search-clear {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: none;
+    }
+    .chips-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      padding: 8px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .chip:hover {
+      border-color: rgba(255, 214, 10, 0.5);
+      color: var(--text);
+    }
+    .chip.on {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-color: transparent;
+      color: #111;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(255, 214, 10, 0.3);
+    }
+
+    /* Featured Post */
+    .feat-card {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .feat-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 214, 10, 0.2);
+    }
+    .feat-cover {
+      height: 100%;
+      min-height: 320px;
+      background: #1e1e20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .feat-cover svg, .feat-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .feat-card:hover .feat-cover svg, .feat-card:hover .feat-cover img {
+      transform: scale(1.05);
+    }
+    .feat-content {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+    }
+    .feat-content h2 {
+      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+      line-height: 1.22;
+      margin: 0;
+      color: var(--text);
+    }
+    .feat-content p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Grid of Cards */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(300px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 214, 10, 0.12), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .card:hover::after {
+      opacity: 1;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 214, 10, 0.6);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5), 0 0 24px rgba(255, 214, 10, 0.18);
+    }
+    .card-cover {
+      height: 200px;
+      width: 100%;
+      background: #1a1a1c;
+      overflow: hidden;
+      position: relative;
+    }
+    .card-cover svg, .card-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .card:hover .card-cover svg, .card:hover .card-cover img {
+      transform: scale(1.08);
+    }
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+    .tag {
+      align-self: flex-start;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(255, 214, 10, 0.12);
+      border: 1px solid rgba(255, 214, 10, 0.25);
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      line-height: 1.35;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .card-meta {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .card-meta b {
+      color: var(--text);
+    }
+
+    /* In-Depth Article Reader */
+    .art-container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      animation: fadeIn 0.4s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .art-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .art-back:hover {
+      transform: translateX(-4px);
+    }
+    .art-header {
+      margin-bottom: 32px;
+    }
+    .art-header h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      line-height: 1.18;
+      margin: 16px 0 20px;
+      letter-spacing: -0.02em;
+    }
+    .art-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.92rem;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .art-meta-bar .author-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .art-cover-wrap {
+      width: 100%;
+      height: 380px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 32px 0;
+      background: #18181a;
+      border: 1px solid var(--border);
+    }
+    .art-cover-wrap svg, .art-cover-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Article Content Typography */
+    .art-content {
+      font-size: 1.14rem;
+      line-height: 1.8;
+      color: #e4e4e0;
+    }
+    .art-content p {
+      margin: 0 0 1.5em;
+    }
+    .art-content h2 {
+      font-size: 1.8rem;
+      margin: 2em 0 0.6em;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .art-content h3 {
+      font-size: 1.35rem;
+      margin: 1.5em 0 0.5em;
+      color: var(--accent);
+    }
+    .art-content ul, .art-content ol {
+      margin: 0 0 1.6em 1.2em;
+      padding: 0;
+    }
+    .art-content li {
+      margin-bottom: 0.7em;
+    }
+    .art-content strong {
+      color: var(--text);
+    }
+    .art-box {
+      background: rgba(255, 214, 10, 0.05);
+      border: 1px solid rgba(255, 214, 10, 0.3);
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 2.2em 0;
+    }
+    .art-box h4 {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 1.15rem;
+    }
+    .art-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Article CTA Box */
+    .art-cta-card {
+      margin-top: 56px;
+      padding: 36px 32px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(255, 214, 10, 0.1), rgba(21, 21, 22, 0.95));
+      border: 1px solid var(--accent);
+      text-align: center;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+    }
+    .art-cta-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.7rem;
+      color: var(--text);
+    }
+    .art-cta-card p {
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto 24px;
+      font-size: 1.05rem;
+    }
+    .btn-gold {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #111;
+      padding: 13px 32px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(255, 214, 10, 0.45);
+    }
+
+    /* Bottom CTA Band */
+    .band-wrap {
+      margin: 40px 0 60px;
+    }
+    .band {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #111;
+      border-radius: 24px;
+      padding: clamp(28px, 5vw, 48px);
+      box-shadow: 0 20px 50px rgba(255, 214, 10, 0.25);
+    }
+    .band h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin: 0 0 8px;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+    .band p {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #222;
+      max-width: 600px;
+    }
+    .band-btn {
+      background: #111;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      border: 1px solid #111;
+      transition: transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .band-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      color: var(--accent);
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--muted);
+    }
+    .empty-state span {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 860px) {
+      .feat-card {
+        grid-template-columns: 1fr;
+      }
+      .feat-cover {
+        min-height: 220px;
+      }
+      .hero-section {
+        padding: 48px 0 32px;
+      }
+      .art-cover-wrap {
+        height: 240px;
+      }
+      .band {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div id="bar"></div>
+
+  <!-- Main Sitewide Header / Navbar -->
+  <header class="navbar" role="banner">
+    <div class="container nav-container">
+      <a href="/" class="brand-logo" aria-label="Zyrox Media Home">
+        <img src="assets/Zyrox logo.png" alt="Zyrox Media - Digital Marketing Agency in Lucknow" class="header-logo-img" width="175" height="42">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/projects" class="nav-link">Projects</a>
+        <a href="/about" class="nav-link">About Us</a>
+        <a href="/blogs" class="nav-link active">Blogs</a>
+        <a href="/contact" class="nav-link">Contact Us</a>
+      </nav>
+
+      <!-- CTA Button Right -->
+      <div class="nav-cta-btn">
+        <a href="/contact" class="btn-accent nav-btn-get-started" aria-label="Get Started with Zyrox Media">
+          <span>Get Started</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Slideout Overlay -->
+  <div class="mobile-menu-overlay" aria-hidden="true">
+    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="/services" class="mobile-nav-link">Services</a>
+      <a href="/projects" class="mobile-nav-link">Projects</a>
+      <a href="/about" class="mobile-nav-link">About Us</a>
+      <a href="/blogs" class="mobile-nav-link active">Blogs</a>
+      <a href="/contact" class="mobile-nav-link">Contact Us</a>
+    </nav>
+    <a href="/contact" class="btn-accent nav-btn-get-started" style="align-self: flex-start; text-decoration: none; margin-top: 24px;">
+      <span>Get Started</span>
+      <span class="btn-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <!-- SPA Blog Application Container -->
+  <main id="app"></main>
+
+  <!-- Sitewide Footer -->
+  <footer class="ft" id="sd-footer">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <symbol id="ft-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></symbol>
+      <symbol id="ft-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="ft-yt" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></symbol>
+      <symbol id="ft-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="ft-ph" viewBox="0 0 24 24"><path d="M22 16.900v3a2 2 0 0 1-2.200 2 19.800 19.800 0 0 1-8.600-3.100 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.100 4.200 2 2 0 0 1 4.100 2h3a2 2 0 0 1 2 1.700c.1 1 .4 1.900.7 2.800a2 2 0 0 1-.5 2.100L8.100 9.900a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.9.3 1.800.6 2.800.7a2 2 0 0 1 1.700 2z"/></symbol>
+      <symbol id="ft-ml" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.970 5.700a2 2 0 0 1-2.060 0L2 7"/></symbol>
+      <symbol id="ft-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    </defs></svg>
+
+    <div class="ft-mq" aria-hidden="true"><div>
+      <span>Social Media</span><span>Content Shoots</span><span>Meta Ads</span><span>SEO</span><span>Website Design</span><span>Branding</span><span>Blogs</span><span>Growth</span>
+      <span>Social Media</span><span>Content Shoots</span><span>Meta Ads</span><span>SEO</span><span>Website Design</span><span>Branding</span><span>Blogs</span><span>Growth</span>
+    </div></div>
+
+    <div class="ft-wrap">
+      <div class="ft-grid">
+        <div class="ft-rv">
+          <a class="ft-logo" href="/" aria-label="Zyrox Media home">
+            <img src="assets/Zyrox logo.png" alt="Zyrox Media - Digital Marketing Agency" width="260" height="75">
+          </a>
+          <p class="ft-about">Architecturally disciplined digital marketing agency engineering exponential organic and paid acquisition for ambitious global brands.</p>
+          <div class="ft-soc">
+            <a href="https://www.instagram.com/zyroxmediaad?obrf=NTVvMjM5dWs4bTN5&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="ft-ic"><use href="#ft-ig"/></svg></a>
+            <a href="https://www.linkedin.com/groups/40993074" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="ft-ic"><use href="#ft-in"/></svg></a>
+            <a href="https://www.youtube.com/@ZyroxMedia-s3m" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg class="ft-ic"><use href="#ft-yt"/></svg></a>
+            <a href="https://www.facebook.com/share/1Dh3682e8E/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="ft-ic"><use href="#ft-fb"/></svg></a>
+          </div>
+        </div>
+
+        <div class="ft-rv" style="--i:1"><h3>Quick Links</h3>
+          <ul>
+            <li><a class="ft-lk" href="/">Home</a></li>
+            <li><a class="ft-lk" href="/services">Services</a></li>
+            <li><a class="ft-lk" href="/projects">Projects</a></li>
+            <li><a class="ft-lk" href="/about">About Us</a></li>
+            <li><a class="ft-lk cur" href="/blogs">Blogs</a></li>
+            <li><a class="ft-lk" href="/#founder">Founder</a></li>
+            <li><a class="ft-lk" href="/#team">Team</a></li>
+            <li><a class="ft-lk" href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-rv" style="--i:2"><h3>Core Services</h3>
+          <ul>
+            <li><a class="ft-lk" href="/services#services">Social Media Growth</a></li>
+            <li><a class="ft-lk" href="/services#services">Content Shoots</a></li>
+            <li><a class="ft-lk" href="/services#services">Performance Meta Ads</a></li>
+            <li><a class="ft-lk" href="/services#services">Search Engine SEO</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-rv" style="--i:3"><h3>Contact Studio</h3>
+          <div class="ft-ct">
+            <strong>Founder: Chandan Rai</strong>
+            <a href="tel:+919455495623"><b><svg class="ft-ic"><use href="#ft-ph"/></svg></b>+91 9455495623</a>
+            <a href="mailto:zyroxmediaa@gmail.com"><b><svg class="ft-ic"><use href="#ft-ml"/></svg></b>zyroxmediaa@gmail.com</a>
+            <div class="ft-av"><i></i>Available Mon - Sat for global inquiries.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ft-bot ft-rv">
+        <span>© <span id="ft-yr">2026</span> Zyrox Media. All rights reserved. Founded by Chandan Rai • +91 9455495623 • zyroxmediaa@gmail.com</span>
+        <nav>
+          <a class="ft-lk" href="/">Privacy Policy</a>
+          <a class="ft-lk" href="/">Terms of Service</a>
+          <button class="ft-top" type="button" id="ft-top" style="border:0;font-family:inherit"><svg class="ft-ic"><use href="#ft-up"/></svg>Back to top</button>
+        </nav>
+      </div>
+      <div class="ft-big" aria-hidden="true">ZYROX</div>
+    </div>
+  </footer>
+
+  <!-- Blog Engine Script -->
+  <script>
+    /* ============================================================
+       ZYROX MEDIA BLOG ENGINE (SPA ROUTER, REAL-TIME FILTERS, READER)
+       ============================================================ */
+    const POSTS = [
+      {
+        id: "local-seo-lucknow-guide-2026",
+        slug: "local-seo-lucknow-guide-2026",
+        title: "How to Rank #1 for 'Digital Marketing Agency in Lucknow' in 2026: The Complete Local SEO Blueprint",
+        tag: "Local SEO Lucknow",
+        category: "Local SEO",
+        featured: true,
+        date: "Feb 18, 2026",
+        readTime: "7 min read",
+        author: "Chandan Rai",
+        authorRole: "Founder & Growth Architect",
+        desc: "A battle-tested blueprint for Lucknow businesses to dominate Google 3-Pack, outrank national aggregators, and capture high-intent local buyers in Gomti Nagar, Hazratganj, and Aliganj.",
+        coverSvg: `<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#151516"/>
+              <stop offset="100%" stop-color="#0b0b0c"/>
+            </linearGradient>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd60a"/>
+              <stop offset="100%" stop-color="#ff9f00"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="450" fill="url(#g1)"/>
+          <circle cx="650" cy="120" r="160" fill="#ffd60a" opacity="0.08"/>
+          <circle cx="150" cy="350" r="140" fill="#ffc400" opacity="0.05"/>
+          <path d="M 100 320 Q 250 200 400 250 T 700 120" fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-dasharray="8 6"/>
+          <!-- Map Pin Icon -->
+          <g transform="translate(380, 140)">
+            <circle cx="20" cy="20" r="45" fill="rgba(255,214,10,0.15)"/>
+            <path d="M20 0 C9 0 0 9 0 20 C0 35 20 52 20 52 C20 52 40 35 40 20 C40 9 31 0 20 0 Z" fill="url(#goldGrad)"/>
+            <circle cx="20" cy="20" r="8" fill="#111"/>
+          </g>
+          <text x="70" y="90" fill="#ffd60a" font-family="'Outfit', sans-serif" font-weight="800" font-size="28" letter-spacing="2">ZYROX GROWTH PLAYBOOK</text>
+          <text x="70" y="130" fill="#f6f6f2" font-family="'Outfit', sans-serif" font-weight="700" font-size="34">LUCKNOW LOCAL SEO #1 RANKING</text>
+          <rect x="70" y="380" width="160" height="32" rx="16" fill="rgba(255,214,10,0.2)"/>
+          <text x="150" y="401" fill="#ffd60a" font-family="'Outfit', sans-serif" font-weight="700" font-size="14" text-anchor="middle">GOOGLE 3-PACK SYSTEM</text>
+        </svg>`,
+        body: `
+          <p class="lead">If you run a local enterprise, dental clinic, luxury retail showroom, or real estate firm in Lucknow, ranking on page 2 of Google is mathematically equivalent to being invisible. Over 78% of local mobile queries with commercial intent lead to a phone call or direct showroom visit within 24 hours.</p>
+          
+          <div class="art-box">
+            <h4>Key Growth Takeaway</h4>
+            <p>Winning local SEO in Lucknow is no longer about stuffing "Best digital marketing agency in Lucknow" into footer tags. It is about establishing verifiable local entity authority across Gomti Nagar, Hazratganj, and Alambagh through geocoded schema, real customer reviews, and hyper-localized topic clusters.</p>
+          </div>
+
+          <h2>1. Dominating the Google 3-Pack (GBP Optimization)</h2>
+          <p>The Google Map Pack captures over 44% of all clicks for local business queries. In Lucknow's competitive corridors, your Google Business Profile (GBP) needs architectural precision:</p>
+          <ul>
+            <li><strong>Primary Category Alignment:</strong> Choose the single most accurate category (e.g. <em>Marketing Agency</em> or <em>Advertising Agency</em>) rather than diluting category weight.</li>
+            <li><strong>Hyperlocal Geo-Coordinates:</strong> Ensure your exact pin matches your physical business address in Gomti Nagar or Hazratganj with consistent Name, Address, and Phone (NAP) parity across all regional directories.</li>
+            <li><strong>Weekly Geotagged Photo Updates:</strong> Upload original, high-resolution photographs taken at your Lucknow studio or client shoots with embedded EXIF location metadata.</li>
+          </ul>
+
+          <h2>2. Semantic Keyword Clustering for Lucknow Audiences</h2>
+          <p>Lucknow searchers often blend Hindi intent with English commercial terms. Instead of targeting isolated keywords, build topical silos around high-intent themes:</p>
+          <ul>
+            <li>"Social media marketing agency in Gomti Nagar Lucknow"</li>
+            <li>"Performance Meta ads for real estate Lucknow"</li>
+            <li>"Ecommerce photoshoot studio Hazratganj"</li>
+          </ul>
+          <p>By interlinking these contextual sub-pages to your primary core service pages, Google recognizes your domain as the regional category king.</p>
+
+          <h2>3. Real Client Reviews & Review Velocity</h2>
+          <p>Google's local ranking algorithm heavily weights steady review velocity. A sudden burst of 50 reviews followed by silence triggers spam filters. Implement an automated post-service WhatsApp trigger inviting verified clients to review your services, mentioning specific deliverables like 'video shoot' or 'website redesign'.</p>
+
+          <h2>4. Technical Core Web Vitals & Local Schema</h2>
+          <p>Mobile internet users in Lucknow expect pages to load in under 1.5 seconds. Zyrox Media utilizes zero-bloat static assets, responsive webp/avif image formatting, and comprehensive <code>LocalBusiness</code> JSON-LD schema markup indicating physical coordinates, opening hours, and direct telephone contact: <strong>+91 9455495623</strong>.</p>
+        `
+      },
+      {
+        id: "meta-ads-scaling-lucknow-playbook",
+        slug: "meta-ads-scaling-lucknow-playbook",
+        title: "Why Lucknow Brands Waste 60% of Their Meta Ad Budget (And How to Fix It)",
+        tag: "Meta & Performance Ads",
+        category: "Performance Ads",
+        featured: false,
+        date: "Feb 12, 2026",
+        readTime: "6 min read",
+        author: "Zyrox Performance Team",
+        authorRole: "Media Buying Unit",
+        desc: "Stop boosting posts. Discover how to deploy Advantage+ conversion architectures, UGC creative testing, and WhatsApp direct-lead funnels that reliably scale in Tier-2 Indian markets.",
+        coverSvg: `<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#141416"/>
+              <stop offset="100%" stop-color="#0b0b0c"/>
+            </linearGradient>
+            <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd60a"/>
+              <stop offset="100%" stop-color="#ffb700"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="450" fill="url(#bgGrad2)"/>
+          <circle cx="680" cy="300" r="180" fill="#ffd60a" opacity="0.06"/>
+          <!-- Graph bars -->
+          <rect x="120" y="280" width="50" height="90" rx="8" fill="#27272a"/>
+          <rect x="200" y="220" width="50" height="150" rx="8" fill="#3f3f46"/>
+          <rect x="280" y="160" width="50" height="210" rx="8" fill="rgba(255,214,10,0.5)"/>
+          <rect x="360" y="90" width="50" height="280" rx="8" fill="url(#goldGrad2)"/>
+          <text x="360" y="70" fill="#ffd60a" font-family="'Outfit', sans-serif" font-weight="800" font-size="20">5.4x ROAS</text>
+          <text x="70" y="80" fill="#ffd60a" font-family="'Outfit', sans-serif" font-weight="800" font-size="24" letter-spacing="2">PERFORMANCE AD ARCHITECTURE</text>
+          <text x="70" y="120" fill="#f6f6f2" font-family="'Outfit', sans-serif" font-weight="700" font-size="32">META ADS SCALING PROTOCOL</text>
+        </svg>`,
+        body: `
+          <p class="lead">Most local businesses in Lucknow treat Meta Advertising like digital lottery tickets: they tap 'Boost Post' on an Instagram photo, select a random 25km radius around Gomti Nagar, and wonder why their phone never rings with serious inquiries.</p>
+
+          <div class="art-box">
+            <h4>The Golden Rule of Tier-2 Media Buying</h4>
+            <p>In Tier-2 cities like Lucknow, friction is the ultimate ad killer. Lengthy website lead forms create drop-offs of up to 70%. When we switch local service providers to direct-to-WhatsApp Conversions with automated CRM qualification, customer acquisition cost (CAC) drops by an average of 42%.</p>
+          </div>
+
+          <h2>1. Ditching the 'Boost Post' Fallacy</h2>
+          <p>The Instagram 'Boost Post' button is engineered by Meta to optimize for vanity engagement (post likes and low-quality comments). Real business scaling requires Meta Ads Manager with verified Conversions or Leads objectives calibrated to qualified action.</p>
+
+          <h2>2. Creative-First Media Buying</h2>
+          <p>In 2026, audience targeting has been automated by Meta's Advantage+ algorithm. Your creative is your targeting. A raw, authentic UGC video shot on an iPhone with a local Lucknow accent will outperform a glossy $5,000 corporate video every single time.</p>
+
+          <h2>3. Setting Up Direct-to-WhatsApp Funnels</h2>
+          <p>For high-ticket local services (interior designers, cosmetic doctors, luxury real estate), buyers want immediate human dialogue. By linking Click-to-WhatsApp ads with instant automated greeting sequences, you lock in the prospect while their buying intent is at peak intensity.</p>
+        `
+      },
+      {
+        id: "short-form-video-production-blueprint",
+        slug: "short-form-video-production-blueprint",
+        title: "From Zero to 100K Followers: The Short-Form Video Blueprint for Retail & D2C Brands",
+        tag: "Social Media & Video",
+        category: "Social Media",
+        featured: false,
+        date: "Jan 28, 2026",
+        readTime: "6 min read",
+        author: "Nitin Soni",
+        authorRole: "Head of Video Production",
+        desc: "How our on-ground shoot crew engineers 15-second visual hooks, rapid pacing, and localized storytelling to convert casual Instagram scrollers into foot-traffic store visitors.",
+        coverSvg: `<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#161514"/>
+              <stop offset="100%" stop-color="#0b0b0c"/>
+            </linearGradient>
+            <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd60a"/>
+              <stop offset="100%" stop-color="#ffb000"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="450" fill="url(#bgGrad3)"/>
+          <circle cx="200" cy="180" r="140" fill="#ffd60a" opacity="0.05"/>
+          <!-- Video Slate / Camera Icon -->
+          <g transform="translate(480, 100)">
+            <rect x="0" y="30" width="220" height="160" rx="18" fill="#1c1c1f" stroke="#27272a" stroke-width="2"/>
+            <polygon points="90,80 150,110 90,140" fill="url(#goldGrad3)"/>
+            <circle cx="110" cy="110" r="60" fill="none" stroke="rgba(255,214,10,0.3)" stroke-width="2"/>
+          </g>
+          <text x="70" y="90" fill="#ffd60a" font-family="'Outfit', sans-serif" font-weight="800" font-size="24" letter-spacing="2">CONTENT PRODUCTION PLAYBOOK</text>
+          <text x="70" y="130" fill="#f6f6f2" font-family="'Outfit', sans-serif" font-weight="700" font-size="32">VIRAL SHORT-FORM VIDEO</text>
+          <text x="70" y="180" fill="#a6a6a0" font-family="'Outfit', sans-serif" font-size="18">The 3-Second Visual Hook Formula</text>
+        </svg>`,
+        body: `
+          <p class="lead">Short-form video is the single most powerful organic growth channel in India today. But posting random trending dance clips won't build brand equity. To turn reels into real showroom foot traffic, your videos need narrative discipline.</p>
+
+          <div class="art-box">
+            <h4>The 3-Second Retention Law</h4>
+            <p>If a viewer does not receive an emotional or curiosity payoff in the first 3 seconds, they swipe away. Every video produced by Zyrox Media undergoes rigorous hook testing before going live.</p>
+          </div>
+
+          <h2>1. The Visual Hook Formula</h2>
+          <p>Never start a video with 'Hello guys, today we are going to show you...'. Start directly in media res: show the final finished transformation, ask a provocative industry question, or reveal a shocking price contrast.</p>
+
+          <h2>2. Batch Production in Dedicated Studio Shoots</h2>
+          <p>Consistency is impossible when you film one reel per day. At Zyrox Media, we bring our full cinema lighting, wireless audio, and 4K camera gear directly to client locations in Lucknow, capturing 20 to 30 strategic pieces of content in a single 4-hour batch session.</p>
+
+          <h2>3. Converting Watch Time into Foot Traffic</h2>
+          <p>Always pair viral content with clear geographical anchors. Mentioning recognizable Lucknow landmarks (e.g. 'Opposite Phoenix Palassio' or 'Behind Hazratganj Metro') creates instant psychological proximity for regional viewers.</p>
+        `
+      },
+      {
+        id: "conversion-rate-optimization-guide",
+        slug: "conversion-rate-optimization-guide",
+        title: "Why Your Website Isn't Converting: 7 Conversion Architecture Mistakes Costing You Revenue",
+        tag: "Web Design & CRO",
+        category: "Web Architecture",
+        featured: false,
+        date: "Jan 15, 2026",
+        readTime: "5 min read",
+        author: "Kumkum Rai",
+        authorRole: "Tech & UX Lead",
+        desc: "A website without conversion discipline is just an expensive digital brochure. Here is how to fix layout hierarchy, mobile thumb zones, and friction points to 3x inbound inquiries.",
+        coverSvg: `<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#151615"/>
+              <stop offset="100%" stop-color="#0b0b0c"/>
+            </linearGradient>
+            <linearGradient id="goldGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd60a"/>
+              <stop offset="100%" stop-color="#e5a700"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="450" fill="url(#bgGrad4)"/>
+          <!-- Browser Mockup -->
+          <g transform="translate(420, 90)">
+            <rect x="0" y="0" width="310" height="220" rx="14" fill="#18181b" stroke="#27272a" stroke-width="2"/>
+            <circle cx="20" cy="20" r="5" fill="#ef4444"/>
+            <circle cx="36" cy="20" r="5" fill="#eab308"/>
+            <circle cx="52" cy="20" r="5" fill="#22c55e"/>
+            <line x1="0" y1="36" x2="310" y2="36" stroke="#27272a"/>
+            <rect x="25" y="60" width="160" height="18" rx="4" fill="url(#goldGrad4)"/>
+            <rect x="25" y="90" width="220" height="10" rx="3" fill="#3f3f46"/>
+            <rect x="25" y="110" width="180" height="10" rx="3" fill="#3f3f46"/>
+            <rect x="25" y="150" width="100" height="30" rx="15" fill="#ffd60a"/>
+          </g>
+          <text x="70" y="90" fill="#ffd60a" font-family="'Outfit', sans-serif" font-weight="800" font-size="24" letter-spacing="2">CONVERSION DESIGN PLAYBOOK</text>
+          <text x="70" y="130" fill="#f6f6f2" font-family="'Outfit', sans-serif" font-weight="700" font-size="32">WEBSITE CRO BLUEPRINT</text>
+          <text x="70" y="180" fill="#a6a6a0" font-family="'Outfit', sans-serif" font-size="18">Turn Cold Visitors Into Paying Clients</text>
+        </svg>`,
+        body: `
+          <p class="lead">Most agency websites suffer from what we call 'Designer Narcissism': heavy, laggy 3D animations, tiny unreadable fonts, and hidden contact numbers. Beautiful websites are pointless if they do not convert visitors into booked appointments.</p>
+
+          <div class="art-box">
+            <h4>The 5-Second Comprehension Rule</h4>
+            <p>Within 5 seconds of loading your homepage, a first-time visitor must clearly understand: 1) Exactly what service you offer, 2) Why they should trust you over competitors, and 3) The single easiest action to contact you.</p>
+          </div>
+
+          <h2>1. Mobile Thumb Zone Engineering</h2>
+          <p>Over 82% of commercial website traffic in Lucknow originates on smartphones. If your primary Call-to-Action button is hidden in a complicated top-right hamburger menu, your conversion rate is doomed. Place sticky, floating bottom action triggers (Call Now or WhatsApp Consultation) right in the natural thumb sweep zone.</p>
+
+          <h2>2. Sub-1.5s Core Web Vitals</h2>
+          <p>Every additional second of page load time reduces conversion rates by up to 20%. By eliminating unnecessary WordPress plugin bloat and serving clean, compiled code, Zyrox Media delivers sub-second page loads across 4G and 5G mobile networks.</p>
+
+          <h2>3. Visual Proof Above the Fold</h2>
+          <p>Stock photos destroy conversion trust. Showcase real founder leadership, actual office locations, verified client metrics, and authentic testimonials directly on your landing page.</p>
+        `
+      },
+      {
+        id: "lucknow-clinic-growth-case-study",
+        slug: "lucknow-clinic-growth-case-study",
+        title: "Case Study: Scaling a Lucknow Healthcare Clinic to 350+ Monthly Patient Bookings",
+        tag: "Client Case Studies",
+        category: "Case Studies",
+        featured: false,
+        date: "Jan 04, 2026",
+        readTime: "8 min read",
+        author: "Chandan Rai",
+        authorRole: "Founder & Growth Architect",
+        desc: "A transparent breakdown of how Zyrox Media combined Google Map Pack dominance, hyper-local Meta retargeting, and automated patient intake to deliver a 4.8x ROAS.",
+        coverSvg: `<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#141517"/>
+              <stop offset="100%" stop-color="#0b0b0c"/>
+            </linearGradient>
+            <linearGradient id="goldGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd60a"/>
+              <stop offset="100%" stop-color="#ffb700"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="450" fill="url(#bgGrad5)"/>
+          <circle cx="650" cy="200" r="150" fill="#ffd60a" opacity="0.06"/>
+          <!-- Metric badge -->
+          <g transform="translate(460, 110)">
+            <rect x="0" y="0" width="260" height="180" rx="20" fill="#18181a" stroke="rgba(255,214,10,0.3)" stroke-width="2"/>
+            <text x="30" y="60" fill="#ffd60a" font-family="'Outfit', sans-serif" font-weight="800" font-size="48">350+</text>
+            <text x="30" y="95" fill="#f6f6f2" font-family="'Outfit', sans-serif" font-weight="700" font-size="18">Bookings / Month</text>
+            <text x="30" y="140" fill="#22c55e" font-family="'Outfit', sans-serif" font-weight="700" font-size="20">▲ 4.8x ROAS</text>
+          </g>
+          <text x="70" y="90" fill="#ffd60a" font-family="'Outfit', sans-serif" font-weight="800" font-size="24" letter-spacing="2">CLIENT GROWTH CASE STUDY</text>
+          <text x="70" y="130" fill="#f6f6f2" font-family="'Outfit', sans-serif" font-weight="700" font-size="32">HEALTHCARE CLINIC SCALE</text>
+          <text x="70" y="180" fill="#a6a6a0" font-family="'Outfit', sans-serif" font-size="18">Lucknow Regional Market Dominance</text>
+        </svg>`,
+        body: `
+          <p class="lead">When a premier aesthetic and dental clinic in Gomti Nagar approached Zyrox Media, they were heavily reliant on offline doctor referrals and word of mouth. Despite having state-of-the-art facilities, their digital presence generated fewer than 20 appointments per month.</p>
+
+          <div class="art-box">
+            <h4>The Result in 90 Days</h4>
+            <p>Within 90 days of deploying the Zyrox Local Growth Architecture, patient consultations surged to over 350+ monthly bookings, delivering a 4.8x ROAS and filling the clinic's appointment books three weeks in advance.</p>
+          </div>
+
+          <h2>Phase 1: Local SEO & Google Maps Dominance</h2>
+          <p>We restructured their Google Business Profile, audited their medical taxonomy, and generated 140+ verified patient reviews highlighting specific treatments. Within 6 weeks, the clinic claimed the #1 Google 3-Pack position across Lucknow for high-value search terms.</p>
+
+          <h2>Phase 2: High-Trust Video Testimonial Ads</h2>
+          <p>Patients do not buy aesthetic procedures based on static graphic flyers. We filmed genuine, emotive patient journey stories showcasing before-and-after results. These video testimonials were deployed via hyper-targeted Meta ad campaigns within a 15km radius.</p>
+
+          <h2>Phase 3: Automated WhatsApp Appointment Intake</h2>
+          <p>Every lead was routed straight to a dedicated clinic WhatsApp line with automated slot availability and reminder triggers, eliminating manual receptionist delays and slashing consultation no-shows to under 5%.</p>
+        `
+      },
+      {
+        id: "social-media-algorithm-strategy-2026",
+        slug: "social-media-algorithm-strategy-2026",
+        title: "The 2026 Social Media Algorithm Playbook: What Actually Drives Organic Reach Now",
+        tag: "Social Media & Video",
+        category: "Social Media",
+        featured: false,
+        date: "Dec 20, 2025",
+        readTime: "6 min read",
+        author: "Vishal Singh",
+        authorRole: "Organic Growth Specialist",
+        desc: "Forget vanity engagement. Learn how Instagram and LinkedIn's 2026 recommendation engines prioritize DM shares, save ratios, and founder authority over obsolete hashtag hacks.",
+        coverSvg: `<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#151416"/>
+              <stop offset="100%" stop-color="#0b0b0c"/>
+            </linearGradient>
+            <linearGradient id="goldGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd60a"/>
+              <stop offset="100%" stop-color="#ffb700"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="450" fill="url(#bgGrad6)"/>
+          <circle cx="680" cy="180" r="160" fill="#ffd60a" opacity="0.06"/>
+          <!-- Network node icon -->
+          <g transform="translate(480, 100)">
+            <circle cx="80" cy="60" r="24" fill="url(#goldGrad6)"/>
+            <circle cx="180" cy="100" r="18" fill="#3f3f46"/>
+            <circle cx="120" cy="160" r="20" fill="#3f3f46"/>
+            <line x1="80" y1="60" x2="180" y2="100" stroke="#ffd60a" stroke-width="2"/>
+            <line x1="80" y1="60" x2="120" y2="160" stroke="#ffd60a" stroke-width="2"/>
+            <line x1="180" y1="100" x2="120" y2="160" stroke="#3f3f46" stroke-width="2"/>
+          </g>
+          <text x="70" y="90" fill="#ffd60a" font-family="'Outfit', sans-serif" font-weight="800" font-size="24" letter-spacing="2">ORGANIC ALGORITHM ENGINE</text>
+          <text x="70" y="130" fill="#f6f6f2" font-family="'Outfit', sans-serif" font-weight="700" font-size="32">SOCIAL MEDIA ALGORITHM 2026</text>
+          <text x="70" y="180" fill="#a6a6a0" font-family="'Outfit', sans-serif" font-size="18">The Shares & Saves Multiplier</text>
+        </svg>`,
+        body: `
+          <p class="lead">If your social media strategy still relies on dropping 30 random hashtags and begging employees to like your posts, you are playing by rules that became obsolete three years ago. The modern social algorithm is driven by private distribution: direct message shares and saved reference value.</p>
+
+          <div class="art-box">
+            <h4>The Metric That Beats Likes by 10x</h4>
+            <p>Meta engineers explicitly confirm that a 'Share via DM' sends the strongest possible ranking signal to the recommendation engine. When users share your post with their friends or colleagues, the algorithm pushes it into the explore feeds of thousands of lookalike users.</p>
+          </div>
+
+          <h2>1. Designing for Shares and Saves</h2>
+          <p>Create content that either: 1) Solves a specific local business problem (saved for future reference), or 2) Entertains so intensely that people can't resist forwarding it to their circle. Informative carousel decks and concise checklist playbooks achieve 4x higher save rates than static brand photos.</p>
+
+          <h2>2. The Founder Personal Brand Advantage</h2>
+          <p>People connect with people, not corporate logos. Brands whose founders actively share behind-the-scenes insights, decision-making philosophies, and industry commentary experience 300% higher engagement than faceless corporate company handles.</p>
+
+          <h2>3. Automated DM Comment Funnels</h2>
+          <p>Use automated trigger responses (e.g. 'Comment AUDIT to get our free Lucknow SEO checklist'). This generates high initial comment velocity within the first 60 minutes of posting, signaling high algorithmic vitality while simultaneously capturing private qualified leads.</p>
+        `
+      }
+    ];
+
+    // State
+    let currentCategory = "All";
+    let searchQuery = "";
+
+    // DOM Elements
+    const appEl = document.getElementById("app");
+    const barEl = document.getElementById("bar");
+
+    // Scroll Progress
+    window.addEventListener("scroll", () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      if (h > 0) {
+        const pct = (window.scrollY / h) * 100;
+        barEl.style.width = pct + "%";
+      }
+    });
+
+    // Hash Router
+    function router() {
+      const hash = window.location.hash.replace(/^#/?/, "");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      if (!hash || hash === "blogs" || hash === "home") {
+        renderList();
+      } else {
+        const found = POSTS.find(p => p.slug === hash || p.id === hash);
+        if (found) {
+          renderArticle(found);
+        } else {
+          renderList();
+        }
+      }
+    }
+
+    // Render List View
+    function renderList() {
+      const categories = ["All", "Local SEO", "Performance Ads", "Social Media", "Web Architecture", "Case Studies"];
+
+      // Filter posts
+      const filtered = POSTS.filter(post => {
+        const matchCat = currentCategory === "All" || post.category === currentCategory || post.tag.toLowerCase().includes(currentCategory.toLowerCase());
+        const matchQ = !searchQuery || 
+          post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+          post.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.tag.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchCat && matchQ;
+      });
+
+      const featPost = (!searchQuery && currentCategory === "All") ? POSTS.find(p => p.featured) : null;
+      const gridPosts = featPost ? filtered.filter(p => p.id !== featPost.id) : filtered;
+
+      let html = `
+        <div class="hero-glow-wrap">
+          <div class="wrap hero-section">
+            <div class="eyebrow">LUCKNOW'S DIGITAL GROWTH JOURNAL</div>
+            <h1>Data-Driven Insights & <span class="g">Growth Playbooks</span></h1>
+            <p class="sub">Battle-tested strategies on Local SEO in Lucknow, high-ROAS Meta Ads, viral video production, and conversion architecture from the Zyrox Media team.</p>
+            
+            <div class="hero-stats">
+              <div class="hero-stats-item"><b>50+</b><span>Playbooks Published</span></div>
+              <div class="hero-stats-item"><b>10M+</b><span>Organic Impressions</span></div>
+              <div class="hero-stats-item"><b>₹15Cr+</b><span>Client Pipeline Value</span></div>
+              <div class="hero-stats-item"><b>5.2x</b><span>Average Meta ROAS</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tick-wrap" aria-hidden="true">
+          <div class="tick-track">
+            <span>Local SEO Lucknow</span>
+            <span>Meta Performance Ads</span>
+            <span>Video Content Shoots</span>
+            <span>Website CRO</span>
+            <span>Direct WhatsApp Funnels</span>
+            <span>Brand Authority</span>
+            <span>Local SEO Lucknow</span>
+            <span>Meta Performance Ads</span>
+            <span>Video Content Shoots</span>
+            <span>Website CRO</span>
+            <span>Direct WhatsApp Funnels</span>
+            <span>Brand Authority</span>
+          </div>
+        </div>
+
+        <div class="wrap">
+          <div class="tools-container">
+            <div class="search-row">
+              <div class="search-box">
+                <span class="material-symbols-outlined search-icon">search</span>
+                <input type="text" id="blogSearch" placeholder="Search growth playbooks, local SEO guides, ad strategies..." value="${searchQuery}">
+                <button class="search-clear" id="searchClear" style="display:${searchQuery ? 'block' : 'none'}">&times;</button>
+              </div>
+            </div>
+            <div class="chips-row">
+              ${categories.map(c => `
+                <button class="chip ${currentCategory === c ? 'on' : ''}" data-cat="${c}">${c}</button>
+              `).join('')}
+            </div>
+          </div>
+
+          ${featPost ? `
+            <div class="feat-card" onclick="location.hash='#${featPost.slug}'">
+              <div class="feat-cover">
+                ${featPost.coverSvg}
+              </div>
+              <div class="feat-content">
+                <div class="tag">${featPost.tag}</div>
+                <h2>${featPost.title}</h2>
+                <p>${featPost.desc}</p>
+                <div class="card-meta">
+                  <span>By <b>${featPost.author}</b> • ${featPost.date}</span>
+                  <span style="color:var(--accent);font-weight:700;">${featPost.readTime} →</span>
+                </div>
+              </div>
+            </div>
+          ` : ''}
+
+          ${gridPosts.length > 0 ? `
+            <div class="blog-grid">
+              ${gridPosts.map(p => `
+                <article class="card" onclick="location.hash='#${p.slug}'">
+                  <div class="card-cover">
+                    ${p.coverSvg}
+                  </div>
+                  <div class="card-body">
+                    <div class="tag">${p.tag}</div>
+                    <h3>${p.title}</h3>
+                    <p>${p.desc}</p>
+                    <div class="card-meta">
+                      <span>${p.date}</span>
+                      <span style="color:var(--accent);font-weight:700;">${p.readTime}</span>
+                    </div>
+                  </div>
+                </article>
+              `).join('')}
+            </div>
+          ` : `
+            <div class="empty-state">
+              <span class="material-symbols-outlined">menu_book</span>
+              <h3>No matching playbooks found</h3>
+              <p>Try searching for a different keyword or reset filters to view all articles.</p>
+              <button class="btn-gold" style="margin-top:16px;" onclick="resetFilters()">View All Articles</button>
+            </div>
+          `}
+
+          <div class="band-wrap">
+            <div class="band">
+              <div>
+                <h2>Ready to Scale Your Brand in Lucknow & Beyond?</h2>
+                <p>Book a confidential 30-minute growth audit with Founder Chandan Rai to uncover your biggest revenue leaks.</p>
+              </div>
+              <a href="/contact" class="band-btn">Claim Free Audit →</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      appEl.innerHTML = html;
+      bindListEvents();
+    }
+
+    // Render Article View
+    function renderArticle(post) {
+      let html = `
+        <div class="art-container">
+          <a class="art-back" onclick="location.hash='#blogs'">
+            <span class="material-symbols-outlined" style="font-size:1.2rem;">arrow_back</span>
+            Back to All Playbooks
+          </a>
+
+          <div class="art-header">
+            <div class="tag" style="margin-bottom:12px;">${post.tag}</div>
+            <h1>${post.title}</h1>
+            <div class="art-meta-bar">
+              <div class="author-badge">
+                <span class="material-symbols-outlined" style="color:var(--accent);">person</span>
+                <span>${post.author} (${post.authorRole})</span>
+              </div>
+              <span>•</span>
+              <span>${post.date}</span>
+              <span>•</span>
+              <span style="color:var(--accent);font-weight:600;">${post.readTime}</span>
+            </div>
+          </div>
+
+          <div class="art-cover-wrap">
+            ${post.coverSvg}
+          </div>
+
+          <div class="art-content">
+            ${post.body}
+          </div>
+
+          <div class="art-cta-card">
+            <h3>Want Zyrox Media to Implement This For Your Business?</h3>
+            <p>Skip the painful trial-and-error. Let Lucknow's premier performance growth team engineer your custom marketing engine.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+              <a href="/contact" class="btn-gold">Book Growth Strategy Call →</a>
+              <a href="tel:+919455495623" class="btn-gold" style="background:none;border:1px solid var(--accent);color:var(--accent);">Call: +91 9455495623</a>
+            </div>
+          </div>
+
+          <div style="margin-top:40px;text-align:center;">
+            <a class="art-back" onclick="location.hash='#blogs'">← Back to All Playbooks</a>
+          </div>
+        </div>
+      `;
+
+      appEl.innerHTML = html;
+    }
+
+    // Event Bindings
+    function bindListEvents() {
+      // Search Input
+      const sInput = document.getElementById("blogSearch");
+      const sClear = document.getElementById("searchClear");
+      if (sInput) {
+        sInput.addEventListener("input", (e) => {
+          searchQuery = e.target.value.trim();
+          if (sClear) sClear.style.display = searchQuery ? "block" : "none";
+          renderList();
+          // Restore focus to input
+          const newInput = document.getElementById("blogSearch");
+          if (newInput) {
+            newInput.focus();
+            newInput.setSelectionRange(newInput.value.length, newInput.value.length);
+          }
+        });
+      }
+      if (sClear) {
+        sClear.addEventListener("click", () => {
+          searchQuery = "";
+          renderList();
+        });
+      }
+
+      // Filter Chips
+      document.querySelectorAll(".chip").forEach(btn => {
+        btn.addEventListener("click", () => {
+          currentCategory = btn.getAttribute("data-cat");
+          renderList();
+        });
+      });
+
+      // Mouse Spotlight Glow on Cards
+      document.querySelectorAll(".card").forEach(card => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty("--mx", (e.clientX - rect.left) + "px");
+          card.style.setProperty("--my", (e.clientY - rect.top) + "px");
+        });
+      });
+    }
+
+    function resetFilters() {
+      currentCategory = "All";
+      searchQuery = "";
+      renderList();
+    }
+
+    // Initialize Router
+    window.addEventListener("hashchange", router);
+    window.addEventListener("DOMContentLoaded", () => {
+      router();
+
+      // Mobile Menu Toggle
+      const mobileToggle = document.querySelector(".mobile-toggle");
+      const mobileOverlay = document.querySelector(".mobile-menu-overlay");
+      if (mobileToggle && mobileOverlay) {
+        mobileToggle.addEventListener("click", () => {
+          const isOpen = mobileToggle.classList.toggle("active");
+          mobileOverlay.classList.toggle("open");
+          mobileToggle.setAttribute("aria-expanded", isOpen);
+          mobileOverlay.setAttribute("aria-hidden", !isOpen);
+        });
+
+        document.querySelectorAll(".mobile-nav-link").forEach(link => {
+          link.addEventListener("click", () => {
+            mobileToggle.classList.remove("active");
+            mobileOverlay.classList.remove("open");
+            mobileToggle.setAttribute("aria-expanded", "false");
+            mobileOverlay.setAttribute("aria-hidden", "true");
+          });
+        });
+      }
+
+      // Footer Year
+      const ftYr = document.getElementById("ft-yr");
+      if (ftYr) ftYr.textContent = new Date().getFullYear();
+
+      // Back to top
+      const topBtn = document.getElementById("ft-top");
+      if (topBtn) {
+        topBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
